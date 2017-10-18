@@ -1,3 +1,3 @@
-# Seedling
+# Infocast
 
-Starter template for laravel app with admin users
+Just a website
