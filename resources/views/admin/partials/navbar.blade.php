@@ -1,10 +1,9 @@
 <nav class="flex justify-between items-center h3 col-p-bg">
-    <div class="flex items-start">
-        <a href="/admin"><img src="'/ogo/goes/here.jpg"
-                              alt="Logo"
-                              height="60px"
-            >
+    <div class="flex justify-start items-center">
+        <a href="/admin" class="col-r ml3">
+            @include('svgicons.logo_icon')
         </a>
+        <a class="link col-w mh3" href="/admin/postings">Job Postings</a>
     </div>
     <div class="flex justify-end items-center h-100">
         <dropdown name="{{ auth()->user()->email }}">

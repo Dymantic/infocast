@@ -8,3 +8,7 @@ body {
   background-color: $body-bg;
   font-family: 'Raleway', sans-serif;
 }
+
+svg {
+  fill: currentColor;
+}

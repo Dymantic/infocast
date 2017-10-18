@@ -1,0 +1,33 @@
+div.vfl-label-on-input {
+  top: -0.5rem;
+  padding-left: .25rem;
+}
+
+select option:first-child {
+  color: $site_red;
+}
+
+.floating-label-input {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: 1.5rem;
+    left: 0.5rem;
+    text-transform: none;
+    font-size: 1rem;
+    color: $mid_grey;
+    transform-origin: left top;
+    transition: .2s;
+    transform: scale(1) translate3d(0,0,0);
+    pointer-events: none;
+    background-color: $site_light;
+    padding: 0 5px;
+  }
+
+  .input:valid + label, .input:focus + label {
+    transform: scale(0.9) translate3d(0,-2.25rem,0);
+    color: $site_secondary;
+    text-transform: uppercase;
+  }
+}

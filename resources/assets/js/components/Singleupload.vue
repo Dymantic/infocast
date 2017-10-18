@@ -83,7 +83,7 @@
         },
         methods: {
             processFile(ev) {
-                var file = ev.target.files[0];
+                const file = ev.target.files[0];
                 this.clearMessage();
                 if (file.type.indexOf('image') === -1) {
                     this.showInvalidFile(file.name);

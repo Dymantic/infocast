@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'artegra-sans-reg';
+  src: url('./fonts/Artegra_Sans-Alt-400-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+  url('./fonts/Artegra_Sans-Alt-400-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'artegra-sans-bold';
+  src: url('./fonts/Artegra_Sans-Alt-600-SemiBold.woff') format('woff'), /* Pretty Modern Browsers */
+  url('./fonts/Artegra_Sans-Alt-600-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
+
+// Variables
+@import "variables";
+
+@import "~tachyons-sass/tachyons";
+
+@import "~flickity/dist/flickity";
+
+@import "front/base";
+@import "utilities/site-colours";
+@import "utilities/site-type";
+@import "utilities/hovers";
+
+@import "front/components/banner";
+@import "front/components/form";
+
+@import "front/home";
+@import "front/careers";
+@import "front/footer";
+
+

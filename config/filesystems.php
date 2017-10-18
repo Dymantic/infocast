@@ -69,6 +69,20 @@ return [
             'visibility' => 'public',
         ],
 
+        'application_uploads' => [
+            'driver' => 'local',
+            'root' => public_path('application_uploads'),
+            'url' => env('APP_URL').'/application_uploads',
+            'visibility' => 'public',
+        ],
+
+        'application_uploads_test' => [
+            'driver' => 'local',
+            'root' => public_path('application_uploads_test'),
+            'url' => env('APP_URL').'/application_uploads_test',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

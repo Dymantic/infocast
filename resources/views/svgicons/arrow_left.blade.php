@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.5 20.15"><defs><style>.cls-1{fill:#183242;}</style></defs><title>arrow_left</title><g id="Layer_2" data-name="Layer 2"><g id="Layer_1-2" data-name="Layer 1"><path class="cls-1" d="M.23,9.71,16.8.06a.47.47,0,0,1,.7.4V19.68a.47.47,0,0,1-.7.4L.23,10.52A.47.47,0,0,1,.23,9.71Z"/></g></g></svg>

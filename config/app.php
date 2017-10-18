@@ -54,6 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
+    'application_uploads' => ['disk' => env('USER_UPLOAD_DISK', 'application_uploads')],
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
