@@ -9,6 +9,8 @@ class CVsController extends Controller
 {
     public function store()
     {
+        request()->validate(['cv' => 'required|mimes:doc,docx,txt,pdf|max:2048']);
+
         return ApplicationUpload::resume(request('cv'));
     }
 }

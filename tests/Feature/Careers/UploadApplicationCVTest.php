@@ -37,4 +37,43 @@ class UploadApplicationCVTest extends TestCase
 
         $this->assertTrue(file_exists($file_path));
     }
+
+    /**
+     *@test
+     */
+    public function the_cv_is_required()
+    {
+        $response = $this->json('POST', "/applications/uploads/cvs", [
+            'cv' => ''
+        ]);
+        $response->assertStatus(422);
+
+        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+    }
+
+    /**
+     *@test
+     */
+    public function the_cover_letter_must_be_a_valid_document_file_type()
+    {
+        $response = $this->json('POST', "/applications/uploads/cvs", [
+            'cv' => UploadedFile::fake()->create('not_a_doc.ai')
+        ]);
+        $response->assertStatus(422);
+
+        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+    }
+
+    /**
+     *@test
+     */
+    public function the_cover_letter_must_be_under_2mb()
+    {
+        $response = $this->json('POST', "/applications/uploads/cvs", [
+            'cv' => UploadedFile::fake()->create('letter.docx', 3000)
+        ]);
+        $response->assertStatus(422);
+
+        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+    }
 }
