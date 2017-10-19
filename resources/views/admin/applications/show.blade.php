@@ -75,4 +75,43 @@
         <p class="ttu col-p f7 mb0">Additional Notes or Message</p>
         <p class="mt1">{{ $application->notes }}</p>
     </section>
+    <section class="card mv3">
+        <p class="col-s ttu">Attachments</p>
+        <div class="flex justify-around">
+            @if($application->avatarUrl())
+                <div>
+                    <p>Avatar</p>
+                    <a href="{{ $application->avatarUrl() }}"
+                       download>
+                        <img src="{{ $application->avatarUrl() }}"
+                             width="200px"
+                             alt="">
+                    </a>
+                </div>
+            @endif
+            @if($application->coverLetterUrl())
+                <div>
+                    <p>Cover letter</p>
+                    <a href="{{ $application->coverLetterUrl() }}"
+                       download>
+                        <img src="/images/default_doc.svg"
+                             width="130px"
+                             alt="">
+                    </a>
+                </div>
+            @endif
+            @if($application->resumeUrl())
+                <div>
+                    <p>CV</p>
+                    <a href="{{ $application->resumeUrl() }}"
+                       download>
+                        <img src="/images/default_doc.svg"
+                             width="130px"
+                             alt="">
+                    </a>
+                </div>
+            @endif
+        </div>
+
+    </section>
 @endsection
