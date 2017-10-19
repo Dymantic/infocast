@@ -30,8 +30,18 @@
   }
 
   nav {
-    .active {
-      text-decoration: underline;
+    a {
+      position: relative;
+    }
+
+    .active:after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: .5rem;
+      right: .5rem;
+      height: 2px;
+      background-color: currentColor;
     }
   }
 }
