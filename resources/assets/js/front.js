@@ -35,6 +35,8 @@ window.swal = swal;
 import Flickity from "flickity";
 window.Flickity = Flickity;
 
+import { throttle} from "lodash";
+
 Vue.component('application-form', require('./components/ApplicationForm.vue'));
 Vue.component('file-attachment', require('./components/FormFileAttachment.vue'));
 
@@ -58,3 +60,11 @@ const app = new Vue({
         }
     }
 });
+
+window.addEventListener('scroll', throttle(() => {
+    if(window.scrollY > 80) {
+        document.querySelector('.main-nav').classList.add('scrolled');
+    } else {
+        document.querySelector('.main-nav').classList.remove('scrolled');
+    }
+}, 150));

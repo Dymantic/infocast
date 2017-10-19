@@ -1,11 +1,11 @@
-@extends('front.base')
+@extends('front.base', ['pageName' => 'light'])
 
 @section('content')
     <section class="pv5">
         <p class="tc bold-type f5 b mb3">Job Title:</p>
         <p class="tc f2 mt1 ttu">{{ $posting->title }}</p>
     </section>
-    <section class="mw7 center pb5">
+    <section class="mw7 mh3 center-ns pb5">
         <div>
             <p class="f5"><span class="bold-type">Type:</span> {{ $posting->type }}</p>
             <p class="f5"><span class="bold-type">Category:</span> {{ $posting->category }}</p>

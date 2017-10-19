@@ -10,7 +10,7 @@
   url('./fonts/Artegra_Sans-Alt-600-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
-
+@import "mixins/media";
 // Variables
 @import "variables";
 
@@ -22,7 +22,9 @@
 @import "utilities/site-colours";
 @import "utilities/site-type";
 @import "utilities/hovers";
+@import "utilities/constraints";
 
+@import "front/components/navbar";
 @import "front/components/banner";
 @import "front/components/form";
 

@@ -1,4 +1,4 @@
-@extends('front.base')
+@extends('front.base', ['pageName' => 'light'])
 
 @section('content')
     <div class="pv5">

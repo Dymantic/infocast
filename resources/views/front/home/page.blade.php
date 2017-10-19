@@ -1,14 +1,15 @@
-@extends('front.base')
+@extends('front.base', ['pageName' => 'dark home-page'])
 
 @section('content')
     <section class="banner col-p-bg flex flex-column justify-center items-center">
         <img src="/images/logos/infocast_logo.svg"
              alt="Infocast logo"
+             class="mw-90 db"
              width="500px">
-        <p class="col-w f3">The cherry on top of the cake you can eat.</p>
+        <p class="col-w f4 f3-ns tc mw-90">The cherry on top of the cake you can eat.</p>
     </section>
     <section class="pv5">
-        <p class="f3 measure-wide center tc lh-copy">
+        <p class="f4 f3-ns mh3 measure-wide center-ns tc lh-copy">
             This is a paragraph about what we do. It is only a few lines. Short
             and punchy. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore.
@@ -20,7 +21,7 @@
     </section>
     <section>
         <h3 class="tc ttu f2 normal">Meet the Team</h3>
-        <div data-flickity='{"groupCells": "true", "cellAlign": "left"}'
+        <div data-flickity='{"cellAlign": "left"}'
              class="mw8 center mv5 pb5">
             @foreach(range(1,7) as $item)
                 @include('front.home.team-member')
@@ -29,7 +30,7 @@
     </section>
     <section class="pv5 join-us mt5">
         <h3 class="normal tc ttu f2">Join Us</h3>
-        <p class="lh-copy f3 measure-wide center">
+        <p class="lh-copy f4 f3-ns mh3 measure-wide center-ns tc tl-ns">
             We’re a super awesome company for the following reasons.
             Just a few quick reasons about how awesome we are,
             nothing too tedious or long. This paragraph should not be
@@ -48,7 +49,7 @@
             @endforeach
         </div>
         <div class="tc mt4">
-            <a class="f3 ttu col-p ba dib center link col-s pv2 ph4" href="/careers">See all available positions</a>
+            <a class="f3 ttu col-p ba dib center-ns link col-s pv2 ph4 mh3" href="/careers">See all available positions</a>
         </div>
     </section>
 @endsection

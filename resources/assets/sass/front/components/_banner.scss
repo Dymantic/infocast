@@ -1,3 +1,7 @@
 .banner {
   height: 40vw;
+
+  @include respond-to(small) {
+    height: 100vw;
+  }
 }
