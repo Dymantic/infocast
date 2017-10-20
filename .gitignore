@@ -19,3 +19,4 @@ yarn-error.log
 /public/build
 /public/mix-manifest.json
 /public/sitemap.xml
+.DS_Store
