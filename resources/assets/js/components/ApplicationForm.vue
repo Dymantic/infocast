@@ -279,7 +279,7 @@
         },
 
         mounted() {
-            eventHub.$on('application-submitted', () => window.location = '/');
+            eventHub.$on('application-submitted', ({url}) => window.location = url);
         },
 
         data() {
@@ -315,7 +315,7 @@
             },
 
             getUpdatedDataFromResponseData(response) {
-                return {};
+                return {url: response.redirect_url};
             },
 
             getStoreActionEventName() {

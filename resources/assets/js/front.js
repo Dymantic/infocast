@@ -39,6 +39,7 @@ import { throttle} from "lodash";
 
 Vue.component('application-form', require('./components/ApplicationForm.vue'));
 Vue.component('file-attachment', require('./components/FormFileAttachment.vue'));
+Vue.component('contact-form', require('./components/ContactForm.vue'));
 
 window.eventHub = new Vue();
 

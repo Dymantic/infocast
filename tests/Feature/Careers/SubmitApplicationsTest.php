@@ -26,9 +26,9 @@ class SubmitApplicationsTest extends TestCase
         $posting = factory(Posting::class)->create();
 
         $application_details = $this->defaultApplicationDetails([
-            'avatar'           => $avatar->file_id,
-            'cover_letter'     => $letter->file_id,
-            'cv'               => $cv->file_id
+            'avatar'       => $avatar->file_id,
+            'cover_letter' => $letter->file_id,
+            'cv'           => $cv->file_id
         ]);
 
         $response = $this->json('POST', "/postings/{$posting->id}/applications", $application_details);
@@ -45,13 +45,26 @@ class SubmitApplicationsTest extends TestCase
     /**
      * @test
      */
+    public function successfully_submitting_an_application_returns_a_redirect_url()
+    {
+        $posting = factory(Posting::class)->create();
+        $response = $this->json('POST', "/postings/{$posting->id}/applications", $this->defaultApplicationDetails());
+
+        $response->assertStatus(200);
+
+        $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=application', $response->decodeResponseJson()['redirect_url']);
+    }
+
+    /**
+     * @test
+     */
     public function the_applicants_name_is_required()
     {
         $this->assertRequired('first_name');
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_first_name_cannot_be_over_255_characters()
     {
@@ -59,7 +72,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_last_name_is_required()
     {
@@ -67,7 +80,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_last_name_must_be_under_255_characters()
     {
@@ -75,7 +88,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_email_is_required()
     {
@@ -83,7 +96,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_email_must_be_a_valid_email()
     {
@@ -99,7 +112,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_phone_field_is_required()
     {
@@ -107,7 +120,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_phone_must_be_under_255_characters()
     {
@@ -115,7 +128,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_contact_method_is_required()
     {
@@ -123,7 +136,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_contact_method_must_be_either_email_or_phone()
     {
@@ -139,7 +152,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_gender_is_required()
     {
@@ -147,7 +160,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_gender_must_be_either_male_or_female()
     {
@@ -163,7 +176,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_date_of_birth_is_required()
     {
@@ -171,7 +184,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_date_of_birth_must_be_under_255_characters()
     {
@@ -179,7 +192,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_prev_company_is_required()
     {
@@ -187,7 +200,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_previous_company_should_be_under_255_characters()
     {
@@ -195,7 +208,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_prev_position_is_required()
     {
@@ -203,7 +216,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_previous_position_should_be_under_255_characters()
     {
@@ -211,7 +224,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_university_is_required()
     {
@@ -219,7 +232,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_university_should_be_under_255_characters()
     {
@@ -227,7 +240,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_english_ability_is_required()
     {
@@ -235,7 +248,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_english_ability_must_be_poor_or_intermediate_or_excellent()
     {
@@ -251,7 +264,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_mandarin_ability_is_required()
     {
@@ -259,7 +272,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_mandarin_ability_must_be_poor_or_intermediate_or_excellent()
     {
@@ -275,7 +288,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_qualifications_field_is_required()
     {
@@ -283,7 +296,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_skills_field_is_required()
     {
@@ -291,7 +304,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_notes_field_is_nullable()
     {
@@ -306,7 +319,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_avatar_must_be_an_existing_file_id_in_the_application_uploads_table()
     {
@@ -323,7 +336,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_avatar_is_nullable()
     {
@@ -338,7 +351,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_cover_letter_must_be_an_existing_file_id_in_the_application_uploads_table()
     {
@@ -355,7 +368,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_cover_letter_is_nullable()
     {
@@ -370,7 +383,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_cv_must_be_an_existing_file_id_in_the_application_uploads_table()
     {
@@ -387,7 +400,7 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function the_cv_is_nullable()
     {

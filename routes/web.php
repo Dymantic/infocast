@@ -44,6 +44,13 @@ Route::post('applications/uploads/avatars', 'AvatarsController@store');
 Route::post('applications/uploads/cover-letters', 'CoverLettersController@store');
 Route::post('applications/uploads/cvs', 'CVsController@store');
 
+Route::get('contact', 'ContactMessageController@create');
+Route::post('contact', 'ContactMessageController@store');
+
+Route::get('thank-you', function() {
+    return view('front.thanks', ['name' => request('name')]);
+});
+
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {

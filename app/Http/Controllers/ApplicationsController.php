@@ -12,5 +12,9 @@ class ApplicationsController extends Controller
     public function store(Posting $posting, ApplicationForm $form)
     {
         $posting->receiveApplication($form->fields());
+
+        $name = urlencode(request('first_name') . ' ' . request('last_name'));
+
+        return ['redirect_url' => "/thank-you?name={$name}&type=application"];
     }
 }

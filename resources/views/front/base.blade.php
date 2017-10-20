@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -13,16 +13,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('head')
 </head>
-<body  class="{{ $pageName ?? '' }} reg-type">
+<body  class="{{ $pageName ?? '' }} flex flex-column reg-type min-h-100">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
-<div id="app">
+<div id="app" class="flex-auto">
     @include('front.partials.navbar')
     @yield('content')
-    @include('front.partials.footer')
 </div>
-
+@include('front.partials.footer')
 
 
 
