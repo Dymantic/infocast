@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Careers\ApplicationUpload;
+use App\Careers\Posting;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -17,25 +18,41 @@ class ApplicationForm extends FormRequest
 
     public function rules()
     {
-        return [
-            'first_name' => 'required|max:255',
-            'last_name' => 'required|max:255',
-            'email' => 'required|email',
-            'phone' => 'required|max:255',
-            'contact_method' => ['required', Rule::in(['email', 'phone'])],
-            'gender' => ['required', Rule::in(['female', 'male'])],
-            'date_of_birth' => 'required|max:255',
-            'prev_company' => 'required|max:255',
-            'prev_position' => 'required|max:255',
-            'university' => 'required|max:255',
-            'english_ability' => ['required', Rule::in(['poor', 'intermediate', 'excellent'])],
-            'mandarin_ability' => ['required', Rule::in(['poor', 'intermediate', 'excellent'])],
-            'qualifications' => 'required',
-            'skills' => 'required',
-            'avatar' => 'nullable|exists:application_uploads,file_id',
-            'cover_letter' => 'nullable|exists:application_uploads,file_id',
-            'cv' => 'nullable|exists:application_uploads,file_id'
+
+        $base_rules = [
+            'first_name'       => ['max:255'],
+            'last_name'        => ['max:255'],
+            'email'            => ['email', 'nullable'],
+            'phone'            => ['max:255'],
+            'contact_method'   => [Rule::in(['email', 'phone']), 'nullable'],
+            'gender'           => [Rule::in(['female', 'male']), 'nullable'],
+            'date_of_birth'    => ['max:255'],
+            'prev_company'     => ['max:255'],
+            'prev_position'    => ['max:255'],
+            'university'       => ['max:255'],
+            'english_ability'  => [Rule::in(['poor', 'intermediate', 'excellent']), 'nullable'],
+            'mandarin_ability' => [Rule::in(['poor', 'intermediate', 'excellent']), 'nullable'],
+            'qualifications'   => [],
+            'skills'           => [],
+            'notes'            => [],
+            'avatar'           => ['nullable', 'exists:application_uploads,file_id'],
+            'cover_letter'     => ['nullable', 'exists:application_uploads,file_id'],
+            'cv'               => ['nullable', 'exists:application_uploads,file_id']
         ];
+
+        $required_fields = collect($this->posting->applicationFields())->filter(function ($field) {
+            return $field === Posting::FIELD_REQUIRED;
+        })->all();
+
+        return collect($base_rules)->flatMap(function ($rules, $field) use ($required_fields) {
+            if (array_key_exists($field, $required_fields)) {
+                return [$field => array_merge($rules, ['required'])];
+            }
+
+            return [$field => $rules];
+        })->all();
+
+
     }
 
     public function fields()
@@ -68,17 +85,17 @@ class ApplicationForm extends FormRequest
 
     private function withUploadFileIds(&$data)
     {
-        if($this->avatar) {
+        if ($this->avatar) {
             $file = ApplicationUpload::byFileId($this->avatar);
             $data['avatar'] = $file->id ?? null;
         }
 
-        if($this->cover_letter) {
+        if ($this->cover_letter) {
             $file = ApplicationUpload::byFileId($this->cover_letter);
             $data['cover_letter'] = $file->id ?? null;
         }
 
-        if($this->cv) {
+        if ($this->cv) {
             $file = ApplicationUpload::byFileId($this->cv);
             $data['cv'] = $file->id ?? null;
         }

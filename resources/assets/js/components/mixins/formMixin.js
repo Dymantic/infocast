@@ -59,8 +59,11 @@ export default {
         onFailure(res) {
             this.waiting = false;
             if (res.status === 422) {
+                this.$emit('failed-validation', res.data.errors);
                 return this.form.setValidationErrors(res.data.errors);
             }
+
+
 
             this.mainError = 'Unable to complete action. Please refresh and try again later.';
         },

@@ -3,9 +3,12 @@
         <form action=""
               class="mh2"
               @submit.stop.prevent="submit"
+              novalidate
         >
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.first_name}">
+                 :class="{'has-error': form.errors.first_name}"
+                 v-if="fieldRequirements.first_name !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.first_name">{{ form.errors.first_name }}</span>
                 <input type="text"
@@ -15,10 +18,14 @@
                        id="first_name"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="first_name">First Name</label>
+                       for="first_name">First Name
+                    <span v-if="fieldRequirements.first_name === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.last_name}">
+                 :class="{'has-error': form.errors.last_name}"
+                 v-if="fieldRequirements.last_name !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.last_name">{{ form.errors.last_name }}</span>
                 <input type="text"
@@ -28,11 +35,14 @@
                        id="last_name"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="last_name">Last Name</label>
+                       for="last_name">Last Name
+                    <span v-if="fieldRequirements.last_name === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.email}">
-
+                 :class="{'has-error': form.errors.email}"
+                 v-if="fieldRequirements.email !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.email">{{ form.errors.email }}</span>
                 <input type="email"
@@ -42,11 +52,14 @@
                        v-model="form.data.email"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="email">Email address</label>
+                       for="email">Email address
+                    <span v-if="fieldRequirements.email === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.phone}">
-
+                 :class="{'has-error': form.errors.phone}"
+                 v-if="fieldRequirements.phone !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.phone">{{ form.errors.phone }}</span>
                 <input type="text"
@@ -56,10 +69,14 @@
                        id="phone"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="phone">Phone Number</label>
+                       for="phone">Phone Number
+                    <span v-if="fieldRequirements.phone === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.contact_method}">
+                 :class="{'has-error': form.errors.contact_method}"
+                 v-if="fieldRequirements.contact_method !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.contact_method">{{ form.errors.contact_method }}</span>
                 <select required
@@ -74,10 +91,14 @@
                     <option value="email">Email</option>
                 </select>
                 <label class="f6 ttu col-p"
-                       for="contact_method">Preferred Contact Method</label>
+                       for="contact_method">Preferred Contact Method
+                    <span v-if="fieldRequirements.contact_method === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.gender}">
+                 :class="{'has-error': form.errors.gender}"
+                 v-if="fieldRequirements.gender !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.gender">{{ form.errors.gender }}</span>
                 <select required
@@ -93,10 +114,14 @@
                     <option value="homo">Homo</option>
                 </select>
                 <label class="f6 ttu col-p"
-                       for="gender">Gender</label>
+                       for="gender">Gender
+                    <span v-if="fieldRequirements.gender === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.date_of_birth}">
+                 :class="{'has-error': form.errors.date_of_birth}"
+                 v-if="fieldRequirements.date_of_birth !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.date_of_birth">{{ form.errors.date_of_birth }}</span>
                 <input type="text"
@@ -106,10 +131,14 @@
                        id="date_of_birth"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="date_of_birth">Date of Birth (mm/dd/yyyy)</label>
+                       for="date_of_birth">Date of Birth (mm/dd/yyyy)
+                    <span v-if="fieldRequirements.date_of_birth === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.prev_company}">
+                 :class="{'has-error': form.errors.prev_company}"
+                 v-if="fieldRequirements.prev_company !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.prev_company">{{ form.errors.prev_company }}</span>
                 <input type="text"
@@ -119,10 +148,14 @@
                        id="prev_company"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="prev_company">Current/Previous Company</label>
+                       for="prev_company">Current/Previous Company
+                    <span v-if="fieldRequirements.prev_company === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.prev_position}">
+                 :class="{'has-error': form.errors.prev_position}"
+                 v-if="fieldRequirements.prev_position !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.prev_position">{{ form.errors.prev_position }}</span>
                 <input type="text"
@@ -132,10 +165,14 @@
                        id="prev_position"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="prev_position">Current/Previous Position</label>
+                       for="prev_position">Current/Previous Position
+                    <span v-if="fieldRequirements.prev_position === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.university}">
+                 :class="{'has-error': form.errors.university}"
+                 v-if="fieldRequirements.university !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.university">{{ form.errors.university }}</span>
                 <input type="text"
@@ -145,10 +182,14 @@
                        id="university"
                        class="w-100 input h3 pl2 ba br2 input">
                 <label class="f6 ttu col-p"
-                       for="university">University/College Name</label>
+                       for="university">University/College Name
+                    <span v-if="fieldRequirements.university === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.qualifications}">
+                 :class="{'has-error': form.errors.qualifications}"
+                 v-if="fieldRequirements.qualifications !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.qualifications">{{ form.errors.qualifications }}</span>
                 <textarea name="qualifications"
@@ -159,10 +200,14 @@
                 >
                 </textarea>
                 <label class="f6 ttu col-p"
-                       for="qualifications">Qualifications</label>
+                       for="qualifications">Qualifications
+                    <span v-if="fieldRequirements.qualifications === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.skills}">
+                 :class="{'has-error': form.errors.skills}"
+                 v-if="fieldRequirements.skills !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.skills">{{ form.errors.skills }}</span>
                 <textarea name="skills"
@@ -173,10 +218,14 @@
                 >
                 </textarea>
                 <label class="f6 ttu col-p"
-                       for="skills">Skills to highlight</label>
+                       for="skills">Skills to highlight
+                    <span v-if="fieldRequirements.skills === 'required'">&ast;</span>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.english_ability}">
+                 :class="{'has-error': form.errors.english_ability}"
+                 v-if="fieldRequirements.english_ability !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.english_ability">{{ form.errors.english_ability }}</span>
                 <select required
@@ -192,10 +241,13 @@
                     <option value="excellent">Excellent</option>
                 </select>
                 <label class="f6 ttu col-p"
-                       for="english_ability">English ability</label>
+                       for="english_ability">English ability
+                    <span v-if="fieldRequirements.english_ability === 'required'">&ast;</span></label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.mandarin_ability}">
+                 :class="{'has-error': form.errors.mandarin_ability}"
+                 v-if="fieldRequirements.mandarin_ability !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.mandarin_ability">{{ form.errors.mandarin_ability }}</span>
                 <select required
@@ -211,10 +263,14 @@
                     <option value="excellent">Excellent</option>
                 </select>
                 <label class="f6 ttu col-p"
-                       for="mandarin_ability">Mandarin ability</label>
+                       for="mandarin_ability">Mandarin ability
+                    <span v-if="fieldRequirements.mandarin_ability === 'required'">&ast;</span></label>
+                </label>
             </div>
             <div class="form-group mv4 floating-label-input mw6 center"
-                 :class="{'has-error': form.errors.notes}">
+                 :class="{'has-error': form.errors.notes}"
+                 v-if="fieldRequirements.notes !== 'hidden'"
+            >
                 <span class="f6 col-r"
                       v-show="form.errors.notes">{{ form.errors.notes }}</span>
                 <textarea name="notes"
@@ -225,7 +281,9 @@
                 >
                 </textarea>
                 <label class="f6 ttu col-p"
-                       for="notes">Message/Notes</label>
+                       for="notes">Message/Notes
+                    <span v-if="fieldRequirements.notes === 'required'">&ast;</span></label>
+                </label>
             </div>
             <div class="mv4 flex justify-between mw6 center">
                 <file-attachment unique="avatar"
@@ -235,6 +293,8 @@
                                  upload-url="/applications/uploads/avatars"
                                  initial_image="/images/default_avatar.svg"
                                  @file-attached="setAvatar"
+                                 v-if="fieldRequirements.avatar !== 'hidden'"
+                                 :is-required="fieldRequirements.avatar === 'required'"
                 ></file-attachment>
                 <file-attachment unique="cover_letter"
                                  file-name="Cover letter"
@@ -243,6 +303,8 @@
                                  upload-url="/applications/uploads/cover-letters"
                                  initial_image="/images/default_doc.svg"
                                  @file-attached="setCoverLetter"
+                                 v-if="fieldRequirements.cover_letter !== 'hidden'"
+                                 :is-required="fieldRequirements.cover_letter === 'required'"
                 ></file-attachment>
                 <file-attachment unique="cv"
                                  file-name="Your CV"
@@ -251,6 +313,8 @@
                                  upload-url="/applications/uploads/cvs"
                                  initial_image="/images/default_doc.svg"
                                  @file-attached="setCV"
+                                 v-if="fieldRequirements.cv !== 'hidden'"
+                                 :is-required="fieldRequirements.cv === 'required'"
                 ></file-attachment>
             </div>
 
@@ -275,11 +339,20 @@
             'posting-id': {
                 type: Number,
                 required: true
+            },
+            'field-requirements': {
+                type: Object,
+                required: true
             }
         },
 
         mounted() {
             eventHub.$on('application-submitted', ({url}) => window.location = url);
+            this.$on('failed-validation', () => eventHub.$emit('user-alert', {
+                type: 'error',
+                title: 'Check your input',
+                text: 'Some fields were invalid, or required fields are missing. Check error messages for details.'
+            }));
         },
 
         data() {
@@ -304,13 +377,26 @@
                     avatar: null,
                     cv: null,
                     cover_letter: null
-
                 })
             };
         },
 
         methods: {
             canSubmit() {
+                const missing_fields = Object.keys(this.fieldRequirements)
+                                             .filter(field => this.fieldRequirements[field] === 'required')
+                                             .filter(field => !this.form.data[field])
+                                             .map(field => field.replace(/\_/g, ' '));
+
+                if(missing_fields.length > 0) {
+                    eventHub.$emit('user-alert', {
+                        type: 'warning',
+                        title: 'Missing Data',
+                        text: `The following fields are required: ${missing_fields.join(', ')}`
+                    });
+
+                    return false;
+                }
                 return true;
             },
 
@@ -354,5 +440,10 @@
             color: #fff;
             border-color: #0096D5;
         }
+    }
+
+    select {
+        background-color: #fff;
+        -webkit-appearance: none;
     }
 </style>

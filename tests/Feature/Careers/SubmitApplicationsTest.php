@@ -52,7 +52,10 @@ class SubmitApplicationsTest extends TestCase
 
         $response->assertStatus(200);
 
-        $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=application', $response->decodeResponseJson()['redirect_url']);
+
+
+        $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=application',
+            $response->decodeResponseJson()['redirect_url']);
     }
 
     /**
@@ -61,6 +64,14 @@ class SubmitApplicationsTest extends TestCase
     public function the_applicants_name_is_required()
     {
         $this->assertRequired('first_name');
+    }
+
+    /**
+     * @test
+     */
+    public function the_first_name_can_be_set_to_optional()
+    {
+        $this->assertNotRequired('first_name');
     }
 
     /**
@@ -93,6 +104,14 @@ class SubmitApplicationsTest extends TestCase
     public function the_email_is_required()
     {
         $this->assertRequired('email');
+    }
+
+    /**
+     *@test
+     */
+    public function the_email_field_is_nullable()
+    {
+        $this->assertNotRequired('email');
     }
 
     /**
@@ -136,6 +155,14 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
+     *@test
+     */
+    public function the_contact_method_is_nullable()
+    {
+        $this->assertNotRequired('contact_method');
+    }
+
+    /**
      * @test
      */
     public function the_contact_method_must_be_either_email_or_phone()
@@ -157,6 +184,14 @@ class SubmitApplicationsTest extends TestCase
     public function the_gender_is_required()
     {
         $this->assertRequired('gender');
+    }
+
+    /**
+     *@test
+     */
+    public function the_gender_can_be_nullable()
+    {
+        $this->assertNotRequired('gender');
     }
 
     /**
@@ -248,6 +283,22 @@ class SubmitApplicationsTest extends TestCase
     }
 
     /**
+     *@test
+     */
+    public function the_english_ability_is_nullable()
+    {
+        $this->assertNotRequired('english_ability');
+    }
+
+    /**
+     *@test
+     */
+    public function the_mandarin_ability_is_nullable()
+    {
+        $this->assertNotRequired('mandarin_ability');
+    }
+
+    /**
      * @test
      */
     public function the_english_ability_must_be_poor_or_intermediate_or_excellent()
@@ -308,7 +359,7 @@ class SubmitApplicationsTest extends TestCase
      */
     public function the_notes_field_is_nullable()
     {
-        $posting = factory(Posting::class)->create();
+        $posting = factory(Posting::class)->create(['application_fields' => ['notes' => Posting::FIELD_OPTIONAL]]);
         $response = $this->json(
             'POST',
             "/postings/{$posting->id}/applications",
@@ -340,7 +391,7 @@ class SubmitApplicationsTest extends TestCase
      */
     public function the_avatar_is_nullable()
     {
-        $posting = factory(Posting::class)->create();
+        $posting = factory(Posting::class)->create(['application_fields' => ['avatar' => Posting::FIELD_OPTIONAL]]);
         $response = $this->json(
             'POST',
             "/postings/{$posting->id}/applications",
@@ -372,7 +423,7 @@ class SubmitApplicationsTest extends TestCase
      */
     public function the_cover_letter_is_nullable()
     {
-        $posting = factory(Posting::class)->create();
+        $posting = factory(Posting::class)->create(['application_fields' => ['cover_letter' => Posting::FIELD_OPTIONAL]]);
         $response = $this->json(
             'POST',
             "/postings/{$posting->id}/applications",
@@ -404,7 +455,7 @@ class SubmitApplicationsTest extends TestCase
      */
     public function the_cv_is_nullable()
     {
-        $posting = factory(Posting::class)->create();
+        $posting = factory(Posting::class)->create(['application_fields' => ['cv' => Posting::FIELD_OPTIONAL]]);
         $response = $this->json(
             'POST',
             "/postings/{$posting->id}/applications",
@@ -414,9 +465,9 @@ class SubmitApplicationsTest extends TestCase
         $response->assertStatus(200);
     }
 
-    private function assertRequired($field)
+    private function assertRequired($field, $application_fields = [])
     {
-        $posting = factory(Posting::class)->create();
+        $posting = factory(Posting::class)->create(['application_fields' => $application_fields]);
         $response = $this->json(
             'POST',
             "/postings/{$posting->id}/applications",
@@ -425,6 +476,18 @@ class SubmitApplicationsTest extends TestCase
 
         $response->assertStatus(422);
         $this->assertArrayHasKey($field, $response->decodeResponseJson()['errors']);
+    }
+
+    private function assertNotRequired($field)
+    {
+        $posting = factory(Posting::class)->create(['application_fields' => [$field => Posting::FIELD_OPTIONAL]]);
+        $response = $this->json(
+            'POST',
+            "/postings/{$posting->id}/applications",
+            $this->defaultApplicationDetails([$field => ''])
+        );
+
+        $response->assertStatus(200);
     }
 
     private function assertMaxLength($field, $max = 256)
@@ -442,6 +505,10 @@ class SubmitApplicationsTest extends TestCase
 
     private function defaultApplicationDetails($overrides = [])
     {
+        $avatar = ApplicationUpload::avatar(UploadedFile::fake()->image('avatar.png'));
+        $letter = ApplicationUpload::coverLetter(UploadedFile::fake()->create('letter.docx'));
+        $cv = ApplicationUpload::resume(UploadedFile::fake()->create('cv.png'));
+
         $default = [
             'first_name'       => 'TEST FIRST NAME',
             'last_name'        => 'TEST LAST NAME',
@@ -457,7 +524,10 @@ class SubmitApplicationsTest extends TestCase
             'skills'           => 'TEST SKILLS',
             'english_ability'  => 'excellent',
             'mandarin_ability' => 'poor',
-            'notes'            => 'TEST NOTES'
+            'notes'            => 'TEST NOTES',
+            'avatar'           => $avatar->file_id,
+            'cover_letter'     => $letter->file_id,
+            'cv'               => $cv->file_id
         ];
 
         return array_merge($default, $overrides);

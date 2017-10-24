@@ -51,6 +51,10 @@
         <p class="mt1">{{ $posting->requirements }}</p>
     </section>
     <section class="card mv3">
+        <application-fields sync-url="/admin/postings/{{ $posting->id }}/application-fields"
+                            :application-fields='@json($posting->applicationFields())'></application-fields>
+    </section>
+    <section class="card mv3">
         <p class="col-s ttu">Applications</p>
         @if($posting->applications->count() < 1)
             <p>There have been no applications for this post yet.</p>
@@ -84,4 +88,5 @@
             </table>
         @endif
     </section>
+
 @endsection

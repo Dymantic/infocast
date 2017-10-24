@@ -98,7 +98,7 @@ class PostingsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function a_posting_can_be_published()
     {
@@ -111,7 +111,7 @@ class PostingsTest extends TestCase
     }
 
     /**
-     *@test
+     * @test
      */
     public function a_posting_can_be_retracted()
     {
@@ -121,5 +121,71 @@ class PostingsTest extends TestCase
         $posting->retract();
 
         $this->assertFalse($posting->fresh()->published);
+    }
+
+    /**
+     * @test
+     */
+    public function a_postings_application_field_settings_can_be_set()
+    {
+        $posting = factory(Posting::class)->create(['application_fields' => ['first_name' => 'required']]);
+
+        $posting->setApplicationFields(['last_name' => 'hidden']);
+
+        $this->assertEquals([
+            'first_name' => 'required',
+            'last_name'  => 'hidden'
+        ], $posting->application_fields);
+    }
+
+    /**
+     * @test
+     */
+    public function all_posting_application_fields_default_to_required_if_not_explicitly_set()
+    {
+        $posting = factory(Posting::class)->create();
+
+        $this->assertEquals($this->getDefaultApplicationFields(), $posting->applicationFields());
+    }
+
+    /**
+     * @test
+     */
+    public function a_postings_application_fields_are_correctly_returned()
+    {
+        $posting_application_fields = [
+            'phone'  => Posting::FIELD_OPTIONAL,
+            'gender' => Posting::FIELD_HIDDEN,
+            'notes'  => Posting::FIELD_OPTIONAL
+        ];
+        $posting = factory(Posting::class)->create(['application_fields' => $posting_application_fields]);
+
+        $expected = array_merge($this->getDefaultApplicationFields(), $posting_application_fields);
+
+        $this->assertEquals($expected, $posting->applicationFields());
+    }
+
+    private function getDefaultApplicationFields()
+    {
+        return [
+            'first_name'       => Posting::FIELD_REQUIRED,
+            'last_name'        => Posting::FIELD_REQUIRED,
+            'email'            => Posting::FIELD_REQUIRED,
+            'phone'            => Posting::FIELD_REQUIRED,
+            'contact_method'   => Posting::FIELD_REQUIRED,
+            'gender'           => Posting::FIELD_REQUIRED,
+            'date_of_birth'    => Posting::FIELD_REQUIRED,
+            'prev_company'     => Posting::FIELD_REQUIRED,
+            'prev_position'    => Posting::FIELD_REQUIRED,
+            'university'       => Posting::FIELD_REQUIRED,
+            'qualifications'   => Posting::FIELD_REQUIRED,
+            'skills'           => Posting::FIELD_REQUIRED,
+            'english_ability'  => Posting::FIELD_REQUIRED,
+            'mandarin_ability' => Posting::FIELD_REQUIRED,
+            'notes'            => Posting::FIELD_REQUIRED,
+            'avatar'           => Posting::FIELD_REQUIRED,
+            'cover_letter'     => Posting::FIELD_REQUIRED,
+            'cv'               => Posting::FIELD_REQUIRED,
+        ];
     }
 }

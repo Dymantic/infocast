@@ -78,6 +78,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('postings/{posting}', 'PostingsController@update');
         Route::delete('postings/{posting}', 'PostingsController@delete');
 
+        Route::post('postings/{posting}/application-fields', 'PostingApplicationFieldsController@update');
+
         Route::post('published-postings', 'PublishedPostingsController@store');
         Route::delete('published-postings/{posting}', 'PublishedPostingsController@delete');
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <p>{{ fileName }}</p>
+        <p>{{ fileName }} <span v-if="isRequired">&ast;</span></p>
         <div class="h4 w4 ba b--dotted relative drop-area"
              @drop.prevent="handleDropFile"
              @dragenter.prevent="hover = true"
@@ -31,7 +31,7 @@
 
     export default {
 
-        props: ['initial_image', 'file-type', 'unique', 'upload-url', 'upload-name', 'file-name'],
+        props: ['initial_image', 'file-type', 'unique', 'upload-url', 'upload-name', 'file-name', 'is-required'],
 
         data() {
             return {
@@ -67,6 +67,10 @@
             },
 
             isValid(file) {
+                if(file.size > 2000000) {
+                    return false;
+                }
+
                 if (this.fileType === 'image') {
                     return file.type.indexOf('image') !== -1;
                 }
@@ -78,6 +82,9 @@
             },
 
             showInvalidFile(file) {
+                if(file.size > 2000000) {
+                    return this.showError(`${file.name} is too large. Please use a file under 2MB`);
+                }
                 this.showError(`${file.name} is not a valid ${this.fileType} file.`);
             },
 
