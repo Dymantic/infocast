@@ -34,4 +34,7 @@
             </tbody>
         </table>
     </section>
+    <section>
+        {!! $applications->render() !!}
+    </section>
 @endsection

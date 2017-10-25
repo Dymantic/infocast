@@ -11,34 +11,22 @@
 |
 */
 
-Route::get('/', function () {
-    $postings = \App\Careers\Posting::latest()->take(4)->get();
-    return view('front.home.page', ['postings' => $postings]);
-});
+Route::get('/', 'PagesController@home');
 
-Route::get('careers', function () {
-    $postings = \App\Careers\Posting::where('published', true)->latest()->get();
-    return view('front.careers.page', ['postings' => $postings]);
-});
+Route::get('careers', 'PostingsController@index');
+Route::get('careers/{posting}/{slug?}', 'PostingsController@show');
 
-Route::get('careers/{posting}', function (\App\Careers\Posting $posting) {
-    return view('front.job-posts.page', ['posting' => $posting]);
-});
-
-Route::get('postings/{posting}/application', function (\App\Careers\Posting $posting) {
-    return view('front.job-posts.application', ['posting' => $posting]);
-});
-
+Route::get('postings/{posting}/application', 'ApplicationsController@create');
 Route::post('postings/{posting}/applications', 'ApplicationsController@store');
 
-$this->get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
-$this->post('admin/login', 'Auth\LoginController@login');
-$this->post('admin/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('admin/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('admin/login', 'Auth\LoginController@login');
+Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Password Reset Routes...
-$this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-$this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-$this->post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::post('applications/uploads/avatars', 'AvatarsController@store');
 Route::post('applications/uploads/cover-letters', 'CoverLettersController@store');
@@ -47,18 +35,14 @@ Route::post('applications/uploads/cvs', 'CVsController@store');
 Route::get('contact', 'ContactMessageController@create');
 Route::post('contact', 'ContactMessageController@store');
 
-Route::get('thank-you', function() {
-    return view('front.thanks', ['name' => request('name')]);
-});
+Route::get('thank-you', 'PagesController@thanks');
 
 
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
     Route::group(['middleware' => 'auth'], function() {
-        Route::get('/', function() {
-            return view('welcome');
-        });
+        Route::get('/', 'DashboardController@show');
 
         Route::get('users', 'UsersController@index');
         Route::post('users', 'UsersController@store');
@@ -85,6 +69,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::get('applications', 'ApplicationsController@index');
         Route::get('applications/{application}', 'ApplicationsController@show');
+        
+        Route::get('inquiries', 'InquiriesController@index');
+        Route::delete('inquiries/{message}', 'InquiriesController@delete');
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'services', 'namespace' => 'Services'], function() {

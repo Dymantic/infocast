@@ -2,6 +2,7 @@
 
 namespace App\Careers;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Posting extends Model
@@ -50,6 +51,11 @@ class Posting extends Model
     protected $attributes = [
         'application_fields' => '{}'
     ];
+
+    public function scopeLive($query)
+    {
+        return $query->where('published', true)->where('posted', '<=', Carbon::today());
+    }
 
     public function applications()
     {

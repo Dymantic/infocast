@@ -11,7 +11,6 @@
         <table class="w-100">
             <thead>
             <tr>
-                <th class="tl col-grey f6 bold">#</th>
                 <th class="tl col-grey f6 bold">Title</th>
                 <th class="tl col-grey f6 bold">Type</th>
                 <th class="tl col-grey f6 bold">Posted</th>
@@ -22,7 +21,6 @@
             <tbody>
             @foreach($postings as $posting)
                 <tr>
-                    <td class="lh-copy">{{ $posting->id }}</td>
                     <td class="lh-copy">
                         <a class="col-s link" href="/admin/postings/{{ $posting->id }}">{{ $posting->title }}</a>
                     </td>
@@ -34,6 +32,8 @@
             @endforeach
             </tbody>
         </table>
-
+    </section>
+    <section>
+        {!! $postings->render() !!}
     </section>
 @endsection

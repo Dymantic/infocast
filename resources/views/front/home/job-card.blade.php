@@ -3,6 +3,6 @@
     <p class="col-s f5 bold-type">{{ $posting->type }}</p>
     <p>{{ $posting->introduction }}</p>
     <div class="tr">
-        <a href="/careers/{{ $posting->id }}" class="link ttu col-s f6 bold-type">Continue to Job</a>
+        <a href="/careers/{{ $posting->id }}/{{ str_slug($posting->title) }}" class="link ttu col-s f6 bold-type">Continue to Job</a>
     </div>
 </div>

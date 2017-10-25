@@ -165,6 +165,22 @@ class PostingsTest extends TestCase
         $this->assertEquals($expected, $posting->applicationFields());
     }
 
+    /**
+     *@test
+     */
+    public function postings_scoped_to_live_are_published_and_have_a_past_posted_date()
+    {
+        $postingA = factory(Posting::class)->create(['posted' => Carbon::parse('-2 days'), 'published' => true]);
+        $postingB = factory(Posting::class)->create(['posted' => Carbon::parse('-2 days'), 'published' => false]);
+        $postingC = factory(Posting::class)->create(['posted' => Carbon::parse('+2 days'), 'published' => true]);
+        $postingD = factory(Posting::class)->create(['posted' => Carbon::parse('+2 days'), 'published' => false]);
+
+        $live_postings = Posting::live()->get();
+
+        $this->assertCount(1, $live_postings);
+        $this->assertTrue($live_postings->first()->is($postingA));
+    }
+
     private function getDefaultApplicationFields()
     {
         return [

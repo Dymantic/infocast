@@ -12,6 +12,6 @@
     <posting-form url="/admin/postings/{{ $posting->id }}"
                   form-type="update"
                   button-text=""
-                  :form-attributes='@json($posting->toJsonableArray())'
+                  :form-attributes='{{ json_encode($posting->toJsonableArray()) }}'
     ></posting-form>
 @endsection

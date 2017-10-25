@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "flickity": "^2.0.10",
+        "markdown-it": "^8.4.0",
         "moment": "^2.19.1",
         "sweetalert": "^2.0.3",
         "tachyons-sass": "^4.8.1",

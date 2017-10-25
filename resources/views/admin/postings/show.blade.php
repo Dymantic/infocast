@@ -40,15 +40,18 @@
             <p class="mt1">{{ $posting->start_date }}</p>
         </div>
     </section>
-    <section class="card mt3">
+    <section class="card mv3">
         <p class="ttu col-p f7 mb0">Introduction</p>
         <p class="mt1">{{ $posting->introduction }}</p>
-        <p class="ttu col-p f7 mb0">Job Description</p>
-        <p class="mt1">{{ $posting->job_description }}</p>
-        <p class="ttu col-p f7 mb0">Responsibilities</p>
-        <p class="mt1">{{ $posting->responsibilities }}</p>
-        <p class="ttu col-p f7 mb0">Requirements</p>
-        <p class="mt1">{{ $posting->requirements }}</p>
+    </section>
+    <section class="card mt3">
+
+        <p class="ttu col-p f6 mb0 col-s">Job Description</p>
+        <p class="mt1"> @markdown($posting->job_description) </p>
+        <p class="ttu col-p f6 mb0 col-s">Responsibilities</p>
+        <p class="mt1">@markdown($posting->responsibilities)</p>
+        <p class="ttu col-p f6 mb0 col-s">Requirements</p>
+        <p class="mt1">@markdown($posting->requirements)</p>
     </section>
     <section class="card mv3">
         <application-fields sync-url="/admin/postings/{{ $posting->id }}/application-fields"

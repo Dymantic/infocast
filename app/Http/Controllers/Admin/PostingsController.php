@@ -12,7 +12,8 @@ class PostingsController extends Controller
 
     public function index()
     {
-        return view('admin.postings.index', ['postings' => Posting::with('applications')->withCount('applications')->get()]);
+        $postings = Posting::with('applications')->withCount('applications')->latest()->paginate(15);
+        return view('admin.postings.index', ['postings' => $postings]);
     }
 
     public function show(Posting $posting)

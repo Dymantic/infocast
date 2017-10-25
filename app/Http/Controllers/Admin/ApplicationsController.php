@@ -11,7 +11,7 @@ class ApplicationsController extends Controller
 
     public function index()
     {
-        $applications = Application::with('posting')->latest()->get();
+        $applications = Application::with('posting')->latest()->paginate(15);
 
         return view('admin.applications.index', ['applications' => $applications]);
     }

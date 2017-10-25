@@ -58,6 +58,15 @@
                            v-model="form.data.compensation"
                            class="w-100 input h2 pl2">
                 </div>
+                <div class="form-group mv3 mw7 center"
+                     :class="{'has-error': form.errors.introduction}">
+                    <label class="f6 ttu col-s mb2"
+                           for="introduction">Introduction</label>
+                    <span class="f6 col-r"
+                          v-show="form.errors.introduction">{{ form.errors.introduction }}</span>
+                    <textarea v-model="form.data.introduction"
+                              class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                </div>
             </div>
             <div class="mv4 card">
                 <div class="flex justify-between mw7 center">
@@ -91,41 +100,59 @@
 
             </div>
             <div class="mv4 card">
-                <div class="form-group mv3 mw7 center"
-                     :class="{'has-error': form.errors.introduction}">
-                    <label class="f6 ttu col-s mb2"
-                           for="introduction">Introduction</label>
-                    <span class="f6 col-r"
-                          v-show="form.errors.introduction">{{ form.errors.introduction }}</span>
-                    <textarea v-model="form.data.introduction"
-                              class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                <div class="flex justify-between mv3">
+                    <div class="w-50 pa2">
+                        <div class="form-group"
+                             :class="{'has-error': form.errors.job_description}">
+                            <label class="f6 ttu col-s mb2"
+                                   for="job_description">Job description</label>
+                            <span class="f6 col-r"
+                                  v-show="form.errors.job_description">{{ form.errors.job_description }}</span>
+                            <textarea v-model="form.data.job_description"
+                                      class="w-100 pa2 ba b--black-30 no-resize h5"></textarea>
+                        </div>
+                    </div>
+                    <div class="w-50 pa2">
+                        <div v-html="marked_description">
+
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group mv3 mw7 center"
-                     :class="{'has-error': form.errors.job_description}">
-                    <label class="f6 ttu col-s mb2"
-                           for="job_description">Job description</label>
-                    <span class="f6 col-r"
-                          v-show="form.errors.job_description">{{ form.errors.job_description }}</span>
-                    <textarea v-model="form.data.job_description"
-                              class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                <div class="flex justify-between mv3">
+                    <div class="w-50 pa2">
+                        <div class="form-group"
+                             :class="{'has-error': form.errors.responsibilities}">
+                            <label class="f6 ttu col-s mb2"
+                                   for="responsibilities">Responsibilities</label>
+                            <span class="f6 col-r"
+                                  v-show="form.errors.responsibilities">{{ form.errors.responsibilities }}</span>
+                            <textarea v-model="form.data.responsibilities"
+                                      class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                        </div>
+                    </div>
+                    <div class="w-50 pa2">
+                        <div v-html="marked_responsibilities">
+
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group mv3 mw7 center"
-                     :class="{'has-error': form.errors.responsibilities}">
-                    <label class="f6 ttu col-s mb2"
-                           for="responsibilities">Responsibilities</label>
-                    <span class="f6 col-r"
-                          v-show="form.errors.responsibilities">{{ form.errors.responsibilities }}</span>
-                    <textarea v-model="form.data.responsibilities"
-                              class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
-                </div>
-                <div class="form-group mv3 mw7 center"
-                     :class="{'has-error': form.errors.requirements}">
-                    <label class="f6 ttu col-s mb2"
-                           for="requirements">Requirements</label>
-                    <span class="f6 col-r"
-                          v-show="form.errors.requirements">{{ form.errors.requirements }}</span>
-                    <textarea v-model="form.data.requirements"
-                              class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                <div class="flex justify-between mv3">
+                    <div class="w-50 pa2">
+                        <div class="form-group"
+                             :class="{'has-error': form.errors.requirements}">
+                            <label class="f6 ttu col-s mb2"
+                                   for="requirements">Requirements</label>
+                            <span class="f6 col-r"
+                                  v-show="form.errors.requirements">{{ form.errors.requirements }}</span>
+                            <textarea v-model="form.data.requirements"
+                                      class="w-100 pa2 ba b--black-30 no-resize h4"></textarea>
+                        </div>
+                    </div>
+                    <div class="w-50 pa2">
+                        <div v-html="marked_requirements">
+
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="tr mb5">
@@ -149,6 +176,7 @@
     import formMixin from "./mixins/formMixin";
     import Form from "./Form";
     import moment from "moment";
+    import MarkdownIt from "markdown-it";
 
 
     export default {
@@ -169,13 +197,28 @@
                     job_description: this.formAttributes.job_description || '',
                     responsibilities: this.formAttributes.responsibilities || '',
                     requirements: this.formAttributes.requirements || ''
-                })
+                }),
+                md: new MarkdownIt()
             };
+        },
+
+        computed: {
+            marked_description() {
+                return this.md.render(this.form.data.job_description);
+            },
+
+            marked_requirements() {
+                return this.md.render(this.form.data.requirements);
+            },
+
+            marked_responsibilities() {
+                return this.md.render(this.form.data.responsibilities);
+            }
         },
 
         mounted() {
             eventHub.$on('posting-created', () => window.location = '/admin/postings');
-            this.$on('posting-updated', () => window.location = '/admin/postings');
+            this.$on('posting-updated', () => window.location = `/admin/postings/${this.formAttributes.id}`);
         },
 
         methods: {
