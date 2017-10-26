@@ -6,7 +6,7 @@
 
 @section('head')
     @include('front.partials.ogmeta', [
-        'ogImage' => '',
+        'ogImage' => '/images/infocast_facebook.jpg',
         'ogTitle' => 'Careers at Infocast',
         'ogDescription' => ''
     ])
