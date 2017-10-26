@@ -15,6 +15,7 @@ yarn-error.log
 /public/application_uploads_test/**/*
 /public/sitemap.xml
 /public/js/**/*
+/public/fonts/**/*
 /public/css/**/*
 /public/build
 /public/mix-manifest.json
