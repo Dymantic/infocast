@@ -1,5 +1,10 @@
 @extends('front.base', ['pageName' => 'light'])
 
+@section('head')
+    <META NAME="ROBOTS"
+          CONTENT="NOINDEX, NOFOLLOW">
+@endsection
+
 @section('content')
     <div class="pv5">
         <p class="tc bold-type f5 b mb3">Job Title:</p>
