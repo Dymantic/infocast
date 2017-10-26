@@ -1,5 +1,17 @@
 @extends('front.base', ['pageName' => 'dark home-page'])
 
+@section('title')
+    Infocast
+@endsection
+
+@section('head')
+    @include('front.partials.ogmeta', [
+        'ogImage' => '',
+        'ogTitle' => 'Infocast',
+        'ogDescription' => ''
+    ])
+@endsection
+
 @section('content')
     <section class="banner col-p-bg flex flex-column justify-center items-center">
         <img src="/images/logos/infocast_logo.svg"

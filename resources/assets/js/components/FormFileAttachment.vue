@@ -1,7 +1,7 @@
 <template>
     <div>
-        <p>{{ fileName }} <span v-if="isRequired">&ast;</span></p>
-        <div class="h4 w4 ba b--dotted relative drop-area"
+        <p class="tc tl-ns">{{ fileName }} <span v-if="isRequired">&ast;</span></p>
+        <div class="h4 w4 center ba b--dotted relative drop-area"
              @drop.prevent="handleDropFile"
              @dragenter.prevent="hover = true"
              @dragover.prevent="hover = true"

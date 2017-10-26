@@ -285,7 +285,8 @@
                     <span v-if="fieldRequirements.notes === 'required'">&ast;</span></label>
                 </label>
             </div>
-            <div class="mv4 flex justify-between mw6 center">
+            <p class="f7 f6-ns tc mw6 center">Click (or drag and drop) on the boxes below to attach the following files to your application.</p>
+            <div class="mv4 flex-ns justify-between mw6 center">
                 <file-attachment unique="avatar"
                                  file-name="Avatar"
                                  file-type="image"

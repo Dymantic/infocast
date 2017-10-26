@@ -2,6 +2,11 @@
     <div>
         <form action="" class=""
               @submit.stop.prevent="submit">
+            <div class="card mv3">
+                <p class="mw7 center">The title is the only field that is always required. If you wish to not include any field on the site, just leave it blank.</p>
+                <p class="mw7 center">Don't forget to publish the posting when it ready.</p>
+                <p class="mw7 center">Even once published, the posting won't show on the site if the posted date is set to the future.</p>
+            </div>
             <div class="mv4 card">
                 <div class="form-group mv3 mw7 center"
                      :class="{'has-error': form.errors.title}">
@@ -100,6 +105,7 @@
 
             </div>
             <div class="mv4 card">
+                <p>The following three fields accept markdown as a formatting option.</p>
                 <div class="flex justify-between mv3">
                     <div class="w-50 pa2">
                         <div class="form-group"
@@ -219,6 +225,11 @@
         mounted() {
             eventHub.$on('posting-created', () => window.location = '/admin/postings');
             this.$on('posting-updated', () => window.location = `/admin/postings/${this.formAttributes.id}`);
+            this.$on('failed-validation', () => eventHub.$emit('user-alert', {
+                type: 'warning',
+                title: 'Some fields are invalid.',
+                text: 'Some of your input was not valid. See the error messages for more detail.'
+            }));
         },
 
         methods: {

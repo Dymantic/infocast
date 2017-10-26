@@ -1,5 +1,17 @@
 @extends('front.base', ['pageName' => 'light'])
 
+@section('title')
+    {{ $posting->title }} at Infocast
+@endsection
+
+@section('head')
+    @include('front.partials.ogmeta', [
+        'ogImage' => '',
+        'ogTitle' => $posting->title,
+        'ogDescription' => $posting->introduction
+    ])
+@endsection
+
 @section('content')
     <section class="pv5">
         <p class="tc bold-type f5 b mb3">Job Title:</p>
