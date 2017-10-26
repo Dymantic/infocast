@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Careers\Posting;
+use App\FlashMessaging\Flash;
 use App\Http\Requests\PostingForm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -35,11 +36,15 @@ class PostingsController extends Controller
     public function store(PostingForm $form)
     {
         Posting::create($form->fields());
+
+        Flash::success('New Post Created', 'Best of luck!');
     }
 
     public function update(Posting $posting, PostingForm $form)
     {
         $posting->update($form->fields());
+
+        Flash::success('Posting updated', 'Your changes have been saved');
 
         return $posting->fresh()->toJsonableArray();
     }
@@ -47,6 +52,9 @@ class PostingsController extends Controller
     public function delete(Posting $posting)
     {
         $posting->delete();
+
+        Flash::success('Posting deleted', 'The posting is no longer on the system.');
+
         return redirect('/admin/postings');
     }
 }

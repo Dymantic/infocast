@@ -8,6 +8,7 @@
         <a class="link col-w mh3" href="/admin/inquiries">Inquiries</a>
     </div>
     <div class="flex justify-end items-center h-100">
+        <a class="link col-w mh3" href="/admin/users">Users</a>
         <dropdown name="{{ auth()->user()->email }}">
             <div slot="dropdown">
                 <reset-password url="/admin/me/password" button-text="Reset"></reset-password>

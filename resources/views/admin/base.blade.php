@@ -32,5 +32,6 @@
 <script src="{{ mix('js/app.js') }}"></script>
 {{--@include('admin.partials.flash')--}}
 @yield('bodyscripts')
+@include('shared.flash')
 </body>
 </html>
