@@ -44,4 +44,9 @@ class ApplicationUpload extends Model
             'file_type' => $type
         ]);
     }
+
+    public function belongsToSubmittedApplication()
+    {
+        return !! Application::where($this->file_type, $this->id)->first();
+    }
 }

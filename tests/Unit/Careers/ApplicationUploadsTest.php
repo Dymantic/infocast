@@ -4,6 +4,7 @@
 namespace Tests\Unit\Careers;
 
 
+use App\Careers\Application;
 use App\Careers\ApplicationUpload;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
@@ -13,6 +14,15 @@ use Tests\TestCase;
 class ApplicationUploadsTest extends TestCase
 {
     use RefreshDatabase;
+
+    public function setUp()
+    {
+        parent::setUp();
+
+        Storage::disk('application_uploads_test')->deleteDirectory('avatars');
+        Storage::disk('application_uploads_test')->deleteDirectory('covers_letters');
+        Storage::disk('application_uploads_test')->deleteDirectory('cvs');
+    }
 
     /**
      *@test
@@ -66,5 +76,34 @@ class ApplicationUploadsTest extends TestCase
         $fetched = ApplicationUpload::byFileId($cv->file_id);
 
         $this->assertTrue($fetched->is($cv));
+    }
+
+    /**
+     *@test
+     */
+    public function an_application_upload_knows_if_it_belongs_to_a_submitted_application()
+    {
+        $avatar = ApplicationUpload::avatar(UploadedFile::fake()->image('avatar.png'));
+        $letter = ApplicationUpload::coverLetter(UploadedFile::fake()->create('letter.docx'));
+        $application = factory(Application::class)->create([
+            'avatar' => $avatar->id
+        ]);
+
+        $this->assertTrue($avatar->fresh()->belongsToSubmittedApplication());
+        $this->assertFalse($letter->fresh()->belongsToSubmittedApplication());
+    }
+
+    /**
+     *@test
+     */
+    public function deleting_an_application_upload_record_deletes_the_actual_file()
+    {
+        $avatar = ApplicationUpload::avatar(UploadedFile::fake()->image('avatar.png'));
+
+        $this->assertTrue(Storage::disk('application_uploads_test')->exists($avatar->file_path));
+
+        $avatar->delete();
+
+        $this->assertFalse(Storage::disk('application_uploads_test')->exists($avatar->file_path));
     }
 }

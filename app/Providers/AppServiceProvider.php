@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Careers\ApplicationUpload;
+use App\Careers\ApplicationUploadObserver;
 use App\Secretary;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
@@ -22,6 +24,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('markdown', function ($markdown) {
             return "<?php echo (new \Parsedown())->text({$markdown}); ?>";
         });
+
+        ApplicationUpload::observe(ApplicationUploadObserver::class);
     }
 
     /**

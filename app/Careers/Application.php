@@ -67,4 +67,6 @@ class Application extends Model
 
         return $cv ? '/application_uploads/' . $cv->file_path : null;
     }
+
+
 }
