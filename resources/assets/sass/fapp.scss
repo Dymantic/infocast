@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'artegra-sans-reg';
-  src: url('./fonts/Artegra_Sans-Alt-400-Regular.woff') format('woff'), /* Pretty Modern Browsers */
-  url('./fonts/Artegra_Sans-Alt-400-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
+  src: url('./fonts/Artegra_Sans-Alt-300-Light.woff') format('woff'), /* Pretty Modern Browsers */
+  url('./fonts/Artegra_Sans-Alt-300-Light.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -23,6 +23,9 @@
 @import "utilities/site-type";
 @import "utilities/hovers";
 @import "utilities/constraints";
+@import "utilities/typography";
+
+@import "front/overrides/flickity";
 
 @import "front/components/navbar";
 @import "front/components/banner";

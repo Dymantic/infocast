@@ -3,19 +3,19 @@ div.vfl-label-on-input {
   padding-left: .25rem;
 }
 
-select option:first-child {
-  color: $site_red;
-}
-
 .floating-label-input {
   position: relative;
 
+  input[type=text], input[type=email], select {
+    height: 35px;
+  }
+
   label {
     position: absolute;
-    top: 1.5rem;
+    top: 10px;
     left: 0.5rem;
     text-transform: none;
-    font-size: 1rem;
+    font-size: .8rem;
     color: $mid_grey;
     transform-origin: left top;
     transition: .2s;
@@ -26,8 +26,16 @@ select option:first-child {
   }
 
   .input:valid + label, .input:focus + label {
-    transform: scale(0.9) translate3d(0,-2.25rem,0);
+    transform: scale(0.9) translate3d(0,-18px,0);
     color: $site_secondary;
     text-transform: uppercase;
   }
+}
+
+input, textarea {
+  color: $site_primary_light;
+}
+
+select {
+  border: 1px solid $site_primary;
 }

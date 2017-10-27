@@ -2,6 +2,7 @@
   background-color: transparent;
   box-shadow: none;
   z-index: 10;
+  height: 70px;
 
   .logo-icon {
     padding-top: 5px;
@@ -50,9 +51,13 @@
 .light .main-nav {
   nav > a {
     color: $site_primary;
+
+    &:hover {
+      color: $site_secondary;
+    }
   }
 
-  .logo-text {
+  .logo-text, .logo-text a {
     color: $site_primary;
   }
 
@@ -66,9 +71,13 @@
 .dark .main-nav {
   nav > a {
     color: $site_light;
+
+    &:hover {
+      color: $site_secondary;
+    }
   }
 
-  .logo-text {
+  .logo-text, .logo-text a {
     color: $site_light;
   }
 
@@ -78,6 +87,19 @@
   }
 }
 
-.home-page .main-nav .logo-text {
-  display: none;
+.home-page .main-nav {
+  .logo-text {
+    display: none;
+  }
+
+  .logo-icon {
+    opacity: 0;
+    transition: 1s;
+  }
+
+  &.scrolled {
+    .logo-icon {
+      opacity: 1;
+    }
+  }
 }

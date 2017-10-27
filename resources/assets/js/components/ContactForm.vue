@@ -4,7 +4,7 @@
               class="mh2"
               @submit.stop.prevent="submit"
         >
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.first_name}">
                 <span class="f6 col-r"
                       v-show="form.errors.first_name">{{ form.errors.first_name }}</span>
@@ -13,11 +13,11 @@
                        required
                        v-model="form.data.first_name"
                        id="first_name"
-                       class="w-100 input h3 pl2 ba br2 input">
+                       class="w-100 input pl2 ba br2 input">
                 <label class="f6 ttu col-p"
                        for="first_name">First Name</label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.last_name}">
                 <span class="f6 col-r"
                       v-show="form.errors.last_name">{{ form.errors.last_name }}</span>
@@ -26,11 +26,11 @@
                        required
                        v-model="form.data.last_name"
                        id="last_name"
-                       class="w-100 input h3 pl2 ba br2 input">
+                       class="w-100 input pl2 ba br2 input">
                 <label class="f6 ttu col-p"
                        for="last_name">Last Name</label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.email}">
 
                 <span class="f6 col-r"
@@ -40,11 +40,11 @@
                        required
                        id="email"
                        v-model="form.data.email"
-                       class="w-100 input h3 pl2 ba br2 input">
+                       class="w-100 input pl2 ba br2 input">
                 <label class="f6 ttu col-p"
                        for="email">Email address</label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.phone}">
 
                 <span class="f6 col-r"
@@ -54,11 +54,11 @@
                        required
                        v-model="form.data.phone"
                        id="phone"
-                       class="w-100 input h3 pl2 ba br2 input">
+                       class="w-100 input pl2 ba br2 input">
                 <label class="f6 ttu col-p"
                        for="phone">Phone Number</label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.inquiry}">
                 <span class="f6 col-r"
                       v-show="form.errors.inquiry">{{ form.errors.inquiry }}</span>
@@ -72,9 +72,9 @@
                 <label class="f6 ttu col-p"
                        for="inquiry">Your inquiry</label>
             </div>
-            <div class="mw6 center tc mv4">
+            <div class="mw6 center tc mv5">
                 <button type="submit"
-                        class="f3 ttu col-p dib center link col-s pv2 ph4 col-w-bg">Submit Application
+                        class="f3 ttu col-p dib center reg-type link col-s pv2 ph4 col-w-bg">Submit Application
                 </button>
             </div>
         </form>
@@ -137,14 +137,15 @@
        lang="scss"
        type="text/scss">
 
+    @import "~@/_variables.scss";
+
     button[type=submit] {
-        border: solid;
-        border-color: currentColor;
+        border: 1px solid $site_secondary;
 
         &:hover {
-            background-color: #0096D5;
-            color: #fff;
-            border-color: #0096D5;
+            background-color: $site_light;
+            color: $site_red;
+            border-color: $site_red;
         }
     }
 </style>

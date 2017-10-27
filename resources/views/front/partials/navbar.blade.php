@@ -4,13 +4,13 @@
             @include('svgicons.logo_icon')
         </a>
         <span class="logo-text">
-            @include('svgicons.logo_text')
+            <a class="link" href="/">@include('svgicons.logo_text')</a>
         </span>
     </div>
     <nav>
-        <a class="ph2 link col-grey @activeclass('careers')"
+        <a class="ph2 hov-s link ttu f6 col-grey @activeclass('careers')"
            href="/careers">Careers</a>
-        <a class="ph2 link col-grey @activeclass('contact')"
+        <a class="ph2 hov-s link ttu f6 col-grey @activeclass('contact')"
            href="/contact">Contact</a>
     </nav>
 </div>

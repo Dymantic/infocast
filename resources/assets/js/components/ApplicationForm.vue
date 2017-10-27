@@ -1,11 +1,11 @@
 <template>
     <div>
         <form action=""
-              class="mh2"
+              class="mh2 mb6"
               @submit.stop.prevent="submit"
               novalidate
         >
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.first_name}"
                  v-if="fieldRequirements.first_name !== 'hidden'"
             >
@@ -17,12 +17,12 @@
                        v-model="form.data.first_name"
                        id="first_name"
                        class="w-100 input h3 pl2 ba br2 input">
-                <label class="f6 ttu col-p"
+                <label class="f7 ttu col-p"
                        for="first_name">First Name
                     <span v-if="fieldRequirements.first_name === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.last_name}"
                  v-if="fieldRequirements.last_name !== 'hidden'"
             >
@@ -34,12 +34,12 @@
                        v-model="form.data.last_name"
                        id="last_name"
                        class="w-100 input h3 pl2 ba br2 input">
-                <label class="f6 ttu col-p"
+                <label class="f7 ttu col-p"
                        for="last_name">Last Name
                     <span v-if="fieldRequirements.last_name === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.email}"
                  v-if="fieldRequirements.email !== 'hidden'"
             >
@@ -56,7 +56,7 @@
                     <span v-if="fieldRequirements.email === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.phone}"
                  v-if="fieldRequirements.phone !== 'hidden'"
             >
@@ -73,7 +73,7 @@
                     <span v-if="fieldRequirements.phone === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.contact_method}"
                  v-if="fieldRequirements.contact_method !== 'hidden'"
             >
@@ -95,7 +95,7 @@
                     <span v-if="fieldRequirements.contact_method === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.gender}"
                  v-if="fieldRequirements.gender !== 'hidden'"
             >
@@ -111,14 +111,13 @@
                     </option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value="homo">Homo</option>
                 </select>
                 <label class="f6 ttu col-p"
                        for="gender">Gender
                     <span v-if="fieldRequirements.gender === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.date_of_birth}"
                  v-if="fieldRequirements.date_of_birth !== 'hidden'"
             >
@@ -135,7 +134,7 @@
                     <span v-if="fieldRequirements.date_of_birth === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.prev_company}"
                  v-if="fieldRequirements.prev_company !== 'hidden'"
             >
@@ -152,7 +151,7 @@
                     <span v-if="fieldRequirements.prev_company === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.prev_position}"
                  v-if="fieldRequirements.prev_position !== 'hidden'"
             >
@@ -169,7 +168,7 @@
                     <span v-if="fieldRequirements.prev_position === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.university}"
                  v-if="fieldRequirements.university !== 'hidden'"
             >
@@ -186,7 +185,7 @@
                     <span v-if="fieldRequirements.university === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.qualifications}"
                  v-if="fieldRequirements.qualifications !== 'hidden'"
             >
@@ -204,7 +203,7 @@
                     <span v-if="fieldRequirements.qualifications === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.skills}"
                  v-if="fieldRequirements.skills !== 'hidden'"
             >
@@ -222,7 +221,7 @@
                     <span v-if="fieldRequirements.skills === 'required'">&ast;</span>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.english_ability}"
                  v-if="fieldRequirements.english_ability !== 'hidden'"
             >
@@ -244,7 +243,7 @@
                        for="english_ability">English ability
                     <span v-if="fieldRequirements.english_ability === 'required'">&ast;</span></label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.mandarin_ability}"
                  v-if="fieldRequirements.mandarin_ability !== 'hidden'"
             >
@@ -267,7 +266,7 @@
                     <span v-if="fieldRequirements.mandarin_ability === 'required'">&ast;</span></label>
                 </label>
             </div>
-            <div class="form-group mv4 floating-label-input mw6 center"
+            <div class="form-group mv3 floating-label-input mw6 center"
                  :class="{'has-error': form.errors.notes}"
                  v-if="fieldRequirements.notes !== 'hidden'"
             >
@@ -285,7 +284,7 @@
                     <span v-if="fieldRequirements.notes === 'required'">&ast;</span></label>
                 </label>
             </div>
-            <p class="f7 f6-ns tc mw6 center">Click (or drag and drop) on the boxes below to attach the following files to your application.</p>
+            <p class="f7 f6-ns tc mw6 mt4 center">Click (or drag and drop) on the boxes below to attach the following files to your application.</p>
             <div class="mv4 flex-ns justify-between mw6 center">
                 <file-attachment unique="avatar"
                                  file-name="Avatar"
@@ -319,9 +318,9 @@
                 ></file-attachment>
             </div>
 
-            <div class="mw6 center tc mv4">
+            <div class="mw6 center tc mv5">
                 <button type="submit"
-                        class="f3 ttu col-p dib center link col-s pv2 ph4 col-w-bg">Submit Application
+                        class="f3 ttu col-p dib reg-type center link col-s pv2 ph4 col-w-bg">Submit Application
                 </button>
             </div>
         </form>
@@ -432,14 +431,15 @@
        lang="scss"
        type="text/scss">
 
+    @import "~@/_variables.scss";
+
     button[type=submit] {
-        border: solid;
-        border-color: currentColor;
+        border: 1px solid $site_secondary;
 
         &:hover {
-            background-color: #0096D5;
-            color: #fff;
-            border-color: #0096D5;
+            background-color: $site_light;
+            color: $site_red;
+            border-color: $site_red;
         }
     }
 

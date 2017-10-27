@@ -3,3 +3,63 @@
     background-color: $light_grey;
   }
 }
+
+.hov-p {
+  &:hover {
+    color: $site_primary;
+  }
+}
+
+.hov-p-bg {
+  &:hover {
+    background-color: $site_primary;
+  }
+}
+
+.hov-s {
+  &:hover {
+    color: $site_secondary;
+  }
+}
+
+.hov-s-bg {
+  &:hover {
+    background-color: $site_secondary;
+  }
+}
+
+.hov-w {
+  &:hover {
+    color: $site_light;
+  }
+}
+
+.hov-w-bg {
+  &:hover {
+    background-color: $site_light;
+  }
+}
+
+.hov-r {
+  &:hover {
+    color: $site_red;
+  }
+}
+
+.hov-r-bg {
+  &:hover {
+    background-color: $site_red;
+  }
+}
+
+.hov-dd {
+  &:hover {
+    color: $dd_colour;
+  }
+}
+
+.hov-pll {
+  &:hover {
+    color: $site_primary_lightest;
+  }
+}

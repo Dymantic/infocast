@@ -19,7 +19,7 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#183242">
 </head>
-<body  class="{{ $pageName ?? '' }} flex flex-column reg-type min-h-100">
+<body  class="{{ $pageName ?? '' }} flex flex-column reg-type min-h-100 col-p">
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->

@@ -1,0 +1,31 @@
+.flickity-prev-next-button {
+
+  transform: scale(0.65);
+
+  .arrow {
+    fill: $site_primary;
+
+    &:hover {
+      fill: $site_primary_lightest;
+    }
+  }
+
+  &.next {
+    right: -40px;
+  }
+
+  &.previous {
+    left: -40px;
+  }
+
+  @include respond-to(small) {
+    top: 90%;
+    &.next {
+      right: 10px;
+    }
+
+    &.previous {
+      left: 10px;
+    }
+  }
+}

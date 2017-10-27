@@ -4,11 +4,11 @@
          class="w4 br-100"
     >
     <div class="ph4 tc">
-        <p class="bold-type f5">Sputnik McGregor</p>
-        <p class="bold-type ttu col-s f5">Senior Infocaster</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi est inventore quo. Animi, beatae cumque dicta dolore eligendi esse provident quas repudiandae temporibus, tenetur vero</p>
+        <p class="bold-type f5 mb0">Sputnik McGregor</p>
+        <p class="bold-type ttu mt1 col-s f5">Senior Infocaster</p>
+        <p class="col-pl lh-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi est inventore quo. Animi, beatae cumque dicta dolore eligendi esse provident quas repudiandae temporibus, tenetur.</p>
     </div>
     <span class="col-p">
-        @include('svgicons.mail')
+        @include('svgicons.email')
     </span>
 </div>

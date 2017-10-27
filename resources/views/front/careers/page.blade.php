@@ -14,20 +14,20 @@
 
 @section('content')
     <section class="banner flex justify-center items-center">
-        <p class="col-r f-headline-ns f1 tc bold-type">Join the party.</p>
+        <p class="col-r f-headline-ns f1 tc bold-type tracked-tight">Join the party.</p>
     </section>
     <section class="pv5">
         @if($postings->count() > 1)
-            <p class="tc f3 f2-ns">These positions are available now.</p>
+            <p class="tc f4 f3-ns lh-max">These positions are available now.</p>
         @else
-            <p class="tc f3 f2-ns mw7 center-ns">
+            <p class="tc f4 f3-ns mw7 lh-max center-ns">
                 We currently don't have any positions available. Feel free to get in
                 touch or revisit this page again to check if positions become
                 available. Thanks.
             </p>
         @endif
     </section>
-    <section>
+    <section class="pb6">
         <div class="mw8 flex flex-wrap justify-between center mt5">
             @foreach($postings as $posting)
                 @include('front.home.job-card')

@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="tc tl-ns">{{ fileName }} <span v-if="isRequired">&ast;</span></p>
-        <div class="h4 w4 center ba b--dotted relative drop-area"
+        <div class="h4 w4 center relative drop-area file-box col-pll-bg"
              @drop.prevent="handleDropFile"
              @dragenter.prevent="hover = true"
              @dragover.prevent="hover = true"
@@ -156,19 +156,28 @@
 <style scoped
        lang="scss"
        type="text/scss">
+
+    @import "~@/_variables.scss";
+
     .preview-image {
-        z-index: -1;
+        z-index: 0;
     }
 
     .progress-bar {
         height: 3px;
-        background-color: #0096D5;
+        background-color: $site_secondary;
         transform-origin: left top;
     }
 
     .hovering {
         border-style: solid;
         border-width: 3px;
-        border-color: #0096D5;
+        border-color: $site_secondary;
+    }
+
+    .file-box {
+        &:hover {
+            opacity: 0.7;
+        }
     }
 </style>
