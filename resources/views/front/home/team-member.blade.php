@@ -1,4 +1,4 @@
-<div class="w-100 w-third-ns flex flex-column items-center">
+<div class="w-100 w-50-m w-third-ns flex flex-column items-center">
     <img src="/images/placeholders/profile_male.jpg"
          alt="A profile image"
          class="w4 br-100"

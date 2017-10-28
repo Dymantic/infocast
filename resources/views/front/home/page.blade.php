@@ -21,7 +21,7 @@
         <p class="col-w f4 f3-ns tc mw-90">The cherry on top of the cake you can eat.</p>
     </section>
     <section class="pv6">
-        <p class="f4 f3-ns mh3 mv0 measure-wide center-ns tc lh-max">
+        <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
             This is a paragraph about what we do. It is only a few lines. Short
             and punchy. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore.
@@ -34,7 +34,7 @@
     <section>
         <h3 class="tc ttu headf normal">Meet the Team</h3>
         <div data-flickity='{"cellAlign": "left", "arrowShape": "M1.11,48.2,80.87.32a2.24,2.24,0,0,1,3.37,2V97.69a2.24,2.24,0,0,1-3.36,2L1.12,52.2A2.34,2.34,0,0,1,1.11,48.2Z"}'
-             class="mw8 center mv5 pb5 pt4">
+             class="w-90 w-80-ns mw8 center mv5 pb5 pt4">
             @foreach(range(1,7) as $item)
                 @include('front.home.team-member')
             @endforeach
@@ -42,7 +42,7 @@
     </section>
     <section class="pv5 join-us mt5">
         <h3 class="normal tc ttu headf">Join Us</h3>
-        <p class="lh-max f4 f3-ns mh3 mv5 measure-wide center-ns tc tl-ns">
+        <p class="lh-max f4 f3-ns mv5 measure-wide mh4 center-l tc tl-ns">
             We’re a super awesome company for the following reasons.
             Just a few quick reasons about how awesome we are,
             nothing too tedious or long. This paragraph should not be

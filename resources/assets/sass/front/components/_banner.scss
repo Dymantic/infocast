@@ -4,4 +4,8 @@
   @include respond-to(small) {
     height: 100vw;
   }
+
+  @include respond-to(medium) {
+    height: 70vw;
+  }
 }

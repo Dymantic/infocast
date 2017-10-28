@@ -13,11 +13,11 @@
 @endsection
 
 @section('content')
-    <section class="pv5">
+    <section class="pt6 pb5">
         <p class="tc bold-type f5 b mb3">Job Title:</p>
         <p class="tc f2 mt1 ttu">{{ $posting->title }}</p>
     </section>
-    <section class="mw7 mh3 center-ns pb5">
+    <section class="mw7 mh4 center-l pb5">
         <div>
             @if($posting->type)
                 <p class="f5"><span class="bold-type">Type:</span> {{ $posting->type }}</p>

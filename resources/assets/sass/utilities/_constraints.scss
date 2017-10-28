@@ -2,6 +2,17 @@
   max-width: 90%;
 }
 
+.mw-80 {
+  max-width: 80%;
+}
+
+.mw-90-m {
+
+  @include respond-to(medium) {
+    max-width: 90%;
+  }
+}
+
 .minh-400 {
   min-height: 400px;
 }
