@@ -9,6 +9,6 @@
         <p class="col-pl lh-title">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur commodi est inventore quo. Animi, beatae cumque dicta dolore eligendi esse provident quas repudiandae temporibus, tenetur.</p>
     </div>
     <span class="col-p">
-        @include('svgicons.email')
+        <a href="#">@include('svgicons.email')</a>
     </span>
 </div>
