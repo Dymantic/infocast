@@ -1,0 +1,15 @@
+.squiggle-box {
+  width: 125px;
+  overflow: hidden;
+
+  img {
+    transform: translate3d(-125px,0,0);
+    animation: wavelet 2.5s linear infinite;
+    max-width: none;
+  }
+}
+
+@keyframes wavelet {
+  from {transform: translate3d(-125px,0,0);}
+  to {transform: translate3d(0,0,0);}
+}

@@ -18,7 +18,7 @@
              alt="Infocast logo"
              class="mw-90 db"
              width="500px">
-        <p class="col-w f4 f3-ns tc mw-90">The cherry on top of the cake you can eat.</p>
+        {{--<p class="col-w f4 f3-ns tc mw-90">The cherry on top of the cake you can eat.</p>--}}
     </section>
     <section class="pv6">
         <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
@@ -26,6 +26,7 @@
             and punchy. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore.
         </p>
+        {{--@include('front.partials.moving-squiggle', ['classNames' => 'center mt6'])--}}
         <img src="/images/squiggle.png"
              alt="page section divider"
              class="db center w3 mt6"
@@ -48,6 +49,7 @@
             nothing too tedious or long. This paragraph should not be
             more than three or four lines long.
         </p>
+        {{--@include('front.partials.moving-squiggle')--}}
         <img src="/images/squiggle.png"
              alt="page section divider"
              class="db center w3 mt5"

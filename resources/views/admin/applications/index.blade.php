@@ -26,7 +26,7 @@
                         <a class="col-s link"
                            href="/admin/applications/{{ $application->id }}">{{ $application->last_name . ', ' . $application->first_name }}</a>
                     </td>
-                    <td class="lh-copy">{{ $application->posting->title }}</td>
+                    <td class="lh-copy">{{ $application->posting ? $application->posting->title : '[POST DELETED]' }}</td>
                     <td class="lh-copy">{{ $application->date_of_birth }}</td>
                     <td class="lh-copy">{{ $application->gender }}</td>
                 </tr>
