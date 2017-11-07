@@ -42,10 +42,7 @@
     <section class="pv5 join-us mt5">
         <h3 class="normal tc ttu headf">Join Us</h3>
         <p class="lh-max f4 f3-ns mv5 measure-wide mh4 center-l tc tl-ns">
-            We’re a super awesome company for the following reasons.
-            Just a few quick reasons about how awesome we are,
-            nothing too tedious or long. This paragraph should not be
-            more than three or four lines long.
+            We are a young, dynamic multi-cultural team looking for collaborative teammates! We offer competitive salaries in a non-traditional company setup, with an open-door policy & flexible working hours. If you have your initials embroidered on the sleeve of your fitted dress shirt, best move along (#sorry #notsorry)!
         </p>
         {{--@include('front.partials.moving-squiggle')--}}
         <img src="/images/squiggle.png"
