@@ -54,7 +54,7 @@ class Posting extends Model
 
     public function scopeLive($query)
     {
-        return $query->where('published', true)->where('posted', '<=', Carbon::today());
+        return $query->where('published', true)->where('posted', '<=', Carbon::today()->endOfDay());
     }
 
     public function applications()

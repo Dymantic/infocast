@@ -181,6 +181,17 @@ class PostingsTest extends TestCase
         $this->assertTrue($live_postings->first()->is($postingA));
     }
 
+    /**
+     *@test
+     */
+    public function a_posting_with_a_posted_daye_of_the_current_date_is_considered_live()
+    {
+        $posting = factory(Posting::class)->create(['posted' => Carbon::now(), 'published' => true]);
+
+        $this->assertCount(1, Posting::live()->get());
+        $this->assertTrue(Posting::live()->first()->is($posting));
+    }
+
     private function getDefaultApplicationFields()
     {
         return [
