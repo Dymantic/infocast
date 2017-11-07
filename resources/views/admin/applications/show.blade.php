@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex justify-between items-center">
-        <h1 class="f1 normal">Application for {{ $application->posting->title }}</h1>
+        <h1 class="f1 normal">Application for {{ $application->posting ? $application->posting->title : '[POST DELETED]' }}</h1>
         <div class="flex justify-end items-center">
 
         </div>
@@ -10,6 +10,7 @@
     <div class="card mv3">
         <p><span class="col-s">Application Date: </span>{{ $application->created_at->toFormattedDateString() }}</p>
     </div>
+    @if($application->posting)
     <section class="card">
         <p class="col-s ttu">Job Details</p>
         <div class="flex justify-between">
@@ -33,6 +34,12 @@
             </div>
         </div>
     </section>
+    @else
+        <section class="card mv3">
+            <p>The original posting for this application has since been deleted.</p>
+        </section>
+    @endif
+
     <section class="card mv3">
         <p class="col-s ttu">Personal Details</p>
         <div class="flex justify-between">
