@@ -17,7 +17,7 @@
         <p class="col-r f-headline-ns f1 tc bold-type tracked-tight">Join the party.</p>
     </section>
     <section class="pv5">
-        @if($postings->count() > 1)
+        @if($postings->count() > 0)
             <p class="tc f4 f3-ns lh-max">These positions are available now.</p>
         @else
             <p class="tc f4 f3-ns mw7 lh-max center-ns">
