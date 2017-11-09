@@ -9,7 +9,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $postings = Posting::live()->latest()->take(4)->get();
+        $postings = Posting::live()->orderBy('position')->take(4)->get();
         $team = [
             [
                 'name' => 'Shunwen',
