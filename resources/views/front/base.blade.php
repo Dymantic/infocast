@@ -39,5 +39,8 @@
     ga('create','{{ config('services.google.analytics_id') }}','auto');ga('send','pageview')
 </script>
 <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+@yield('json-schema')
+
 </body>
 </html>

@@ -13,5 +13,5 @@
     </div>
 
     <p class="col-w tc f6">&copy; Copyright {{ (new DateTime())->format('Y') }}. All rights reserved. Brilliantly built by
-        <a href="https://dymanticdesign.com" class="link col-w hov-dd">Dymantic Design</a></p>
+        <a href="https://dymanticdesign.com" class="link col-w hov-dd">Dymantic Design.</a></p>
 </footer>

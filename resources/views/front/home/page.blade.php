@@ -62,3 +62,32 @@
         </div>
     </section>
 @endsection
+
+@section('json-schema')
+    <script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "LocalBusiness",
+  "name": "Infocast",
+  "url": "https://infocast.tech",
+  "logo": "https://infocast.tech/images/logos/logo.png",
+  "description": "Infocast provides value driven data analysis and processing",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "105 台北市松山區南京東路四段183號五樓",
+    "addressLocality": "Taipei City",
+    "addressRegion": "Taipei",
+    "postalCode": "105",
+    "addressCountry": "Taiwan"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "25.0518344",
+    "longitude": "121.5543061"
+  },
+  "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00",
+  "telephone": "+886 287-707-912",
+  "image": "https://infocast.tech/images/infocast_facebook.jpg"
+  }
+ </script>
+@endsection
