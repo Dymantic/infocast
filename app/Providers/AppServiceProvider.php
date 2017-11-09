@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Careers\Application;
+use App\Careers\ApplicationObserver;
 use App\Careers\ApplicationUpload;
 use App\Careers\ApplicationUploadObserver;
 use App\Secretary;
@@ -25,6 +27,7 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo (new \Parsedown())->text({$markdown}); ?>";
         });
 
+        Application::observe(ApplicationObserver::class);
         ApplicationUpload::observe(ApplicationUploadObserver::class);
     }
 
