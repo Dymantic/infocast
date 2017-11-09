@@ -5,6 +5,7 @@
         <h1 class="f1 normal">Job Postings</h1>
         <div class="flex justify-end items-center">
             <a class="btn link justify-center items-center" href="/admin/postings/create">New Posting</a>
+            <a class="btn link justify-center items-center" href="/admin/postings-order">Set Order</a>
         </div>
     </div>
     <section class="card">
