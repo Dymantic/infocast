@@ -22,7 +22,7 @@
     </section>
     <section class="pv6">
         <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
-            Information is everywhere, deriving value from it can be challenging — at Infocast, we offer value driven data analysis and processing, offering insight and guiding decision making.
+            Information is everywhere, deriving value from it can be challenging — at Infocast, we offer value driven data analysis and processing, giving insight and guiding decision making.
         </p>
         {{--@include('front.partials.moving-squiggle', ['classNames' => 'center mt6'])--}}
         <img src="/images/squiggle.png"
