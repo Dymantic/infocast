@@ -30,6 +30,7 @@ Vue.component('toggle-switch', require('./components/Toggle.vue'));
 Vue.component('image-upload', require('./components/Singleupload.vue'));
 Vue.component('posting-form', require('./components/PostingForm.vue'));
 Vue.component('application-fields', require('./components/PostingApplicationFieldsSetter.vue'));
+Vue.component('sortable-list', require('./components/SortableList.vue'));
 
 
 window.eventHub = new Vue();

@@ -34,7 +34,7 @@
         <h3 class="tc ttu headf normal">Meet the Team</h3>
         <div data-flickity='{"cellAlign": "left", "arrowShape": "M1.11,48.2,80.87.32a2.24,2.24,0,0,1,3.37,2V97.69a2.24,2.24,0,0,1-3.36,2L1.12,52.2A2.34,2.34,0,0,1,1.11,48.2Z", "contain": "true", "draggable": true}'
              class="w-90 w-80-ns mw8 center mv5 pb5 pt4">
-            @foreach(range(1,7) as $item)
+            @foreach($team as $member)
                 @include('front.home.team-member')
             @endforeach
         </div>

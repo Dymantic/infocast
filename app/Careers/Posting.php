@@ -41,7 +41,8 @@ class Posting extends Model
         'application_fields->notes',
         'application_fields->avatar',
         'application_fields->cover_letter',
-        'application_fields->cv'
+        'application_fields->cv',
+        'position'
     ];
 
     protected $casts = ['published' => 'boolean', 'application_fields' => 'array'];
@@ -77,6 +78,16 @@ class Posting extends Model
     {
         $this->published = false;
         $this->save();
+    }
+
+    public static function setOrder($positions)
+    {
+        collect($positions)->each(function($posting_id, $position) {
+            $post = static::find($posting_id);
+            if($post) {
+                $post->update(['position' => $position]);
+            }
+        });
     }
 
     public function toJsonableArray()

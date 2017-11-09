@@ -192,6 +192,32 @@ class PostingsTest extends TestCase
         $this->assertTrue(Posting::live()->first()->is($posting));
     }
 
+    /**
+     *@test
+     */
+    public function the_order_of_postings_can_be_set()
+    {
+        $postingA = factory(Posting::class)->create();
+        $postingB = factory(Posting::class)->create();
+        $postingC = factory(Posting::class)->create();
+        $postingD = factory(Posting::class)->create();
+        $postingE = factory(Posting::class)->create();
+
+        Posting::setOrder([
+            $postingB->id,
+            $postingE->id,
+            $postingD->id,
+            $postingA->id,
+            $postingC->id
+        ]);
+
+        $this->assertEquals(3, $postingA->fresh()->position);
+        $this->assertEquals(0, $postingB->fresh()->position);
+        $this->assertEquals(4, $postingC->fresh()->position);
+        $this->assertEquals(2, $postingD->fresh()->position);
+        $this->assertEquals(1, $postingE->fresh()->position);
+    }
+
     private function getDefaultApplicationFields()
     {
         return [
