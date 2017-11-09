@@ -8,7 +8,7 @@
     @include('front.partials.ogmeta', [
         'ogImage' => '/images/infocast_facebook.jpg',
         'ogTitle' => 'Infocast',
-        'ogDescription' => ''
+        'ogDescription' => 'At Infocast, we offer value driven data analysis and processing, giving insight and guiding decision making.'
     ])
 @endsection
 
