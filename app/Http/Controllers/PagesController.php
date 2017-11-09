@@ -42,7 +42,7 @@ class PagesController extends Controller
             [
                 'name' => 'J-D',
                 'title' => 'Project Manager',
-                'profile' => '/images/profiles/jd.png',
+                'profile' => '/images/profiles/JD.png',
                 'quote' => '“Never half-ass two things. Whole-ass one thing.” — Ron Swanson',
                 'email' => 'jd@infocast.tech'
             ],

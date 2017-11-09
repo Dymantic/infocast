@@ -18,7 +18,7 @@
              alt="Infocast logo"
              class="mw-90 db"
              width="500px">
-        {{--<p class="col-w f4 f3-ns tc mw-90">The cherry on top of the cake you can eat.</p>--}}
+        <p class="col-w f4 f3-ns tc mw-90">Data driven insight.</p>
     </section>
     <section class="pv6">
         <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
