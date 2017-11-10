@@ -193,7 +193,7 @@
                       v-show="form.errors.qualifications">{{ form.errors.qualifications }}</span>
                 <textarea name="qualifications"
                           v-model="form.data.qualifications"
-                          class="w-100 input h5 pt4 pl2 input ba br2"
+                          class="w-100 input h5 pt2 pl2 input ba br2"
                           required
                           id="qualifications"
                 >
@@ -211,7 +211,7 @@
                       v-show="form.errors.skills">{{ form.errors.skills }}</span>
                 <textarea name="skills"
                           v-model="form.data.skills"
-                          class="w-100 input h5 pt4 pl2 input ba br2"
+                          class="w-100 input h5 pt2 pl2 input ba br2"
                           required
                           id="skills"
                 >
@@ -274,7 +274,7 @@
                       v-show="form.errors.notes">{{ form.errors.notes }}</span>
                 <textarea name="notes"
                           v-model="form.data.notes"
-                          class="w-100 input h5 pt4 pl2 input ba br2"
+                          class="w-100 input h5 pt2 pl2 input ba br2"
                           required
                           id="notes"
                 >

@@ -64,7 +64,7 @@
                       v-show="form.errors.inquiry">{{ form.errors.inquiry }}</span>
                 <textarea name="notes"
                           v-model="form.data.inquiry"
-                          class="w-100 input h5 pt4 pl2 input ba br2"
+                          class="w-100 input h5 pt2 pl2 input ba br2"
                           required
                           id="inquiry"
                 >
