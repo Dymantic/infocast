@@ -4,7 +4,7 @@
     <div class="flex justify-between items-center">
         <h1 class="f1 normal">Application for {{ $application->posting ? $application->posting->title : '[POST DELETED]' }}</h1>
         <div class="flex justify-end items-center">
-
+            <delete-modal item-name="this application" url="/admin/applications/{{ $application->id }}" :redirect="true"></delete-modal>
         </div>
     </div>
     <div class="card mv3">

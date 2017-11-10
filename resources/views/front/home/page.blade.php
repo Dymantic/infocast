@@ -25,7 +25,7 @@
             Information is everywhere, deriving value from it can be challenging — at Infocast, we offer value driven data analysis and processing, giving insight and guiding decision making.
         </p>
         {{--@include('front.partials.moving-squiggle', ['classNames' => 'center mt6'])--}}
-        <img src="/images/squiggle.png"
+        <img src="/images/squiggle_single.png"
              alt="page section divider"
              class="db center w3 mt6"
         >
@@ -45,7 +45,7 @@
             We are a young, dynamic multi-cultural team looking for collaborative teammates! We offer competitive salaries in a non-traditional company setup, with an open-door policy & flexible working hours. If you have your initials embroidered on the sleeve of your fitted dress shirt, best move along (#sorry #notsorry)!
         </p>
         {{--@include('front.partials.moving-squiggle')--}}
-        <img src="/images/squiggle.png"
+        <img src="/images/squiggle_single.png"
              alt="page section divider"
              class="db center w3 mt5"
         >

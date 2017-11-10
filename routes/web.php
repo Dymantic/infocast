@@ -81,6 +81,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::get('applications', 'ApplicationsController@index');
         Route::get('applications/{application}', 'ApplicationsController@show');
+        Route::delete('applications/{application}', 'ApplicationsController@delete');
         
         Route::get('inquiries', 'InquiriesController@index');
         Route::delete('inquiries/{message}', 'InquiriesController@delete');

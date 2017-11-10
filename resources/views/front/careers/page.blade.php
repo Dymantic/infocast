@@ -13,7 +13,7 @@
 @endsection
 
 @section('content')
-    <section class="banner flex justify-center items-center">
+    <section class="banner flex justify-center items-center col-pl-bg">
         <p class="col-r f-headline-ns f1 tc bold-type tracked-tight">Join the party.</p>
     </section>
     <section class="pv5">

@@ -1,4 +1,4 @@
-<div class="w-100 w-50-m w-third-ns flex flex-column items-center">
+<div class="w-100 w-50-m w-third-ns flex flex-column justify-between items-center minh-340">
     <img src="{{ $member['profile'] }}"
          alt="A profile image of {{ $member['name'] }}"
          class="w4 br-100"
