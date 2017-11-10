@@ -80,6 +80,11 @@ class Posting extends Model
         $this->save();
     }
 
+    public function scopeOrdered($query)
+    {
+        return $query->orderByRaw('- position DESC');
+    }
+
     public static function setOrder($positions)
     {
         collect($positions)->each(function($posting_id, $position) {

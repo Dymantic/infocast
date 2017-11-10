@@ -9,7 +9,7 @@ class PostingsController extends Controller
 {
     public function index()
     {
-        $postings = Posting::live()->latest()->get();
+        $postings = Posting::live()->ordered()->get();
         return view('front.careers.page', ['postings' => $postings]);
     }
 

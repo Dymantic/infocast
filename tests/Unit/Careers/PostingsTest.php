@@ -218,6 +218,24 @@ class PostingsTest extends TestCase
         $this->assertEquals(1, $postingE->fresh()->position);
     }
 
+    /**
+     *@test
+     */
+    public function postings_have_a_ordered_scope()
+    {
+        $postingA = factory(Posting::class)->create(['position' => 2]);
+        $postingB = factory(Posting::class)->create(['position' => null]);
+        $postingC = factory(Posting::class)->create(['position' => 3]);
+        $postingD = factory(Posting::class)->create(['position' => 0]);
+
+        $ordered_postings = Posting::ordered()->get();
+
+        $this->assertTrue($ordered_postings[0]->is($postingD));
+        $this->assertTrue($ordered_postings[1]->is($postingA));
+        $this->assertTrue($ordered_postings[2]->is($postingC));
+        $this->assertTrue($ordered_postings[3]->is($postingB));
+    }
+
     private function getDefaultApplicationFields()
     {
         return [
