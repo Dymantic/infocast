@@ -36,7 +36,7 @@ class ContactMessageReceived extends Notification
                 'phone'   => $this->message->phone,
                 'email'   => $this->message->email,
                 'inquiry' => $this->message->inquiry,
-                'url'     => url("/admin/inquiries/{$this->message->id}")
+                'url'     => url("/admin/inquiries")
             ]);
     }
 

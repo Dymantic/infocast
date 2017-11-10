@@ -67,16 +67,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('published-postings', 'PublishedPostingsController@store');
         Route::delete('published-postings/{posting}', 'PublishedPostingsController@delete');
 
-        Route::get('postings-order', function() {
-            $postings = \App\Careers\Posting::all()->map(function($posting) {
-               return [
-                   'id' => $posting->id,
-                   'name' => $posting->title,
-                   'position' => $posting->position ?? 999
-               ];
-            });
-            return view('admin.postings.order.show', ['postings' => $postings]);
-        });
+        Route::get('postings-order', 'PostingsOrderController@show');
         Route::post('postings-order', 'PostingsOrderController@store');
 
         Route::get('applications', 'ApplicationsController@index');

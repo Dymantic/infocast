@@ -8,6 +8,19 @@ use App\Http\Controllers\Controller;
 
 class PostingsOrderController extends Controller
 {
+
+    public function show()
+    {
+        $postings = Posting::all()->map(function($posting) {
+            return [
+                'id' => $posting->id,
+                'name' => $posting->title,
+                'position' => $posting->position ?? 999
+            ];
+        });
+        return view('admin.postings.order.show', ['postings' => $postings]);
+    }
+
     public function store()
     {
         request()->validate([
