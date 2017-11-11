@@ -197,7 +197,7 @@
                     category: this.formAttributes.category || '',
                     location: this.formAttributes.location || '',
                     compensation: this.formAttributes.compensation || '',
-                    posted: this.formAttributes.posted || moment().format(),
+                    posted: this.formAttributes.posted || null,
                     start_date: this.formAttributes.start_date || '',
                     introduction: this.formAttributes.introduction || '',
                     job_description: this.formAttributes.job_description || '',
