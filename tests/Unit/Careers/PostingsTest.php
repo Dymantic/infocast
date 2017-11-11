@@ -184,9 +184,20 @@ class PostingsTest extends TestCase
     /**
      *@test
      */
-    public function a_posting_with_a_posted_daye_of_the_current_date_is_considered_live()
+    public function a_posting_with_a_posted_day_of_the_current_date_is_considered_live()
     {
         $posting = factory(Posting::class)->create(['posted' => Carbon::now(), 'published' => true]);
+
+        $this->assertCount(1, Posting::live()->get());
+        $this->assertTrue(Posting::live()->first()->is($posting));
+    }
+
+    /**
+     *@test
+     */
+    public function a_published_posting_without_a_posted_date_is_still_live()
+    {
+        $posting = factory(Posting::class)->create(['posted' => null, 'published' => true]);
 
         $this->assertCount(1, Posting::live()->get());
         $this->assertTrue(Posting::live()->first()->is($posting));
