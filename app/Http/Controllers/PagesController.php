@@ -22,7 +22,7 @@ class PagesController extends Controller
                 'name' => 'Oliver',
                 'title' => 'Senior Front End Developer',
                 'profile' => '/images/profiles/oliver.png',
-                'quote' => '“Your positive action combined with positive thinking results in success.” — Oliver Lin',
+                'quote' => '“Your positive action combined with positive thinking results in success.” — Shiv Khera',
                 'email' => 'oliver@infocast.tech'
             ],
             [
