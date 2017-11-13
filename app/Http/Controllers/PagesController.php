@@ -50,7 +50,7 @@ class PagesController extends Controller
                 'name' => 'Enrique',
                 'title' => 'CEO',
                 'profile' => '/images/profiles/enrique.png',
-                'quote' => 'TBD - E.O.',
+                'quote' => '“Knowing what you’re doing gets you halfway there..”',
                 'email' => 'enrique@infocast.tech'
             ],
             [
