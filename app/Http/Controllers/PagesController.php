@@ -12,53 +12,53 @@ class PagesController extends Controller
         $postings = Posting::live()->ordered()->take(4)->get();
         $team = [
             [
-                'name' => 'Shunwen',
-                'title' => 'VP of Engineering',
-                'profile' => '/images/profiles/shunwen.png',
-                'quote' => '“Whatever comes, let it come, what stays let stay, what goes let go.” ― Papaji',
-                'email' => 'shunwen@infocast.tech'
-            ],
-            [
                 'name' => 'Oliver',
-                'title' => 'Senior Front End Developer',
+                'title' => 'Front End',
                 'profile' => '/images/profiles/oliver.png',
                 'quote' => '“Your positive action combined with positive thinking results in success.” — Shiv Khera',
                 'email' => 'oliver@infocast.tech'
             ],
             [
                 'name' => 'Wei',
-                'title' => 'Product Designer',
+                'title' => 'Design',
                 'profile' => '/images/profiles/wei.png',
                 'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
                 'email' => 'wei@infocast.tech'
             ],
             [
                 'name' => 'Ruoshin',
-                'title' => 'Front End Developer',
+                'title' => 'Front End',
                 'profile' => '/images/profiles/ruoshin.png',
                 'quote' => '“Learn to… be what you are, and learn to resign with a good grace all that you are not.” — Henri Frederic Amiel',
                 'email' => 'ruoshin@infocast.tech'
             ],
             [
                 'name' => 'J-D',
-                'title' => 'Project Manager',
+                'title' => 'Projects',
                 'profile' => '/images/profiles/JD.png',
                 'quote' => '“Never half-ass two things. Whole-ass one thing.” — Ron Swanson',
                 'email' => 'jd@infocast.tech'
             ],
             [
                 'name' => 'Enrique',
-                'title' => 'CEO',
+                'title' => 'Strategy',
                 'profile' => '/images/profiles/enrique.png',
                 'quote' => '“Knowing what you’re doing gets you halfway there..”',
                 'email' => 'enrique@infocast.tech'
             ],
             [
                 'name' => 'Chris',
-                'title' => 'Chief Application Developer',
+                'title' => 'Applications',
                 'profile' => '/images/profiles/chris.png',
                 'quote' => '“The second mouse gets the cheese” — Ernst Berg',
                 'email' => 'chrisb@infocast.tech'
+            ],
+            [
+                'name' => 'Mose',
+                'title' => 'Operations',
+                'profile' => '/images/profiles/mose.png',
+                'quote' => '',
+                'email' => 'mose@infocast.tech'
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
