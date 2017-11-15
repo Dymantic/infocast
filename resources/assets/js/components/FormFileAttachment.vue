@@ -76,6 +76,7 @@
                 }
 
                 return (file.type.indexOf('docx') !== -1) ||
+                    (file.type.indexOf('openxmlformats') !== -1) ||
                     (file.type.indexOf('msword') !== -1) ||
                     (file.type.indexOf('pdf') !== -1) ||
                     (file.type.indexOf('text') !== -1);
