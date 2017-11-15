@@ -18,6 +18,7 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#183242">
+    <meta name="google-site-verification" content="4OI-IBz6j8j9B5HFd-7W7EShMDN_I1HJ7y5rKog9ciU" />
 </head>
 <body  class="{{ $pageName ?? '' }} flex flex-column reg-type min-h-100 col-p">
 <!--[if lte IE 9]>
