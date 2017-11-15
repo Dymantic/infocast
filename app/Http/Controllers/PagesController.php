@@ -12,11 +12,11 @@ class PagesController extends Controller
         $postings = Posting::live()->ordered()->take(4)->get();
         $team = [
             [
-                'name' => 'Oliver',
-                'title' => 'Front End',
-                'profile' => '/images/profiles/oliver.png',
-                'quote' => '“Your positive action combined with positive thinking results in success.” — Shiv Khera',
-                'email' => 'oliver@infocast.tech'
+                'name' => 'Enrique',
+                'title' => 'Strategy',
+                'profile' => '/images/profiles/enrique.png',
+                'quote' => '“Knowing what you’re doing gets you halfway there..”',
+                'email' => 'enrique@infocast.tech'
             ],
             [
                 'name' => 'Wei',
@@ -26,11 +26,11 @@ class PagesController extends Controller
                 'email' => 'wei@infocast.tech'
             ],
             [
-                'name' => 'Ruoshin',
+                'name' => 'Oliver',
                 'title' => 'Front End',
-                'profile' => '/images/profiles/ruoshin.png',
-                'quote' => '“Learn to… be what you are, and learn to resign with a good grace all that you are not.” — Henri Frederic Amiel',
-                'email' => 'ruoshin@infocast.tech'
+                'profile' => '/images/profiles/oliver.png',
+                'quote' => '“Your positive action combined with positive thinking results in success.” — Shiv Khera',
+                'email' => 'oliver@infocast.tech'
             ],
             [
                 'name' => 'J-D',
@@ -40,11 +40,11 @@ class PagesController extends Controller
                 'email' => 'jd@infocast.tech'
             ],
             [
-                'name' => 'Enrique',
-                'title' => 'Strategy',
-                'profile' => '/images/profiles/enrique.png',
-                'quote' => '“Knowing what you’re doing gets you halfway there..”',
-                'email' => 'enrique@infocast.tech'
+                'name' => 'Ruoshin',
+                'title' => 'Front End',
+                'profile' => '/images/profiles/ruoshin.png',
+                'quote' => '“Learn to… be what you are, and learn to resign with a good grace all that you are not.” — Henri Frederic Amiel',
+                'email' => 'ruoshin@infocast.tech'
             ],
             [
                 'name' => 'Chris',
