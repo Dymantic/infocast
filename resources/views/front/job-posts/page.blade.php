@@ -36,19 +36,19 @@
             @endif
         </div>
         @if($posting->job_description)
-        <div class="mt4">
+        <div class="mt4 from-markdown">
             <p class="bold-type">Job Description</p>
             <div class="lh-copy">@markdown($posting->job_description)</div>
         </div>
         @endif
         @if($posting->responsibilities)
-        <div class="mt4">
+        <div class="mt4 from-markdown">
             <p class="bold-type">Responsibilities</p>
             <div class="lh-copy">@markdown($posting->responsibilities)</div>
         </div>
         @endif
         @if($posting->requirements)
-        <div class="mt4">
+        <div class="mt4 from-markdown">
             <p class="bold-type">Requirements</p>
             <div class="lh-copy">@markdown($posting->requirements)</div>
         </div>
