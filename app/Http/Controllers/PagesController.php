@@ -52,6 +52,12 @@ class PagesController extends Controller
                 'title' => 'Operations',
                 'profile' => '/images/profiles/mose.png',
                 'quote' => '',
+            ],
+            [
+                'name' => 'Chris S.',
+                'title' => 'Back End',
+                'profile' => '/images/profiles/chris2.png',
+                'quote' => '',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
