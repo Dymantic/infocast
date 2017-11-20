@@ -89,7 +89,7 @@
                 <div>
                     <p>Avatar</p>
                     <a href="{{ $application->avatarUrl() }}"
-                       download>
+                       download="{{ $application->avatarName() }}">
                         <img src="{{ $application->avatarUrl() }}"
                              width="200px"
                              alt="">
@@ -100,7 +100,7 @@
                 <div>
                     <p>Cover letter</p>
                     <a href="{{ $application->coverLetterUrl() }}"
-                       download>
+                       download="{{ $application->coverLetterName() }}">
                         <img src="/images/default_doc.svg"
                              width="130px"
                              alt="">
@@ -111,7 +111,7 @@
                 <div>
                     <p>CV</p>
                     <a href="{{ $application->resumeUrl() }}"
-                       download>
+                       download="{{ $application->resumeName() }}">
                         <img src="/images/default_doc.svg"
                              width="130px"
                              alt="">

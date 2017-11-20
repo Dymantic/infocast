@@ -89,4 +89,49 @@ class ApplicationsTest extends TestCase
 
         $this->assertNull($application->resumeUrl());
     }
+
+    /**
+     *@test
+     */
+    public function the_application_can_name_the_avatar_appropriately()
+    {
+        $avatar = ApplicationUpload::avatar(UploadedFile::fake()->image('random_name.jpg'));
+        $application = factory(Application::class)->create([
+            'avatar' => $avatar->id,
+            'first_name' => 'John',
+            'last_name' => "O'Brien"
+        ]);
+
+        $this->assertEquals('john_obrien_avatar.jpeg' , $application->avatarName());
+    }
+
+    /**
+     *@test
+     */
+    public function the_application_can_name_the_cover_letter()
+    {
+        $letter = ApplicationUpload::coverLetter(UploadedFile::fake()->create('testdoc.doc'));
+        $application = factory(Application::class)->create([
+            'cover_letter' => $letter->id,
+            'first_name' => 'Billy Bob',
+            'last_name' => "Kee Lung"
+        ]);
+
+        $this->assertEquals('billybob_keelung_cover_letter.doc', $application->coverLetterName());
+    }
+
+    /**
+     *@test
+     */
+    public function the_application_can_name_the_cv()
+    {
+        $cv = ApplicationUpload::resume(UploadedFile::fake()->create('cv.pdf'));
+        $application = factory(Application::class)->create([
+            'cv' => $cv->id,
+            'first_name' => 'John',
+            'last_name' => "O'Brien"
+        ]);
+
+        $this->assertEquals('john_obrien_cv.pdf', $application->resumeName());
+    }
 }
