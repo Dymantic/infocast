@@ -41,7 +41,7 @@
     </section>
     <section class="pv5 join-us mt5">
         <h3 class="normal tc ttu headf">Join Us</h3>
-        <p class="lh-max f4 f3-ns mv5 measure-wide mh4 center-l tc tl-ns">
+        <p class="lh-max f4 f3-ns mv5 measure-wide mh4 center-l tc">
             We are a young, dynamic multi-cultural team looking for collaborative teammates! We offer competitive salaries in a non-traditional company setup, with an open-door policy & flexible working hours. If you have your initials embroidered on the sleeve of your fitted dress shirt, best move along (#sorry #notsorry)!
         </p>
         {{--@include('front.partials.moving-squiggle')--}}
