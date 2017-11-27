@@ -14,11 +14,11 @@
 
 @section('content')
     <section class="banner col-p-bg flex flex-column justify-center items-center">
-        <img src="/images/logos/infocast_logo.svg"
+        <img src="/images/logos/logo_slogan.svg"
              alt="Infocast logo"
              class="mw-90 db"
              width="500px">
-        <p class="col-w f4 f3-ns tc mw-90">Data driven insight.</p>
+        {{--<p class="col-w f4 f3-ns tc mw-90">Data driven insight.</p>--}}
     </section>
     <section class="pv6">
         <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
