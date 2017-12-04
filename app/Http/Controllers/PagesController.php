@@ -49,7 +49,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Mose',
-                'title' => 'Operations',
+                'title' => 'DevOps',
                 'profile' => '/images/profiles/mose.png',
                 'quote' => '',
             ],
