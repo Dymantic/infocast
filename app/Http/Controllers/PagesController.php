@@ -58,6 +58,12 @@ class PagesController extends Controller
                 'title' => 'Back End',
                 'profile' => '/images/profiles/chris2.png',
                 'quote' => '',
+            ],
+            [
+                'name' => 'Kilari',
+                'title' => 'Senior SRE',
+                'profile' => '/images/profiles/kilari.png',
+                'quote' => '“If you would not be forgotten as soon as you are dead, either write something worth reading or do things worth writing.”',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
