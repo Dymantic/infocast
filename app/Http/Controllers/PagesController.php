@@ -51,19 +51,19 @@ class PagesController extends Controller
                 'name' => 'Mose',
                 'title' => 'DevOps',
                 'profile' => '/images/profiles/mose.png',
-                'quote' => '',
+                'quote' => '“It is not the strongest of the species that survive, nor the most intelligent, but the one most responsive to change.” – Charles Darwin',
             ],
             [
                 'name' => 'Chris S.',
                 'title' => 'Back End',
                 'profile' => '/images/profiles/chris2.png',
-                'quote' => '',
+                'quote' => '“...” – Unknown',
             ],
             [
                 'name' => 'Kilari',
                 'title' => 'Senior SRE',
                 'profile' => '/images/profiles/kilari.png',
-                'quote' => '“If you would not be forgotten as soon as you are dead, either write something worth reading or do things worth writing.”',
+                'quote' => '“If you would not be forgotten as soon as you are dead, either write something worth reading or do things worth writing.” - Benjamin Franklin',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
