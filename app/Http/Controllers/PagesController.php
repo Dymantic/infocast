@@ -44,7 +44,7 @@ class PagesController extends Controller
             [
                 'name' => 'Chris',
                 'title' => 'Applications',
-                'profile' => '/images/profiles/chris.png',
+                'profile' => '/images/profiles/chris.jpg',
                 'quote' => '“The second mouse gets the cheese” — Ernst Berg',
             ],
             [
