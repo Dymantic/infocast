@@ -26,7 +26,7 @@ Route::post('admin/logout', 'Auth\LoginController@logout')->name('logout');
 // Password Reset Routes...
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.request');
 
 Route::post('applications/uploads/avatars', 'AvatarsController@store');
 Route::post('applications/uploads/cover-letters', 'CoverLettersController@store');
