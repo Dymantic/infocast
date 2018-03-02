@@ -23,7 +23,7 @@ class UploadApplicationCoverLetterTest extends TestCase
         $response = $this->json('POST', "/applications/uploads/cover-letters", [
             'cover_letter' => UploadedFile::fake()->create('cover_letter.docx')
         ]);
-        $response->assertStatus(200);
+        $response->assertStatus(201);
 
         $this->assertArrayHasKey('file_id', $response->decodeResponseJson());
         $avatar_id = $response->decodeResponseJson()['file_id'];

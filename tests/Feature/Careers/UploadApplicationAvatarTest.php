@@ -23,7 +23,7 @@ class UploadApplicationAvatarTest extends TestCase
         $response = $this->json('POST', "/applications/uploads/avatars", [
             'avatar' => UploadedFile::fake()->image('avatar.png')
         ]);
-        $response->assertStatus(200);
+        $response->assertStatus(201);
 
         $this->assertArrayHasKey('file_id', $response->decodeResponseJson());
         $avatar_id = $response->decodeResponseJson()['file_id'];
