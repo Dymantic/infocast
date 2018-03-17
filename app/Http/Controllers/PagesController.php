@@ -65,6 +65,24 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/sara.jpg',
                 'quote' => '“Always remember that you are absolutely unique. Just like everyone else.” - Margaret Mead',
             ],
+            [
+                'name' => 'Alex',
+                'title' => 'Project Manager',
+                'profile' => '/images/profiles/alex.jpg',
+                'quote' => '“May the force be with you.” - Star Wars',
+            ],
+            [
+                'name' => 'Alven',
+                'title' => 'UI/Visual Designer',
+                'profile' => '/images/profiles/alven.jpg',
+                'quote' => '“We don’t get a chance to do that many things, and every one should be really excellent.” - Steve Jobs',
+            ],
+            [
+                'name' => 'Kaiya',
+                'title' => 'UI/Visual Designer',
+                'profile' => '/images/profiles/kaiya.jpg',
+                'quote' => '“For when I am weak, then I am strong.” - 2 Corinthians 12:10 Bible',
+            ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
     }
