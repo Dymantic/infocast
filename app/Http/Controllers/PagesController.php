@@ -48,12 +48,6 @@ class PagesController extends Controller
                 'quote' => '“The second mouse gets the cheese” — Ernst Berg',
             ],
             [
-                'name' => 'Chris S.',
-                'title' => 'Back End',
-                'profile' => '/images/profiles/chris2.png',
-                'quote' => '“...” – Unknown',
-            ],
-            [
                 'name' => 'Kilari',
                 'title' => 'Senior SRE',
                 'profile' => '/images/profiles/kilari.png',
@@ -64,12 +58,6 @@ class PagesController extends Controller
                 'title' => 'Office Manager',
                 'profile' => '/images/profiles/sara.jpg',
                 'quote' => '“Always remember that you are absolutely unique. Just like everyone else.” - Margaret Mead',
-            ],
-            [
-                'name' => 'Alex',
-                'title' => 'Project Manager',
-                'profile' => '/images/profiles/alex.jpg',
-                'quote' => '“May the force be with you.” - Star Wars',
             ],
             [
                 'name' => 'Alven',
