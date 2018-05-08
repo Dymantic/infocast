@@ -73,7 +73,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Sullivan',
-                'title' => 'Front End,
+                'title' => 'Front End',
                 'profile' => '/images/profiles/sullivan.jpg',
                 'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
             ]
