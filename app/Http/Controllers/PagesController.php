@@ -70,6 +70,12 @@ class PagesController extends Controller
                 'title' => 'UI/Visual Designer',
                 'profile' => '/images/profiles/kaiya.jpg',
                 'quote' => '“For when I am weak, then I am strong.” - 2 Corinthians 12:10 Bible',
+            ],
+            [
+                'name' => 'Sullivan',
+                'title' => 'Front-end Developer',
+                'profile' => '/images/profiles/sullivan.jpg',
+                'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
