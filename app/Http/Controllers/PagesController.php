@@ -61,19 +61,19 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Alven',
-                'title' => 'UI/Visual Designer',
+                'title' => 'UI/Visual',
                 'profile' => '/images/profiles/alven.jpg',
                 'quote' => '“We don’t get a chance to do that many things, and every one should be really excellent.” - Steve Jobs',
             ],
             [
                 'name' => 'Kaiya',
-                'title' => 'UI/Visual Designer',
+                'title' => 'UI/Visual',
                 'profile' => '/images/profiles/kaiya.jpg',
                 'quote' => '“For when I am weak, then I am strong.” - 2 Corinthians 12:10 Bible',
             ],
             [
                 'name' => 'Sullivan',
-                'title' => 'Front-end Developer',
+                'title' => 'Front End,
                 'profile' => '/images/profiles/sullivan.jpg',
                 'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
             ]
