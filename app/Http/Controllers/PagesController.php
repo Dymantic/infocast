@@ -63,7 +63,7 @@ class PagesController extends Controller
                 'name' => 'Alven',
                 'title' => 'UI/Visual',
                 'profile' => '/images/profiles/alven.jpg',
-                'quote' => '“We don’t get a chance to do that many things, and every one should be really excellent.” - Steve Jobs',
+                'quote' => '“No one ever made a difference by being like everyone else.” - P.T. Barnum',
             ],
             [
                 'name' => 'Kaiya',
