@@ -62,13 +62,13 @@ class PagesController extends Controller
             [
                 'name' => 'Alven',
                 'title' => 'UI/Visual',
-                'profile' => '/images/profiles/alven.jpg',
+                'profile' => '/images/profiles/alven_2.jpg',
                 'quote' => '“No one ever made a difference by being like everyone else.” - P.T. Barnum',
             ],
             [
                 'name' => 'Kaiya',
                 'title' => 'UI/Visual',
-                'profile' => '/images/profiles/kaiya.jpg',
+                'profile' => '/images/profiles/kaiya_2.jpg',
                 'quote' => '“For when I am weak, then I am strong.” - 2 Corinthians 12:10 Bible',
             ],
             [
@@ -76,6 +76,12 @@ class PagesController extends Controller
                 'title' => 'Front End',
                 'profile' => '/images/profiles/sullivan.jpg',
                 'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
+            ],
+            [
+                'name' => 'Tony',
+                'title' => 'Back End',
+                'profile' => '/images/profiles/tony.jpg',
+                'quote' => '“The first step is to establish that something is possible; then probability will occur.” - Elon Musk',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
