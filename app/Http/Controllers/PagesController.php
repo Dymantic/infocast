@@ -85,7 +85,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Marshall',
-                'title' => 'Product Manager',
+                'title' => 'Projects',
                 'profile' => '/images/profiles/marshall.png',
                 'quote' => '“To live will be an awfully big adventure.“– Peter Pan',
             ]
