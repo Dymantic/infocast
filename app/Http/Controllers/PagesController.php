@@ -82,6 +82,12 @@ class PagesController extends Controller
                 'title' => 'Back End',
                 'profile' => '/images/profiles/tony.jpg',
                 'quote' => '“The first step is to establish that something is possible; then probability will occur.” - Elon Musk',
+            ],
+            [
+                'name' => 'Marshall',
+                'title' => 'Product Manager',
+                'profile' => '/images/profiles/marshall.png',
+                'quote' => '“To live will be an awfully big adventure.“– Peter Pan',
             ]
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
