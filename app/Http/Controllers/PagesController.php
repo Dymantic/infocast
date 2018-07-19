@@ -69,7 +69,7 @@ class PagesController extends Controller
                 'name' => 'Kaiya',
                 'title' => 'UI/Visual',
                 'profile' => '/images/profiles/kaiya_2.jpg',
-                'quote' => '“For when I am weak, then I am strong.” - 2 Corinthians 12:10 Bible',
+                'quote' => '“As your days, so shall your strength be.” Deuteronomy 33:25 Bible',
             ],
             [
                 'name' => 'Sullivan',
