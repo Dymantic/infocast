@@ -24,18 +24,6 @@ class PagesController extends Controller
                 'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
             ],
             [
-                'name' => 'Oliver',
-                'title' => 'Front End',
-                'profile' => '/images/profiles/oliver.png',
-                'quote' => '“Your positive action combined with positive thinking results in success.” — Shiv Khera',
-            ],
-            [
-                'name' => 'J-D',
-                'title' => 'Projects',
-                'profile' => '/images/profiles/JD.png',
-                'quote' => '“Never half-ass two things. Whole-ass one thing.” — Ron Swanson',
-            ],
-            [
                 'name' => 'Ruoshin',
                 'title' => 'Front End',
                 'profile' => '/images/profiles/ruoshin.png',
@@ -83,12 +71,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/tony.jpg',
                 'quote' => '“The first step is to establish that something is possible; then probability will occur.” - Elon Musk',
             ],
-            [
-                'name' => 'Marshall',
-                'title' => 'Projects',
-                'profile' => '/images/profiles/marshall.png',
-                'quote' => '“To live will be an awfully big adventure.“– Peter Pan',
-            ]
+
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
     }
