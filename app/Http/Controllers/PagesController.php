@@ -18,12 +18,6 @@ class PagesController extends Controller
                 'quote' => '“Knowing what you’re doing gets you halfway there..”',
             ],
             [
-                'name' => 'Wei',
-                'title' => 'Design',
-                'profile' => '/images/profiles/wei.png',
-                'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
-            ],
-            [
                 'name' => 'Ruoshin',
                 'title' => 'Front End',
                 'profile' => '/images/profiles/ruoshin.png',
@@ -70,6 +64,24 @@ class PagesController extends Controller
                 'title' => 'Back End',
                 'profile' => '/images/profiles/tony.jpg',
                 'quote' => '“The first step is to establish that something is possible; then probability will occur.” - Elon Musk',
+            ],
+            [
+                'name' => 'Jason',
+                'title' => 'Quality Assurance',
+                'profile' => '/images/profiles/jason.png',
+                'quote' => '“Do not go gentle into that good night, old age should burn and rave at close of day; Rage, rage against the dying of the light.” - Dylan Thomas',
+            ],
+            [
+                'name' => 'Mushin',
+                'title' => 'Project Manager',
+                'profile' => '/images/profiles/mushin.png',
+                'quote' => '“I never think of the future – it comes soon enough.” -Albert Einstein',
+            ],
+            [
+                'name' => 'Wei',
+                'title' => 'UX Consultant',
+                'profile' => '/images/profiles/wei.png',
+                'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
             ],
 
         ];
