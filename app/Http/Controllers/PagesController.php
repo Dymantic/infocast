@@ -42,12 +42,6 @@ class PagesController extends Controller
                 'quote' => '“Always remember that you are absolutely unique. Just like everyone else.” - Margaret Mead',
             ],
             [
-                'name' => 'Alven',
-                'title' => 'UI/Visual',
-                'profile' => '/images/profiles/alven_2.jpg',
-                'quote' => '“No one ever made a difference by being like everyone else.” - P.T. Barnum',
-            ],
-            [
                 'name' => 'Kaiya',
                 'title' => 'UI/Visual',
                 'profile' => '/images/profiles/kaiya_2.jpg',
