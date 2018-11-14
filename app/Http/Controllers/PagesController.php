@@ -36,12 +36,6 @@ class PagesController extends Controller
                 'quote' => '“If you would not be forgotten as soon as you are dead, either write something worth reading or do things worth writing.” - Benjamin Franklin',
             ],
             [
-                'name' => 'Sara',
-                'title' => 'Office Manager',
-                'profile' => '/images/profiles/sara.jpg',
-                'quote' => '“Always remember that you are absolutely unique. Just like everyone else.” - Margaret Mead',
-            ],
-            [
                 'name' => 'Kaiya',
                 'title' => 'UI/Visual',
                 'profile' => '/images/profiles/kaiya_2.jpg',
@@ -76,6 +70,12 @@ class PagesController extends Controller
                 'title' => 'UX Consultant',
                 'profile' => '/images/profiles/wei.png',
                 'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
+            ],
+            [
+                'name' => 'Wanyu',
+                'title' => 'Front End',
+                'profile' => '/images/profiles/wanyu.png',
+                'quote' => '“Always pass on what you have learned.” - Master Yoda',
             ],
 
         ];
