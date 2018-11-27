@@ -77,6 +77,12 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/wanyu.png',
                 'quote' => '“Always pass on what you have learned.” - Master Yoda',
             ],
+            [
+                'name' => 'Leo',
+                'title' => 'Business Intelligence',
+                'profile' => '/images/profiles/leo.png',
+                'quote' => '“When you want something, all the universe conspires in helping you to achieve it.”   – Paulo Coelho, The Alchemist',
+            ],
 
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
