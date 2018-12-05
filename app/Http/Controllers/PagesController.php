@@ -83,6 +83,12 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/leo.png',
                 'quote' => '“When you want something, all the universe conspires in helping you to achieve it.”   – Paulo Coelho, The Alchemist',
             ],
+            [
+                'name' => 'Kerry',
+                'title' => 'Office Manager',
+                'profile' => '/images/profiles/kerry.png',
+                'quote' => '” Faith is a hope in that which is not seen which is true”  - Alma : 32',
+            ],
 
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
