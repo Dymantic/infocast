@@ -61,7 +61,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Mushin',
-                'title' => 'Project Manager',
+                'title' => 'Product Manager',
                 'profile' => '/images/profiles/mushin.png',
                 'quote' => '“I never think of the future – it comes soon enough.” -Albert Einstein',
             ],
