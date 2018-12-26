@@ -66,12 +66,6 @@ class PagesController extends Controller
                 'quote' => '“I never think of the future – it comes soon enough.” -Albert Einstein',
             ],
             [
-                'name' => 'Wei',
-                'title' => 'UX Consultant',
-                'profile' => '/images/profiles/wei.png',
-                'quote' => '“You never ‘make’ it. There is no end goal in life so you should enjoy the journey.” — Unknown',
-            ],
-            [
                 'name' => 'Wanyu',
                 'title' => 'Front End',
                 'profile' => '/images/profiles/wanyu.png',
@@ -83,12 +77,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/leo.png',
                 'quote' => '“When you want something, all the universe conspires in helping you to achieve it.”   – Paulo Coelho, The Alchemist',
             ],
-            [
-                'name' => 'Kerry',
-                'title' => 'Office Manager',
-                'profile' => '/images/profiles/kerry.png',
-                'quote' => '” Faith is a hope in that which is not seen which is true”  - Alma : 32',
-            ],
+            
 
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
