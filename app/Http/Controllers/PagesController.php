@@ -77,7 +77,25 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/leo.png',
                 'quote' => '“When you want something, all the universe conspires in helping you to achieve it.”   – Paulo Coelho, The Alchemist',
             ],
-            
+            [
+                'name' => 'Irish',
+                'title' => 'Lead UX Designer',
+                'profile' => '/images/profiles/irish.png',
+                'quote' => '“Good designers copy, great designers steal.” -Pablo Picasso',
+            ],
+            [
+                'name' => 'Derek',
+                'title' => 'Jnr. Business Dev',
+                'profile' => '/images/profiles/derek.png',
+                'quote' => '“Innovation distinguishes between a leader and a follower.” —Steve Jobs',
+            ],
+            [
+                'name' => 'Gary',
+                'title' => 'Jnr. Data Scientist',
+                'profile' => '/images/profiles/gary.png',
+                'quote' => '“No man can win every battle, but no man should fall without a struggle.”  - Peter Parker',
+            ],
+
 
         ];
         return view('front.home.page', ['postings' => $postings, 'team' => $team]);
