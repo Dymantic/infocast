@@ -83,6 +83,12 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/gary.png',
                 'quote' => '“No man can win every battle, but no man should fall without a struggle.”  - Peter Parker',
             ],
+            [
+                'name' => 'Lukas',
+                'title' => 'Sr. Software Engineer',
+                'profile' => '/images/profiles/lukas.png',
+                'quote' => '“Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more.” - Nikola Tesla',
+            ],
 
 
         ];
