@@ -11,12 +11,7 @@ class PagesController extends Controller
     {
         $postings = Posting::live()->ordered()->take(4)->get();
         $team = [
-            [
-                'name' => 'Enrique',
-                'title' => 'Strategy',
-                'profile' => '/images/profiles/enrique.png',
-                'quote' => '“Knowing what you’re doing gets you halfway there..”',
-            ],
+
             [
                 'name' => 'Ruoshin',
                 'title' => 'Frontend Developer',
@@ -94,6 +89,18 @@ class PagesController extends Controller
                 'title' => 'Graphic/UI Designer',
                 'profile' => '/images/profiles/pan.png',
                 'quote' => '“In every real man, a child is hidden that wants to play. ” - Friedrich Nietzsche',
+            ],
+            [
+                'name' => 'Stacy',
+                'title' => 'Office Administration',
+                'profile' => '/images/profiles/stacy.png',
+                'quote' => '“For good ideas and true innovation, you need human interaction, conflict, argument, debate.” -Margaret Heffernan',
+            ],
+            [
+                'name' => 'Enrique',
+                'title' => 'Strategy',
+                'profile' => '/images/profiles/enrique.png',
+                'quote' => '“Knowing what you’re doing gets you halfway there..”',
             ],
 
 
