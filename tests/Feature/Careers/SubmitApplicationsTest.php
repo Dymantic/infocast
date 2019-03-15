@@ -47,6 +47,7 @@ class SubmitApplicationsTest extends TestCase
      */
     public function successfully_submitting_an_application_returns_a_redirect_url()
     {
+        $this->withoutExceptionHandling();
         $posting = factory(Posting::class)->create();
         $response = $this->json('POST', "/postings/{$posting->id}/applications", $this->defaultApplicationDetails());
 
