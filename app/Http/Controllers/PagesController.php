@@ -97,6 +97,12 @@ class PagesController extends Controller
                 'quote' => '“For good ideas and true innovation, you need human interaction, conflict, argument, debate.” -Margaret Heffernan',
             ],
             [
+                'name' => 'PingRong',
+                'title' => 'Lead Interactive UX Designer',
+                'profile' => '/images/profiles/pingrong.png',
+                'quote' => '“Be the change you wish to see in the world.” - Mahatma Gandhi',
+            ],
+            [
                 'name' => 'Enrique',
                 'title' => 'Strategy',
                 'profile' => '/images/profiles/enrique.png',
