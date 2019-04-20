@@ -56,7 +56,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Wanyu',
-                'title' => 'Jr. Frontend Developer',
+                'title' => 'Frontend Developer',
                 'profile' => '/images/profiles/wanyu.png',
                 'quote' => '“Always pass on what you have learned.” - Master Yoda',
             ],
@@ -80,7 +80,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'Lukas',
-                'title' => 'Sr. Software Engineer',
+                'title' => 'Software Engineer',
                 'profile' => '/images/profiles/lukas.png',
                 'quote' => '“Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more.” - Nikola Tesla',
             ],
@@ -98,7 +98,7 @@ class PagesController extends Controller
             ],
             [
                 'name' => 'PingRong',
-                'title' => 'Lead Interactive UX Designer',
+                'title' => 'Interactive UX Designer',
                 'profile' => '/images/profiles/pingrong.png',
                 'quote' => '“Be the change you wish to see in the world.” - Mahatma Gandhi',
             ],
