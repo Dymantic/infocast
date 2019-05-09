@@ -85,6 +85,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::post('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@store');
         Route::delete('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@destroy');
+        Route::post('case-studies/{caseStudy}/images', 'CaseStudyBodyImagesController@store');
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'services', 'namespace' => 'Services'], function() {

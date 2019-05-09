@@ -85,6 +85,7 @@ class CaseStudy extends Model implements HasMedia
     public function setTitleImage(UploadedFile $image)
     {
         $this->clearTitleImage();
+
         return $this
             ->addMedia($image)
             ->preservingOriginal()
@@ -94,5 +95,13 @@ class CaseStudy extends Model implements HasMedia
     public function clearTitleImage()
     {
         $this->clearMediaCollection(static::TITLE_IMAGES);
+    }
+
+    public function addBodyImage(UploadedFile $image)
+    {
+        return $this
+            ->addMedia($image)
+            ->preservingOriginal()
+            ->toMediaCollection(static::BODY_IMAGES);
     }
 }
