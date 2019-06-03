@@ -20,6 +20,8 @@ class CreateCaseStudiesTable extends Migration
             $table->string('client')->nullable();
             $table->string('time_period')->nullable();
             $table->string('project_type')->nullable();
+            $table->text('intro')->nullable();
+            $table->text('description')->nullable();
             $table->text('body')->nullable();
             $table->boolean('is_draft')->default(1);
             $table->date('published_on')->nullable();

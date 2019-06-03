@@ -8,6 +8,9 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+Vue.config.ignoredElements = [
+    'trix-editor',
+];
 import Datepicker from "vuejs-datepicker";
 import swal from "sweetalert";
 window.swal = swal;
@@ -31,6 +34,9 @@ Vue.component('image-upload', require('./components/Singleupload.vue'));
 Vue.component('posting-form', require('./components/PostingForm.vue'));
 Vue.component('application-fields', require('./components/PostingApplicationFieldsSetter.vue'));
 Vue.component('sortable-list', require('./components/SortableList.vue'));
+
+Vue.component('case-studies-index', require('./components/CaseStudies/Index.vue'));
+Vue.component('case-study-editor', require('./components/CaseStudies/Edit.vue'));
 
 
 window.eventHub = new Vue();

@@ -23,7 +23,7 @@
     @else
         @include('admin.partials.fakenavbar')
     @endif
-    <div class="container">
+    <div class="@if(!($fullWidth ?? false)) container @endif">
         @yield('content')
     </div>
 </div>

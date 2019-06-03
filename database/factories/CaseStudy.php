@@ -8,6 +8,8 @@ $factory->define(\App\CaseStudies\CaseStudy::class, function (Faker $faker) {
         'time_period' => \Illuminate\Support\Carbon::today()->subYear()->year,
         'project_type' => $faker->words(2, true),
         'client' => $faker->company,
+        'intro' => $faker->paragraph,
+        'description' => $faker->paragraph,
         'body' => $faker->paragraph
     ];
 });

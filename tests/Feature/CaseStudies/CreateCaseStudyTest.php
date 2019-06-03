@@ -20,7 +20,9 @@ class CreateCaseStudyTest extends TestCase
             'title' => 'test title',
             'client' => 'test client',
             'time_period' => 'test time',
-            'project_type' => 'test project'
+            'project_type' => 'test project',
+            'intro' => 'test intro',
+            'description' => 'test description'
         ]);
         $response->assertStatus(201);
 
@@ -29,6 +31,8 @@ class CreateCaseStudyTest extends TestCase
             'client' => 'test client',
             'time_period' => 'test time',
             'project_type' => 'test project',
+            'intro' => 'test intro',
+            'description' => 'test description',
             'body' => null
         ]);
     }

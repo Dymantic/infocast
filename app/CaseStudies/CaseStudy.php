@@ -22,7 +22,9 @@ class CaseStudy extends Model implements HasMedia
         'title',
         'project_type',
         'time_period',
-        'client'
+        'client',
+        'intro',
+        'description',
     ];
 
     protected $dates = ['published_on'];

@@ -77,8 +77,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::get('inquiries', 'InquiriesController@index');
         Route::delete('inquiries/{message}', 'InquiriesController@delete');
 
+        Route::get('case-studies-page', 'CaseStudiesPageController@index');
 
+
+        Route::get('case-studies', 'CaseStudiesController@index');
+        Route::get('case-studies/{study}/edit', 'CaseStudiesController@edit');
         Route::post('case-studies', 'CaseStudiesController@store');
+        Route::post('case-studies/{study}', 'CaseStudiesController@update');
         Route::post('case-studies/{caseStudy}/body', 'CaseStudyBodyController@update');
         Route::post('published-case-studies', 'PublishedCaseStudiesController@store');
         Route::delete('published-case-studies/{caseStudy}', 'PublishedCaseStudiesController@destroy');
