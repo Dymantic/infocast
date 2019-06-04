@@ -92,7 +92,7 @@
     "longitude": "121.5543061"
   },
   "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00",
-  "telephone": "+886 225-063-875",
+  "telephone": "+886 225-063-857",
   "image": "https://infocast.tech/images/infocast_facebook.jpg"
   }
  </script>
