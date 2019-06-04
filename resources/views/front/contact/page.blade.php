@@ -21,7 +21,8 @@
     <section class="flex-ns justify-between mv5 pt3 bt b--black-30 mw7 mh4 center-ns">
         <div class="w-50-ns br-ns b--black-30 pt4">
             <p class="ttu col-p bold-type mb1">Location</p>
-            <p class="col-midgr f5 bold-type mt0">105 台北市松山區南京東路四段183號五樓</p>
+            <p class="col-midgr f5 bold-type mt0">台北市中山區長安東路二段110號2樓</p>
+            <p class="col-midgr f5 bold-type mt0">2F, No 110, Chang An E. Road Sec.2, <br/> Zhongshan Dist, Taipei</p>
         </div>
         <div class="w-50-ns pl4-ns pt4">
             <p class="ttu col-p bold-type mb1">Tel</p>
