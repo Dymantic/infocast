@@ -28,6 +28,7 @@ class UpdateCaseStudyTest extends TestCase
             'client' => 'new client',
             'intro' => 'new intro',
             'description' => 'new description',
+            'body' => 'test body content'
         ]);
         $response->assertStatus(200);
 
@@ -38,6 +39,7 @@ class UpdateCaseStudyTest extends TestCase
             'client' => 'new client',
             'intro' => 'new intro',
             'description' => 'new description',
+            'body' => 'test body content'
         ]);
     }
 }

@@ -55,6 +55,7 @@ class CaseStudiesController extends Controller
             'project_type',
             'intro',
             'description',
+            'body'
         ]);
 
         $study->update($updated_data);

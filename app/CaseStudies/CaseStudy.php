@@ -25,6 +25,7 @@ class CaseStudy extends Model implements HasMedia
         'client',
         'intro',
         'description',
+        'body'
     ];
 
     protected $dates = ['published_on'];
@@ -116,7 +117,10 @@ class CaseStudy extends Model implements HasMedia
             'client' => $this->client,
             'project_type' => $this->project_type,
             'time_period' => $this->time_period,
-            'published_on' => $this->published_on->format('F j, Y'),
+            'intro' => $this->intro,
+            'description' => $this->description,
+            'body' => $this->body,
+            'published_on' => $this->hasBeenPublished() ? $this->published_on->format('F j, Y') : null,
             'is_draft' => $this->is_draft,
             'title_image_thumb' => $title_img ? $title_img->getUrl('thumb') : null,
             'title_image_web' => $title_img ? $title_img->getUrl('web') : null,

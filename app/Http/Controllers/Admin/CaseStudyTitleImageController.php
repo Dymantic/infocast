@@ -15,7 +15,7 @@ class CaseStudyTitleImageController extends Controller
         ]);
         $image = $caseStudy->setTitleImage($upload['image']);
 
-        return ['location' => $image->getFullUrl()];
+        return ['image_src' => $image->getFullUrl()];
     }
 
     public function destroy(CaseStudy $caseStudy)
