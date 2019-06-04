@@ -25,7 +25,7 @@
         </div>
         <div class="w-50-ns pl4-ns pt4">
             <p class="ttu col-p bold-type mb1">Tel</p>
-            <p class="col-midgr f5 bold-type mt0">+886 287-707-912</p>
+            <p class="col-midgr f5 bold-type mt0">+886 225-063-875</p>
         </div>
     </section>
 @endsection
