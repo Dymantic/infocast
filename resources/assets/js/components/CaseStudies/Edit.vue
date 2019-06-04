@@ -5,7 +5,10 @@
             <div class="editor-container">
                 <div class="editor">
                     <h1 class="ph3">{{ post.title }}</h1>
-                    <trix-vue ref="editor" v-model="post.body"></trix-vue>
+                    <trix-vue ref="editor"
+                              :image-upload-path="`/admin/case-studies/${studyId}/images`"
+                              v-model="post.body"
+                    ></trix-vue>
                 </div>
                 <div class="sidebar">
                     <div class="mv3 ph3">
@@ -45,10 +48,36 @@
                         <image-upload class="mt1" :initial-src="post.title_image_web" :upload-url="`/admin/case-studies/${post.id}/title-image`"></image-upload>
                     </div>
                 </div>
-                <div class="action-bar flex justify-between">
-                    <div></div>
+                <div class="action-bar flex justify-between items-center ph3 col-p-bg col-w">
+                    <div>
+                        <div class="flex items-center">
+
+                            <svg v-if="!post.is_draft" xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 24" class="mr3 col-green"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+
+                            <svg v-if="post.is_draft" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="mr3 col-r"><path d="M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z" fill="none"/><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/></svg>
+                            <p class="mr3">{{publish_status }}</p>
+                            <button
+                                :disabled="waiting_publish"
+                                :class="{'o-50': waiting_publish}"
+                                class="bn col-w-bg col-p pv1 ph2 hov-s-bg br3"
+                                @click="publish"
+                                v-if="post.is_draft"
+                            >Publish</button>
+                            <button
+                                :disabled="waiting_publish"
+                                :class="{'o-50': waiting_publish}"
+                                class="bn col-w-bg col-p pv1 ph2 hov-s-bg br3"
+                                @click="retract"
+                                v-if="!post.is_draft"
+                            >Retract</button>
+                        </div>
+
+                    </div>
                     <div class="flex justify-end items-center">
-                        <button @click="savePost">Save</button>
+                        <button
+                            @click="savePost"
+                            class="bn col-w-bg col-p pv1 ph2 hov-s-bg br3"
+                        >Save</button>
                     </div>
                 </div>
             </div>
@@ -60,7 +89,7 @@
 <script type="text/babel">
     import {ImageUpload} from "@dymantic/imagineer";
     import TrixVue from "@dymantic/vue-trix-editor";
-    import {fetchCaseStudy, saveCaseStudy} from "../../lib/CaseStudies/CaseStudies";
+    import {fetchCaseStudy, saveCaseStudy, publishCaseStudy, retractCaseStudy} from "../../lib/CaseStudies/CaseStudies";
 
     export default {
         components: {
@@ -73,10 +102,21 @@
         data() {
             return {
                 is_ready: false,
+                waiting_publish: false,
                 post: {
 
                 }
             };
+        },
+
+        computed: {
+            publish_status() {
+                if(this.post.is_draft) {
+                    return 'This case study is a draft and not visible to the public.'
+                }
+
+                return 'This case study is live and publicly visible.'
+            }
         },
 
         mounted() {
@@ -102,6 +142,20 @@
                 saveCaseStudy(caseStudy)
                     .then(data => console.log(data))
                     .catch(() => console.log('shit'));
+            },
+
+            publish() {
+                this.waiting_publish = true;
+                publishCaseStudy(this.studyId)
+                    .then(() => this.post.is_draft = false)
+                    .then(() => this.waiting_publish = false);
+            },
+
+            retract() {
+                this.waiting_publish = true;
+                retractCaseStudy(this.studyId)
+                    .then(() => this.post.is_draft = true)
+                    .then(() => this.waiting_publish = false);
             }
         }
     }
@@ -116,6 +170,8 @@
     .editor {
         flex: 1;
         padding: 2rem;
+        padding-bottom: 6rem;
+        overflow-y: auto;
     }
 
     .sidebar {
@@ -130,7 +186,6 @@
         height: 3rem;
         width: 100%;
         bottom: 0;
-        background: deeppink;
     }
 
 </style>

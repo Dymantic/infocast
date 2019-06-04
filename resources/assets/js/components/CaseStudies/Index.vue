@@ -3,12 +3,16 @@
         <div class="flex justify-between items-center">
             <h1 class="f1 normal">Case Studies</h1>
             <div class="flex justify-end items-center">
-                <new-study-form @study-added="fetchStudies"></new-study-form>
+                <new-study-form @study-added="goToNewStudy"></new-study-form>
             </div>
         </div>
-        <div class="">
-            <div v-for="study in studies" :key="study.id">
-                <p>{{ study.title }}</p>
+        <div class="pb4">
+            <div v-for="study in studies" :key="study.id" class="mv3 col-w-bg pa3">
+                <a :href="`/admin/case-studies/${study.id}/edit`" class="col-p hov-s f4 no-underline">
+                    <p><strong>Title: </strong>{{ study.title }}</p>
+                </a>
+                <p><strong>Client: </strong>{{ study.client }}</p>
+                <p>{{ study.intro }}</p>
             </div>
         </div>
     </div>
@@ -43,6 +47,10 @@
                         })
                         .catch(reject);
                 });
+            },
+
+            goToNewStudy(study) {
+                window.location = `/admin/case-studies/${study.id}/edit`;
             }
         }
     }

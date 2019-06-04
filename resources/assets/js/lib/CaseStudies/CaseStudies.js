@@ -16,4 +16,20 @@ function saveCaseStudy(study) {
     });
 }
 
-export {fetchCaseStudy, saveCaseStudy};
+function publishCaseStudy(id) {
+    return new Promise((resolve, reject) => {
+        axios.post("/admin/published-case-studies", {case_study_id: id})
+             .then(({data}) => resolve(data))
+             .catch(resp => reject(resp.data));
+    });
+}
+
+function retractCaseStudy(id) {
+    return new Promise((resolve, reject) => {
+        axios.delete(`/admin/published-case-studies/${id}`)
+             .then(({data}) => resolve(data))
+             .catch(resp => reject(resp.data));
+    });
+}
+
+export {fetchCaseStudy, saveCaseStudy, publishCaseStudy, retractCaseStudy};

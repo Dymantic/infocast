@@ -14,6 +14,6 @@ class CaseStudyBodyImagesController extends Controller
 
         $image = $caseStudy->addBodyImage(request('image'));
 
-        return ['location' => $image->getUrl('web')];
+        return ['src' => $image->getUrl('web')];
     }
 }

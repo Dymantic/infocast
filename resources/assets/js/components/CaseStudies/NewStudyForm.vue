@@ -1,6 +1,6 @@
 <template>
     <span>
-        <button @click="showModal = true">New Case Study</button>
+        <button class="btn" @click="showModal = true">New Case Study</button>
         <modal :show="showModal">
             <div slot="header"></div>
             <div slot="body">
@@ -28,13 +28,14 @@
                             <span class="text-xs text-red" v-show="formErrors.client">{{ formErrors.client }}</span>
                             <input type="text" name="client" v-model="formData.client" class="w-100 db h2 mt1" id="client">
                         </div>
-                        <div class="form-group mv4" :class="{'has-error': formErrors.project}">
-                            <label class="text-sm uppercase text-green font-bold" for="project">Project Type</label>
-                            <span class="text-xs text-red" v-show="formErrors.project">{{ formErrors.project }}</span>
-                            <input type="text" name="project" v-model="formData.project" class="w-100 db h2 mt1" id="project">
+                        <div class="form-group mv4" :class="{'has-error': formErrors.project_type}">
+                            <label class="text-sm uppercase text-green font-bold" for="project_type">Project Type</label>
+                            <span class="text-xs text-red" v-show="formErrors.project_type">{{ formErrors.project_type }}</span>
+                            <input type="text" name="project_type" v-model="formData.project_type" class="w-100 db h2 mt1" id="project_type">
                         </div>
-                        <div>
-                            <button type="submit">submit</button>
+                        <div class="flex justify-end">
+                            <button class="btn btn-grey mr3" @click="showModal = false" type="button">Cancel</button>
+                            <button class="btn" type="submit">Submit</button>
                         </div>
                     </div>
                 </vue-form>
@@ -58,14 +59,14 @@
                 formModel: new Form({
                     title: '',
                     client: '',
-                    project: '',
+                    project_type: '',
                 })
             };
         },
 
         methods: {
             studyCreated(data) {
-                this.$emit('study-added');
+                this.$emit('study-added', data);
                 this.showModal = false;
             }
         }
