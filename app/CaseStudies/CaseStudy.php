@@ -106,4 +106,21 @@ class CaseStudy extends Model implements HasMedia
             ->preservingOriginal()
             ->toMediaCollection(static::BODY_IMAGES);
     }
+
+    public function toArray()
+    {
+        $title_img = $this->getFirstMedia(static::TITLE_IMAGES);
+        return [
+            'id' => $this->id,
+            'title' => $this->title,
+            'client' => $this->client,
+            'project_type' => $this->project_type,
+            'time_period' => $this->time_period,
+            'published_on' => $this->published_on->format('F j, Y'),
+            'is_draft' => $this->is_draft,
+            'title_image_thumb' => $title_img ? $title_img->getUrl('thumb') : null,
+            'title_image_web' => $title_img ? $title_img->getUrl('web') : null,
+            'title_image_banner' => $title_img ? $title_img->getUrl('banner') : null,
+        ];
+    }
 }

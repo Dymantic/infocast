@@ -14,6 +14,11 @@ class CaseStudiesController extends Controller
         return CaseStudy::latest()->get();
     }
 
+    public function show(CaseStudy $study)
+    {
+        return $study;
+    }
+
     public function edit(CaseStudy $study)
     {
         return view('admin.case-studies.edit', ['study' => $study->toArray()]);

@@ -81,6 +81,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
 
         Route::get('case-studies', 'CaseStudiesController@index');
+        Route::get('case-studies/{study}', 'CaseStudiesController@show');
         Route::get('case-studies/{study}/edit', 'CaseStudiesController@edit');
         Route::post('case-studies', 'CaseStudiesController@store');
         Route::post('case-studies/{study}', 'CaseStudiesController@update');
