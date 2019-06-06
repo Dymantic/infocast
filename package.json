@@ -21,7 +21,7 @@
     "dependencies": {
         "@dymantic/imagineer": "^0.1.1",
         "@dymantic/vue-forms": "^1.1.0",
-        "@dymantic/vue-trix-editor": "^0.2.0",
+        "@dymantic/vue-trix-editor": "^0.2.1",
         "flickity": "^2.0.10",
         "markdown-it": "^8.4.0",
         "moment": "^2.24.0",

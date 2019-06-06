@@ -6,6 +6,7 @@
                 <div class="editor">
                     <h1 class="ph3">{{ post.title }}</h1>
                     <trix-vue ref="editor"
+                              @content-changed="onContentChanged"
                               :image-upload-path="`/admin/case-studies/${studyId}/images`"
                               v-model="post.body"
                     ></trix-vue>
@@ -74,6 +75,7 @@
 
                     </div>
                     <div class="flex justify-end items-center">
+                        <span class="mr3">{{ last_save_status }}</span>
                         <button
                             @click="savePost"
                             class="bn col-w-bg col-p pv1 ph2 hov-s-bg br3"
@@ -103,6 +105,10 @@
             return {
                 is_ready: false,
                 waiting_publish: false,
+                saving: false,
+                is_dirty: false,
+                last_saved: null,
+                last_save_status: '',
                 post: {
 
                 }
@@ -116,6 +122,17 @@
                 }
 
                 return 'This case study is live and publicly visible.'
+            },
+        },
+
+        watch: {
+            post: {
+                deep: true,
+
+                handler(a,b) {
+                    console.log('changed meta');
+                }
+
             }
         },
 
@@ -125,6 +142,8 @@
                     this.post = post;
                     this.is_ready = true
                 });
+
+            window.setInterval(() => this.doSaveRoutine(), 10000)
         },
 
         methods: {
@@ -140,7 +159,10 @@
                     body: this.$refs.editor.content()
                 };
                 saveCaseStudy(caseStudy)
-                    .then(data => console.log(data))
+                    .then(data => {
+                        this.last_saved = new Date();
+                        this.updateSaveStatus();
+                    })
                     .catch(() => console.log('shit'));
             },
 
@@ -156,6 +178,32 @@
                 retractCaseStudy(this.studyId)
                     .then(() => this.post.is_draft = true)
                     .then(() => this.waiting_publish = false);
+            },
+
+            onContentChanged() {
+                console.log('changed')
+            },
+
+            updateSaveStatus() {
+                if(this.last_saved === null) {
+                    return this.last_save_status =  ''
+                }
+
+                const minute = 60 * 1000;
+                const now = new Date();
+
+                if((now.getTime() - this.last_saved.getTime()) < minute) {
+                    return this.last_save_status =  'Last saved less than a minute ago';
+                }
+
+                this.last_save_status =  `Last saved at ${this.last_saved.toTimeString().slice(0,5)}`
+            },
+
+            doSaveRoutine() {
+                if(this.is_dirty) {
+                    return this.savePost();
+                }
+                this.updateSaveStatus();
             }
         }
     }
