@@ -12,12 +12,7 @@ class PagesController extends Controller
         $postings = Posting::live()->ordered()->take(4)->get();
         $team = [
 
-            [
-                'name' => 'Ruoshin',
-                'title' => 'Frontend Developer',
-                'profile' => '/images/profiles/ruoshin.png',
-                'quote' => '“Learn to… be what you are, and learn to resign with a good grace all that you are not.” — Henri Frederic Amiel',
-            ],
+
             [
                 'name' => 'Chris',
                 'title' => 'Software Developer',
@@ -54,12 +49,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/mushin.png',
                 'quote' => '“I never think of the future – it comes soon enough.” -Albert Einstein',
             ],
-            [
-                'name' => 'Wanyu',
-                'title' => 'Frontend Developer',
-                'profile' => '/images/profiles/wanyu.png',
-                'quote' => '“Always pass on what you have learned.” - Master Yoda',
-            ],
+
             [
                 'name' => 'Leo',
                 'title' => 'BI & Data Services',
@@ -96,12 +86,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/stacy.png',
                 'quote' => '“For good ideas and true innovation, you need human interaction, conflict, argument, debate.” -Margaret Heffernan',
             ],
-            [
-                'name' => 'PingRong',
-                'title' => 'Interactive UX Designer',
-                'profile' => '/images/profiles/pingrong.png',
-                'quote' => '“Be the change you wish to see in the world.” - Mahatma Gandhi',
-            ],
+            
             [
                 'name' => 'Enrique',
                 'title' => 'Strategy',
