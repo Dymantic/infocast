@@ -130,7 +130,7 @@
                 deep: true,
 
                 handler(a,b) {
-                    console.log('changed meta');
+                    this.is_dirty = true;
                 }
 
             }
@@ -160,6 +160,7 @@
                 };
                 saveCaseStudy(caseStudy)
                     .then(data => {
+                        this.is_dirty = false;
                         this.last_saved = new Date();
                         this.updateSaveStatus();
                     })
@@ -181,7 +182,7 @@
             },
 
             onContentChanged() {
-                console.log('changed')
+                this.is_dirty = true;
             },
 
             updateSaveStatus() {
