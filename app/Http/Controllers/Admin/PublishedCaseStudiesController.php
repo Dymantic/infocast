@@ -10,6 +10,7 @@ class PublishedCaseStudiesController extends Controller
 {
     public function store()
     {
+
         $case_study = CaseStudy::findOrFail(request('case_study_id'));
 
         $case_study->publish();

@@ -26,6 +26,7 @@
     <div class="@if(!($fullWidth ?? false)) container @endif">
         @yield('content')
     </div>
+    <notification-hub></notification-hub>
 </div>
 
 {{--<div class="main-footer"></div>--}}

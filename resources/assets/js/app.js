@@ -38,6 +38,8 @@ Vue.component('sortable-list', require('./components/SortableList.vue'));
 Vue.component('case-studies-index', require('./components/CaseStudies/Index.vue'));
 Vue.component('case-study-editor', require('./components/CaseStudies/Edit.vue'));
 
+Vue.component('notification-hub', require('./components/Notifications/NotificationHub.vue'));
+
 
 window.eventHub = new Vue();
 

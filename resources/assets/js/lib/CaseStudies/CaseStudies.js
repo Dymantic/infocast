@@ -12,7 +12,7 @@ function saveCaseStudy(study) {
     return new Promise((resolve, reject) => {
         axios.post(`/admin/case-studies/${study.id}`, study)
              .then(({data}) => resolve(data))
-             .catch(resp => reject(resp.data));
+             .catch(resp => reject(resp.response));
     });
 }
 

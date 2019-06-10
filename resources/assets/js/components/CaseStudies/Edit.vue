@@ -46,7 +46,14 @@
                     </div>
                     <div class="mv3 ph3">
                         <label class="f6 ttu fw7" for="description">Title Image</label>
-                        <image-upload class="mt1" :initial-src="post.title_image_web" :upload-url="`/admin/case-studies/${post.id}/title-image`"></image-upload>
+                        <image-upload class="mt1"
+                                      :initial-src="post.title_image_web"
+                                      :upload-url="`/admin/case-studies/${post.id}/title-image`"
+                                      @invalid-file-selected="onInvalidImage"
+                                      @image-upload-error="onImageUploadError"
+                                      @image-upload-failed="onImageUploadFailure"
+                                      @image-failed-validation="onImageFailedValidation"
+                        ></image-upload>
                     </div>
                 </div>
                 <div class="action-bar flex justify-between items-center ph3 col-p-bg col-w">
@@ -92,6 +99,7 @@
     import {ImageUpload} from "@dymantic/imagineer";
     import TrixVue from "@dymantic/vue-trix-editor";
     import {fetchCaseStudy, saveCaseStudy, publishCaseStudy, retractCaseStudy} from "../../lib/CaseStudies/CaseStudies";
+    import {notify} from "../Notifications/notify";
 
     export default {
         components: {
@@ -163,14 +171,21 @@
                         this.is_dirty = false;
                         this.last_saved = new Date();
                         this.updateSaveStatus();
+
                     })
-                    .catch(() => console.log('shit'));
+                    .catch(data => this.handleSaveError(data));
+            },
+
+            handleSaveError(response) {
+                const msg = response.status === 422 ? 'Failed to save: some of your input is not valid' : 'Failed to save.';
+                notify.error({message: msg});
             },
 
             publish() {
                 this.waiting_publish = true;
                 publishCaseStudy(this.studyId)
                     .then(() => this.post.is_draft = false)
+                    .catch(() => notify.error({message: 'Failed to publish case study.'}))
                     .then(() => this.waiting_publish = false);
             },
 
@@ -178,6 +193,7 @@
                 this.waiting_publish = true;
                 retractCaseStudy(this.studyId)
                     .then(() => this.post.is_draft = true)
+                    .catch(() => notify.error({message: 'Failed to retract case study.'}))
                     .then(() => this.waiting_publish = false);
             },
 
@@ -205,6 +221,22 @@
                     return this.savePost();
                 }
                 this.updateSaveStatus();
+            },
+
+            onInvalidImage(msg) {
+                notify.error({message: msg});
+            },
+
+            onImageUploadFailure(msg) {
+                notify.error({message: msg});
+            },
+
+            onImageUploadError(msg) {
+                notify.error({message: msg});
+            },
+
+            onImageFailedValidation(msg) {
+                notify.error({message: msg});
             }
         }
     }
