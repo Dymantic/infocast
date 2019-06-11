@@ -80,7 +80,7 @@
   "description": "Infocast provides value driven data analysis and processing",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "105 台北市松山區南京東路四段183號五樓",
+    "streetAddress": "台北市中山區長安東路二段110號2樓",
     "addressLocality": "Taipei City",
     "addressRegion": "Taipei",
     "postalCode": "105",
@@ -92,7 +92,7 @@
     "longitude": "121.5543061"
   },
   "openingHours": "Mo, Tu, We, Th, Fr 09:00-18:00",
-  "telephone": "+886 287-707-912",
+  "telephone": "+886 225-063-857",
   "image": "https://infocast.tech/images/infocast_facebook.jpg"
   }
  </script>
