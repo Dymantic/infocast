@@ -98,5 +98,22 @@ class Application extends Model
         return "{$firstName}_{$lastName}_{$type}.{$extension}";
     }
 
+    public function track()
+    {
+        return $this->candidate()->create([
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'cover_letter_id' => $this->cover_letter,
+            'resume_id' => $this->cv,
+        ]);
+    }
+
+    public function candidate()
+    {
+        return $this->hasOne(Candidate::class);
+    }
+
 
 }

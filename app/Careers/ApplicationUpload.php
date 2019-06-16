@@ -49,4 +49,17 @@ class ApplicationUpload extends Model
     {
         return !! Application::where($this->file_type, $this->id)->first();
     }
+
+    public function belongsToCandidate()
+    {
+        if($this->file_type === 'cv') {
+            return !! Candidate::where('resume_id', $this->id)->first();
+        }
+
+        if($this->file_type === 'cover_letter') {
+            return !! Candidate::where('cover_letter_id', $this->id)->first();
+        }
+
+        return false;
+    }
 }
