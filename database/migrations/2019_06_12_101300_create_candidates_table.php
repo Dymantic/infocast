@@ -20,8 +20,12 @@ class CreateCandidatesTable extends Migration
             $table->string('last_name');
             $table->string('phone');
             $table->string('email');
-            $table->integer('cover_letter_id')->unsigned()->nullable();
-            $table->integer('resume_id')->unsigned()->nullable();
+            $table->string('position')->nullable();
+            $table->integer('cover_letter')->unsigned()->nullable();
+            $table->integer('cv')->unsigned()->nullable();
+            $table->date('terminated_on')->nullable();
+            $table->string('terminated_by')->nullable();
+            $table->string('terminated_reason')->nullable();
             $table->timestamps();
         });
     }

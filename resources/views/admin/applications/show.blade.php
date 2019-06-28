@@ -4,6 +4,16 @@
     <div class="flex justify-between items-center">
         <h1 class="f1 normal">Application for {{ $application->posting ? $application->posting->title : '[POST DELETED]' }}</h1>
         <div class="flex justify-end items-center">
+            @if($application->isTracked())
+                <a href="/admin/candidates/{{ $application->candidate->id }}"
+                   class="btn no-underline items-center">View Candidate</a>
+            @else
+                <form action="/admin/candidates" method="POST">
+                    {!! csrf_field() !!}
+                    <input type="hidden" name="application_id" value="{{ $application->id }}">
+                    <button class="btn" type="submit">Track Candidate</button>
+                </form>
+            @endif
             <delete-modal item-name="this application" url="/admin/applications/{{ $application->id }}" :redirect="true"></delete-modal>
         </div>
     </div>

@@ -93,6 +93,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@destroy');
         Route::post('case-studies/{caseStudy}/images', 'CaseStudyBodyImagesController@store');
 
+        Route::get('candidates-tracking', 'CandidatesPageController@index');
+        Route::get('candidates/{candidate}', 'CandidatesPageController@show');
+
         Route::post('candidates', 'CandidatesController@store');
 
         Route::post('candidates/{candidate}/screened', 'ScreenedCandidatesController@store');
@@ -102,6 +105,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('candidates/{candidate}/supervisor-phone-interview', 'SupervisorPhoneInterviewController@store');
 
         Route::post('candidates/{candidate}/in-person-meeting', 'InPersonMeetingController@store');
+
+        Route::post('candidates/{candidate}/terminate', 'TerminatedCandidatesController@store');
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'services', 'namespace' => 'Services'], function() {

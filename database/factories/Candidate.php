@@ -9,6 +9,7 @@ $factory->define(\App\Careers\Candidate::class, function (Faker $faker) {
         'last_name' => $application->last_name,
         'email' => $application->email,
         'phone' => $application->phone,
-        'application_id' => $application->id
+        'application_id' => $application->id,
+        'position' => 'Sweet Job',
     ];
 });

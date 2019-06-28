@@ -59,4 +59,19 @@ class ApplicationsTest extends TestCase
 
         Storage::disk('application_uploads_test')->assertExists($letter->file_path);
     }
+
+    /**
+     *@test
+     */
+    public function an_application_knows_if_it_is_being_tracked()
+    {
+        $tracked = tap(factory(Application::class)->create(), function($application) {
+            $application->track();
+        });
+        $untracked = factory(Application::class)->create();
+
+        $this->assertTrue($tracked->isTracked());
+        $this->assertFalse($untracked->isTracked());
+
+    }
 }

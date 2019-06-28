@@ -13,6 +13,8 @@ class CandidatesController extends Controller
     {
         $application = Application::findOrFail(request('application_id'));
 
-        return $application->track();
+        $application->track();
+
+        return redirect('/admin/candidates-tracking');
     }
 }

@@ -8,14 +8,20 @@ use Illuminate\Support\Carbon;
 
 class Candidate extends Model
 {
+
+    use HasApplicationDocuments;
+
     protected $fillable = [
         'first_name',
         'last_name',
         'phone',
         'email',
-        'cover_letter_id',
-        'resume_id',
+        'cover_letter',
+        'cv',
+        'position',
     ];
+
+    protected $dates = ['terminated_on'];
 
     public function screening()
     {
@@ -103,5 +109,36 @@ class Candidate extends Model
             'marked_by' => $user->id,
             'skipped' => true
         ]);
+    }
+
+    public function terminate($terminated_by, $reason)
+    {
+        $this->terminated_on = Carbon::today();
+        $this->terminated_by = $terminated_by;
+        $this->terminated_reason = $reason;
+        $this->save();
+    }
+
+    public function isTerminated()
+    {
+        return !! $this->terminated_on;
+    }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'application_id' => $this->application_id,
+            'last_name' => $this->last_name,
+            'first_name' => $this->first_name,
+            'full_name' => $this->last_name . ', ' . $this->first_name,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'position' => $this->position,
+            'cover_letter_link' => $this->coverLetterUrl(),
+            'cover_letter_name' => $this->coverLetterName(),
+            'cv_name' => $this->resumeName(),
+            'cv_link' => $this->resumeUrl(),
+        ];
     }
 }
