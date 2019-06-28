@@ -31,12 +31,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/sullivan.jpg',
                 'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
             ],
-            [
-                'name' => 'Tony',
-                'title' => 'Backend Developer',
-                'profile' => '/images/profiles/tony.jpg',
-                'quote' => '“The first step is to establish that something is possible; then probability will occur.” - Elon Musk',
-            ],
+            
             [
                 'name' => 'Jason',
                 'title' => 'QA & Product Support',
