@@ -4,13 +4,13 @@ namespace App\Hiring;
 
 use Illuminate\Database\Eloquent\Model;
 
-class InPersonMeeting extends Model
+class JobOffer extends Model
 {
     use GetsMarkedByUser;
 
-    protected $fillable = ['met_on', 'marked_by', 'skipped'];
+    protected $fillable = ['marked_by', 'skipped', 'offered_on'];
 
     protected $casts = ['skipped' => 'boolean'];
 
-    protected $dates = ['met_on'];
+    protected $dates = ['offered_on'];
 }

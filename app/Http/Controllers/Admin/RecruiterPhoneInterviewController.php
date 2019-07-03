@@ -15,7 +15,6 @@ class RecruiterPhoneInterviewController extends Controller
         if(request('skipped', false)) {
             return $candidate->skipRecruiterPhoneInterview(request()->user());
         }
-//        $interview_date = request('interviewed_on', null);
         return $candidate->recruiterPhoneInterviewDone(request('interviewed_on'), request()->user());
     }
 }

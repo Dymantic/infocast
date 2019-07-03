@@ -26,6 +26,9 @@ class CreateCandidatesTable extends Migration
             $table->date('terminated_on')->nullable();
             $table->string('terminated_by')->nullable();
             $table->string('terminated_reason')->nullable();
+            $table->date('deadline')->nullable();
+            $table->boolean('finalised')->default(0);
+            $table->date('accepted_on')->nullable();
             $table->timestamps();
         });
     }

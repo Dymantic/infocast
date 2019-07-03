@@ -106,7 +106,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::post('candidates/{candidate}/in-person-meeting', 'InPersonMeetingController@store');
 
+        Route::post('candidates/{candidate}/job-offered', 'JobOffersController@store');
+
         Route::post('candidates/{candidate}/terminate', 'TerminatedCandidatesController@store');
+
+        Route::post('candidates/{candidate}/deadline', 'CandidateDeadlineController@store');
+
+        Route::post('candidates/{candidate}/finalise-job-offer', 'FinalisedCandidatesController@store');
+
+        Route::get('candidates/{candidate}/status', 'CandidateStatusController@show');
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'services', 'namespace' => 'Services'], function() {

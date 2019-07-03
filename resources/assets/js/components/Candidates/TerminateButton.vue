@@ -16,14 +16,14 @@
                         <input type="radio"
                                name="terminated_by"
                                v-model="terminated_by"
-                               value="infocast"
+                               value="Infocast"
                                id="infocast_terminated">
                         <label class="ml4"
                                for="self_terminated">Candidate</label>
                         <input type="radio"
                                name="terminated_by"
                                v-model="terminated_by"
-                               value="self"
+                               value="Candidate"
                                id="self_terminated">
                     </div>
                 </div>
@@ -56,7 +56,7 @@
         data() {
             return {
                 showTerminateForm: false,
-                terminated_by: 'infocast',
+                terminated_by: 'Infocast',
                 reason: ''
             };
         },
@@ -65,14 +65,19 @@
             terminateCandidate() {
                 axios.post(`/admin/candidates/${this.candidateId}/terminate`, {
                     terminated_by: this.terminated_by,
-                    terminated_reason: this.reason
+                    reason: this.reason
                 })
                     .then(({data}) => this.onTerminated(data))
-                    .catch(() => {});
+                    .catch(() => this.onFailure());
             },
 
             onTerminated() {
                 this.$emit('candidate-terminated');
+                this.showTerminateForm = false;
+            },
+
+            onFailure() {
+                this.$emit('termination-failed');
                 this.showTerminateForm = false;
             }
         }
