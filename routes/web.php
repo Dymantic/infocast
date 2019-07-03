@@ -93,7 +93,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::delete('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@destroy');
         Route::post('case-studies/{caseStudy}/images', 'CaseStudyBodyImagesController@store');
 
-        Route::get('candidates-tracking', 'CandidatesPageController@index');
+        Route::get('candidates-tracking/decided', 'DecidedCandidatesController@index');
+        Route::get('candidates-tracking/ongoing', 'OngoingCandidatesController@index');
         Route::get('candidates/{candidate}', 'CandidatesPageController@show');
 
         Route::post('candidates', 'CandidatesController@store');

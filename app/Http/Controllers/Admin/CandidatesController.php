@@ -15,6 +15,6 @@ class CandidatesController extends Controller
 
         $application->track();
 
-        return redirect('/admin/candidates-tracking');
+        return redirect('/admin/candidates-tracking/ongoing');
     }
 }

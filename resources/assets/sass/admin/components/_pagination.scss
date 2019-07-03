@@ -1,0 +1,22 @@
+.pagination {
+  list-style-type: none;
+  display: flex;
+  font-size: 150%;
+
+  li {
+    margin: 0 .75rem;
+  }
+
+  a {
+    color: $admin-dark;
+    text-decoration: none;
+  }
+
+  .page-item.active {
+    color: $admin-secondary;
+  }
+
+  .page-item.disabled {
+    color: $mid_grey;
+  }
+}

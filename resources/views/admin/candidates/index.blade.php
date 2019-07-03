@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="flex justify-between items-center">
-        <h1 class="f1 normal">Candidates</h1>
+        <h1 class="f1 normal">{{ $group }} Candidates</h1>
         <div class="flex justify-end items-center">
 
         </div>
@@ -14,14 +14,22 @@
                 <th class="tl col-grey f6 bold">Name</th>
                 <th class="tl col-grey f6 bold">Position</th>
                 <th class="tl col-grey f6 bold">Status</th>
+                <th class="tl col-grey f6 bold">Deadline</th>
             </tr>
             </thead>
             <tbody>
             @foreach($candidates as $candidate)
-                <tr>
-                    <td><a href="/admin/candidates/{{ $candidate->id }}">{{ $candidate->last_name }}, {{ $candidate->first_name }}</a></td>
+                <tr class="pb3">
+                    <td>
+                        <a href="/admin/candidates/{{ $candidate->id }}"
+                           class="col-p hov-s no-underline"
+                        >
+                            {{ $candidate->last_name . ', ' . $candidate->first_name }}
+                        </a>
+                    </td>
                     <td>{{ $candidate->position }}</td>
-                    <td></td>
+                    <td>{{ $candidate->status()['status'] }}</td>
+                    <td>{{ $candidate->status()['deadline'] }}</td>
                 </tr>
             @endforeach
 
@@ -30,6 +38,6 @@
 
     </section>
     <section>
-{{--        {!! $applications->render() !!}--}}
+        {!! $candidates->render() !!}
     </section>
 @endsection

@@ -26,6 +26,18 @@ class Candidate extends Model
 
     protected $casts = ['finalised' => 'boolean'];
 
+    public function scopeOngoing($query)
+    {
+        return $query->whereNull('terminated_on')
+            ->where('finalised', false);
+    }
+
+    public function scopeDecided($query)
+    {
+        return $query->whereNotNull('terminated_on')
+                     ->orWhere('finalised', true);
+    }
+
     public function screening()
     {
         return $this->hasOne(Screening::class);

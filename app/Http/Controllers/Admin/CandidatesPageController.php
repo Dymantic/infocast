@@ -8,11 +8,7 @@ use App\Http\Controllers\Controller;
 
 class CandidatesPageController extends Controller
 {
-    public function index()
-    {
-        $candidates = Candidate::latest()->get();
-        return view('admin.candidates.index', ['candidates' => $candidates]);
-    }
+
 
     public function show(Candidate $candidate)
     {
