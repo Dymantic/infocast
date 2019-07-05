@@ -70,12 +70,6 @@ class PagesController extends Controller
                 'quote' => '“Our virtues and our failings are inseparable, like force and matter. When they separate, man is no more.” - Nikola Tesla',
             ],
             [
-                'name' => 'Pan',
-                'title' => 'Graphic/UI Designer',
-                'profile' => '/images/profiles/pan.png',
-                'quote' => '“In every real man, a child is hidden that wants to play. ” - Friedrich Nietzsche',
-            ],
-            [
                 'name' => 'Stacy',
                 'title' => 'Office Administration',
                 'profile' => '/images/profiles/stacy.png',
