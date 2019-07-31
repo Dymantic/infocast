@@ -31,13 +31,6 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/sullivan.jpg',
                 'quote' => '“Never stop investing. Never stop improving. Never stop doing something new.” - Bob Parsons',
             ],
-            
-            [
-                'name' => 'Jason',
-                'title' => 'QA & Product Support',
-                'profile' => '/images/profiles/jason.png',
-                'quote' => '“Do not go gentle into that good night, old age should burn and rave at close of day; Rage, rage against the dying of the light.” - Dylan Thomas',
-            ],
             [
                 'name' => 'Mushin',
                 'title' => 'Product Liaison',
@@ -51,12 +44,7 @@ class PagesController extends Controller
                 'profile' => '/images/profiles/leo.png',
                 'quote' => '“When you want something, all the universe conspires in helping you to achieve it.”   – Paulo Coelho, The Alchemist',
             ],
-            [
-                'name' => 'Derek',
-                'title' => 'Business Development',
-                'profile' => '/images/profiles/derek.png',
-                'quote' => '“Innovation distinguishes between a leader and a follower.” —Steve Jobs',
-            ],
+
             [
                 'name' => 'Gary',
                 'title' => 'Data Scientist',
