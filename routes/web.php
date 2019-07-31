@@ -13,6 +13,9 @@
 
 Route::get('/', 'PagesController@home');
 
+Route::get('about', 'PagesController@about');
+Route::get('services', 'PagesController@services');
+
 Route::get('careers', 'PostingsController@index');
 Route::get('careers/{posting}/{slug?}', 'PostingsController@show');
 

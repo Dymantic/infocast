@@ -8,6 +8,10 @@
         </span>
     </div>
     <nav>
+        <a class="ph2 hov-s link ttu f6 col-grey @activeclass('services')"
+           href="/services">Services</a>
+        <a class="ph2 hov-s link ttu f6 col-grey @activeclass('about')"
+           href="/about">Our Story</a>
         <a class="ph2 hov-s link ttu f6 col-grey @activeclass('careers')"
            href="/careers">Careers</a>
         <a class="ph2 hov-s link ttu f6 col-grey @activeclass('contact')"

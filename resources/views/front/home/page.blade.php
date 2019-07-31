@@ -22,21 +22,21 @@
     </section>
     <section class="pv6">
         <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
-            Information is everywhere, deriving value from it can be challenging — at Infocast, we offer value driven data analysis and processing, giving insight and guiding decision making.
+            Information is everywhere, but deriving value from it can be challenging. At Infocast, through our unique tools and services, we offer value driven data analysis and processing, providing insight and guidance to take your decision making to the next level.
         </p>
+        <div class="tc mv4"><a href="/about">About Us</a></div>
         {{--@include('front.partials.moving-squiggle', ['classNames' => 'center mt6'])--}}
         <img src="/images/squiggle_single.png"
              alt="page section divider"
              class="db center w3 mt6"
         >
     </section>
-    <section>
-        <h3 class="tc ttu headf normal">Meet the Team</h3>
-        <div data-flickity='{"cellAlign": "left", "arrowShape": "M1.11,48.2,80.87.32a2.24,2.24,0,0,1,3.37,2V97.69a2.24,2.24,0,0,1-3.36,2L1.12,52.2A2.34,2.34,0,0,1,1.11,48.2Z", "contain": "true", "draggable": true, "groupCells": "80%"}' class="w-90 w-80-ns mw8 center mv5 pb5 pt4">
-            @foreach($team as $member)
-                @include('front.home.team-member')
-            @endforeach
-        </div>
+    <section class="pb6">
+        <h3 class="normal tc ttu headf">What we Offer</h3>
+        <p class="f4 f3-ns mh4 mv0 measure-wide center-l tc lh-max">
+            We are a modern software boutique, and have a wide range of specialized software skills and knowledge. Our services can be split into software development and architecture as a service, and information analysis using our custom built tools.
+        </p>
+        <div class="tc mv4"><a href="/services">Our Services</a></div>
     </section>
     <section class="pv5 join-us mt5">
         <h3 class="normal tc ttu headf">Join Us</h3>
