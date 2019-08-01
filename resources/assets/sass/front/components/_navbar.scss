@@ -43,6 +43,10 @@
       right: .5rem;
       height: 2px;
       background-color: currentColor;
+
+      @include respond-to(small) {
+        display: none;
+      }
     }
   }
 }
@@ -61,9 +65,9 @@
     color: $site_primary;
   }
 
-  &.scrolled {
+  &.scrolled:not(.show) {
     background-color: $site_light;
-    box-shadow: 0px 0px 5px $light_grey;
+    border-bottom: 1px solid $light_grey;
 
   }
 }
@@ -103,3 +107,4 @@
     }
   }
 }
+

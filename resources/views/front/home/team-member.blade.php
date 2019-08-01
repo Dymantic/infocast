@@ -1,4 +1,4 @@
-<div class="w-100 w-50-m w-third-ns flex flex-column justify-between items-center mb4">
+<div class="w-100 w-50-m w-third-ns flex flex-column justify-between items-center mb5" data-usher>
     <div class="ph4 tc">
         <img src="{{ $member['profile'] }}"
              alt="A profile image of {{ $member['name'] }}"

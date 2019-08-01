@@ -34,31 +34,31 @@ We offer software development and architecture as a service. We build software t
 Our custom tools and in-house research allow us to provide the following services.
         </p>
         <div class="measure-wide center">
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Text Analytics</h4>
                 <p class="lh-title">Ability to break down text into subcomponents that include proper name extraction, summarization, language identification, link analysis and categorization to help you quickly absorb only the data which is relevant to your needs</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">AI for Human Language</h4>
                 <p class="lh-title">By providing services using deep learning methodologies we are able to segment information by topic and organize it for in a way which makes sense to you.</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Entity extraction and linking</h4>
                 <p class="lh-title">Ability to identify proper names that include company names, persons, stock tickers, numerical value ranges and link analysis capable of identifying and aggregating link reoccurrence to understand why a link is popular and help you find your way to the most important data.</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Sentiment Analysis</h4>
                 <p class="lh-title">Determining by subject matter the mood of the content to help you better classify and understand your analysis</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Categorization</h4>
                 <p class="lh-title">A key component of classifying information by subject: sports, business, finance, etc or topic: green energy, financial crisis, etc.- to help you quickly identify the information you need to know to make your decisions</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Topic Extraction</h4>
                 <p class="lh-title">Another key component of classifying information is topic - entertainment, politics, industry, etc - to help you quickly extract information necessary to make informed decisions</p>
             </div>
-            <div class="service-detail mb5">
+            <div class="service-detail mb5" data-usher>
                 <h4 class="mb2 bold-type ttu">Text Summarization</h4>
                 <p class="lh-title">The ability to quickly summarize data and provide you with the key components you need to scan through only the information which is relevant to your needs</p>
             </div>

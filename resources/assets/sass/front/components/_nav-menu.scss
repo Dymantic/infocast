@@ -1,0 +1,76 @@
+.main-nav {
+  position: fixed;
+}
+
+.main-nav .nav-links {
+  @include respond-to(small) {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 70px;
+    transform: rotateX(90deg);
+    transform-origin: top center;
+    transition: .3s ease-in-out;
+    padding-bottom: 2rem;
+  }
+}
+
+.main-nav .nav-links > * {
+  @include respond-to(small) {
+    display: block;
+    text-align: right;
+    margin: 1rem;
+  }
+
+}
+
+.dark .nav-links {
+  @include respond-to(small) {
+    background: $site_primary;
+  }
+}
+
+.light .nav-links {
+  @include respond-to(small) {
+    background: $white;
+  }
+}
+
+.main-nav.show .nav-links {
+  @include respond-to(small) {
+    transform: rotateX(0);
+    border-bottom: 1px solid $light_grey;
+  }
+}
+
+.light .main-nav.show {
+  @include respond-to(small) {
+    background: $white;
+  }
+}
+
+.dark .main-nav.show {
+  @include respond-to(small) {
+    background: $site_primary;
+  }
+}
+
+.nav-trigger {
+  margin-right: 1rem;
+
+  @include respond-to(small) {
+    display: flex;
+  }
+}
+
+.dark .nav-trigger {
+  color: $white;
+}
+
+.light .nav-trigger {
+  color: $site_primary;
+}
+
+.show .nav-trigger svg {
+  transform: scale(1,-1);
+}

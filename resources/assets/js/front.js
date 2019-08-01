@@ -24,6 +24,8 @@ if (token) {
 
 window.Vue = require('vue');
 
+import Menu from "./components/Menu";
+import Usher from "./components/Usher";
 import swal from "sweetalert";
 window.swal = swal;
 
@@ -69,3 +71,7 @@ window.addEventListener('scroll', throttle(() => {
         document.querySelector('.main-nav').classList.remove('scrolled');
     }
 }, 150));
+
+const menu = new Menu();
+menu.init();
+new Usher();
