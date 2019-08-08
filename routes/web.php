@@ -92,6 +92,30 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
         Route::post('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@store');
         Route::delete('case-studies/{caseStudy}/title-image', 'CaseStudyTitleImageController@destroy');
         Route::post('case-studies/{caseStudy}/images', 'CaseStudyBodyImagesController@store');
+
+        Route::get('candidates-tracking/decided', 'DecidedCandidatesController@index');
+        Route::get('candidates-tracking/ongoing', 'OngoingCandidatesController@index');
+        Route::get('candidates/{candidate}', 'CandidatesPageController@show');
+
+        Route::post('candidates', 'CandidatesController@store');
+
+        Route::post('candidates/{candidate}/screened', 'ScreenedCandidatesController@store');
+
+        Route::post('candidates/{candidate}/recruiter-phone-interview', 'RecruiterPhoneInterviewController@store');
+
+        Route::post('candidates/{candidate}/supervisor-phone-interview', 'SupervisorPhoneInterviewController@store');
+
+        Route::post('candidates/{candidate}/in-person-meeting', 'InPersonMeetingController@store');
+
+        Route::post('candidates/{candidate}/job-offered', 'JobOffersController@store');
+
+        Route::post('candidates/{candidate}/terminate', 'TerminatedCandidatesController@store');
+
+        Route::post('candidates/{candidate}/deadline', 'CandidateDeadlineController@store');
+
+        Route::post('candidates/{candidate}/finalise-job-offer', 'FinalisedCandidatesController@store');
+
+        Route::get('candidates/{candidate}/status', 'CandidateStatusController@show');
     });
 
     Route::group(['middleware' => 'auth', 'prefix' => 'services', 'namespace' => 'Services'], function() {

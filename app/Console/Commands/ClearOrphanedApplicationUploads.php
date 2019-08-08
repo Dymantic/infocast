@@ -37,6 +37,9 @@ class ClearOrphanedApplicationUploads extends Command
                          })
                          ->filter(function ($upload) {
                              return !$upload->belongsToSubmittedApplication();
+                         })
+                         ->filter(function ($upload) {
+                             return !$upload->belongsToCandidate();
                          })->each->delete();
     }
 }

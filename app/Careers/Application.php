@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Application extends Model
 {
+    use HasApplicationDocuments;
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -51,51 +53,29 @@ class Application extends Model
         return $avatar ? $this->createFileName($avatar->file_path, 'avatar') : null;
     }
 
-    public function coverLetter()
+
+
+    public function track()
     {
-        return $this->belongsTo(ApplicationUpload::class, 'cover_letter');
+        return $this->candidate()->create([
+            'first_name' => $this->first_name,
+            'last_name' => $this->last_name,
+            'phone' => $this->phone,
+            'email' => $this->email,
+            'cover_letter' => $this->cover_letter,
+            'cv' => $this->cv,
+            'position' => $this->posting->title,
+        ]);
     }
 
-    public function coverLetterUrl()
+    public function candidate()
     {
-        $letter = $this->coverLetter()->first();
-
-        return $letter ? '/application_uploads/' . $letter->file_path : null;
+        return $this->hasOne(Candidate::class);
     }
 
-    public function coverLetterName()
+    public function isTracked()
     {
-        $letter = $this->coverLetter()->first();
-
-        return $letter ? $this->createFileName($letter->file_path, 'cover_letter') : null;
-    }
-
-    public function resume()
-    {
-        return $this->belongsTo(ApplicationUpload::class, 'cv');
-    }
-
-    public function resumeUrl()
-    {
-        $cv = $this->resume()->first();
-
-        return $cv ? '/application_uploads/' . $cv->file_path : null;
-    }
-
-    public function resumeName()
-    {
-        $cv = $this->resume()->first();
-
-        return $cv ? $this->createFileName($cv->file_path, 'cv') : null;
-    }
-
-    private function createFileName($original, $type)
-    {
-        $firstName = strtolower(preg_replace('/[^A-Za-z]/', '', $this->first_name));
-        $lastName = strtolower(preg_replace('/[^A-Za-z]/', '', $this->last_name));
-        $extension = collect(explode('.', $original))->last();
-
-        return "{$firstName}_{$lastName}_{$type}.{$extension}";
+        return !! $this->candidate;
     }
 
 
