@@ -13,8 +13,13 @@
             <tr>
                 <th class="tl col-grey f6 bold">Name</th>
                 <th class="tl col-grey f6 bold">Position</th>
+                @if($group === 'Ongoing')
                 <th class="tl col-grey f6 bold">Status</th>
                 <th class="tl col-grey f6 bold">Deadline</th>
+                @else
+                <th class="tl col-grey f6 bold">Decided By</th>
+                <th class="tl col-grey f6 bold">Reason</th>
+                @endif
             </tr>
             </thead>
             <tbody>
@@ -28,8 +33,13 @@
                         </a>
                     </td>
                     <td>{{ $candidate->position }}</td>
+                    @if($group === 'Ongoing')
                     <td>{{ $candidate->status()['status'] }}</td>
                     <td>{{ $candidate->status()['deadline'] }}</td>
+                    @else
+                    <td>{{ $candidate->terminated_by }}</td>
+                    <td>{{ $candidate->terminated_reason ?? 'None given' }}</td>
+                    @endif
                 </tr>
             @endforeach
 
