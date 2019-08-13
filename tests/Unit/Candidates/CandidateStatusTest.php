@@ -101,6 +101,48 @@ class CandidateStatusTest extends TestCase
             'terminated_reason' => null,
             'deadline' => null,
             'next_milestone' => [
+                'name' => 'Aptitude Test',
+                'url' => '/admin/candidates/' . $candidate->id . '/aptitude-test',
+                'date_field_name' => 'tested_on',
+            ],
+            'completed_milestones' => [
+                [
+                    'name' => 'Initial Screening',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ]
+            ]
+        ];
+
+        $this->assertEquals($expected, $candidate->status());
+    }
+
+    /**
+     *@test
+     */
+    public function passed_aptitude_test()
+    {
+        $hr = factory(User::class)->create();
+        $candidate = factory(Candidate::class)->create();
+
+        $this->assertNull($candidate->terminated_on);
+
+        $candidate->markAsScreened(Carbon::today(), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
+
+        $expected = [
+            'status' => 'ongoing',
+            'finalised' => false,
+            'accepted' => false,
+            'ongoing' => true,
+            'job_offered' => false,
+            'terminated' => false,
+            'terminated_on' => null,
+            'terminated_by' => null,
+            'terminated_reason' => null,
+            'deadline' => null,
+            'next_milestone' => [
                 'name' => 'Phone Interview (Recruiter)',
                 'url' => '/admin/candidates/' . $candidate->id . '/recruiter-phone-interview',
                 'date_field_name' => 'interviewed_on',
@@ -108,6 +150,12 @@ class CandidateStatusTest extends TestCase
             'completed_milestones' => [
                 [
                     'name' => 'Initial Screening',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
+                    'name' => 'Aptitude Test',
                     'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false,
@@ -129,6 +177,7 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::yesterday(), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today(), $hr);
 
         $expected = [
@@ -155,6 +204,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
@@ -177,6 +232,7 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::yesterday(), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today(), $hr);
         $candidate->terminate('self', 'test reason');
 
@@ -204,6 +260,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
@@ -226,6 +288,7 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::today()->subDays(2), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(1), $hr);
         $candidate->supervisorPhoneInterviewDone(Carbon::today(), $hr);
 
@@ -249,6 +312,12 @@ class CandidateStatusTest extends TestCase
                 [
                     'name' => 'Initial Screening',
                     'date' => Carbon::today()->subDays(2)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false,
                 ],
@@ -281,9 +350,80 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::today()->subDays(3), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(2), $hr);
         $candidate->supervisorPhoneInterviewDone(Carbon::today()->subDays(1), $hr);
         $candidate->inPersonMeetingDone(Carbon::today(), $hr);
+
+        $expected = [
+            'status' => 'under consideration',
+            'finalised' => false,
+            'accepted' => false,
+            'ongoing' => true,
+            'job_offered' => false,
+            'terminated' => false,
+            'terminated_on' => null,
+            'terminated_by' => null,
+            'terminated_reason' => null,
+            'deadline' => null,
+            'next_milestone' => [
+                'name' => 'Reference Check',
+                'url' => '/admin/candidates/' . $candidate->id . '/reference-check',
+                'date_field_name' => 'checked_on',
+            ],
+            'completed_milestones' => [
+                [
+                    'name' => 'Initial Screening',
+                    'date' => Carbon::today()->subDays(3)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
+                    'name' => 'Phone Interview (Recruiter)',
+                    'date' => Carbon::today()->subDays(2)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
+                    'name' => 'Phone Interview (Supervisor)',
+                    'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
+                    'name' => 'In-person Meeting',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+            ]
+        ];
+
+        $this->assertEquals($expected, $candidate->status());
+    }
+
+    /**
+     *@test
+     */
+    public function reference_check_done()
+    {
+        $hr = factory(User::class)->create();
+        $candidate = factory(Candidate::class)->create();
+
+        $this->assertNull($candidate->terminated_on);
+
+        $candidate->markAsScreened(Carbon::today()->subDays(3), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
+        $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(2), $hr);
+        $candidate->supervisorPhoneInterviewDone(Carbon::today()->subDays(1), $hr);
+        $candidate->inPersonMeetingDone(Carbon::today(), $hr);
+        $candidate->referenceCheckOkay(Carbon::today(), $hr);
 
         $expected = [
             'status' => 'under consideration',
@@ -309,6 +449,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->subDays(2)->format('Y-m-d'),
                     'by' => $hr->name,
@@ -322,6 +468,12 @@ class CandidateStatusTest extends TestCase
                 ],
                 [
                     'name' => 'In-person Meeting',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
+                    'name' => 'Reference Check',
                     'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false
@@ -343,9 +495,11 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::today()->subDays(4), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(3), $hr);
         $candidate->supervisorPhoneInterviewDone(Carbon::today()->subDays(2), $hr);
         $candidate->inPersonMeetingDone(Carbon::today()->subDays(1), $hr);
+        $candidate->referenceCheckOkay(Carbon::today()->subDays(1), $hr);
         $candidate->offerJob(Carbon::today(), $hr);
 
         $expected = [
@@ -368,6 +522,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->subDays(3)->format('Y-m-d'),
                     'by' => $hr->name,
@@ -386,11 +546,18 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false
                 ],
                 [
+                    'name' => 'Reference Check',
+                    'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
                     'name' => 'Job Offered',
                     'date' => Carbon::today()->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false
                 ],
+
             ]
         ];
 
@@ -408,9 +575,11 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::today()->subDays(4), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(3), $hr);
         $candidate->supervisorPhoneInterviewDone(Carbon::today()->subDays(2), $hr);
         $candidate->inPersonMeetingDone(Carbon::today()->subDays(1), $hr);
+        $candidate->referenceCheckOkay(Carbon::today()->subDays(1), $hr);
         $candidate->offerJob(Carbon::today(), $hr);
         $candidate->finalise(true);
 
@@ -434,6 +603,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->subDays(3)->format('Y-m-d'),
                     'by' => $hr->name,
@@ -447,6 +622,12 @@ class CandidateStatusTest extends TestCase
                 ],
                 [
                     'name' => 'In-person Meeting',
+                    'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
+                    'name' => 'Reference Check',
                     'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false
@@ -474,9 +655,11 @@ class CandidateStatusTest extends TestCase
         $this->assertNull($candidate->terminated_on);
 
         $candidate->markAsScreened(Carbon::today()->subDays(4), $hr);
+        $candidate->passedAptitudeTest(Carbon::today(), $hr);
         $candidate->recruiterPhoneInterviewDone(Carbon::today()->subDays(3), $hr);
         $candidate->supervisorPhoneInterviewDone(Carbon::today()->subDays(2), $hr);
         $candidate->inPersonMeetingDone(Carbon::today()->subDays(1), $hr);
+        $candidate->referenceCheckOkay(Carbon::today()->subDays(1), $hr);
         $candidate->offerJob(Carbon::today(), $hr);
         $candidate->finalise(false);
 
@@ -500,6 +683,12 @@ class CandidateStatusTest extends TestCase
                     'skipped' => false,
                 ],
                 [
+                    'name' => 'Aptitude Test',
+                    'date' => Carbon::today()->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false,
+                ],
+                [
                     'name' => 'Phone Interview (Recruiter)',
                     'date' => Carbon::today()->subDays(3)->format('Y-m-d'),
                     'by' => $hr->name,
@@ -513,6 +702,12 @@ class CandidateStatusTest extends TestCase
                 ],
                 [
                     'name' => 'In-person Meeting',
+                    'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
+                    'by' => $hr->name,
+                    'skipped' => false
+                ],
+                [
+                    'name' => 'Reference Check',
                     'date' => Carbon::today()->subDays(1)->format('Y-m-d'),
                     'by' => $hr->name,
                     'skipped' => false

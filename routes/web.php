@@ -101,11 +101,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 
         Route::post('candidates/{candidate}/screened', 'ScreenedCandidatesController@store');
 
+        Route::post('candidates/{candidate}/aptitude-test', 'AptitudeTestController@store');
+
         Route::post('candidates/{candidate}/recruiter-phone-interview', 'RecruiterPhoneInterviewController@store');
 
         Route::post('candidates/{candidate}/supervisor-phone-interview', 'SupervisorPhoneInterviewController@store');
 
         Route::post('candidates/{candidate}/in-person-meeting', 'InPersonMeetingController@store');
+
+        Route::post('candidates/{candidate}/reference-check', 'ReferenceCheckController@store');
 
         Route::post('candidates/{candidate}/job-offered', 'JobOffersController@store');
 

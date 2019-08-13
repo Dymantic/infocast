@@ -38,6 +38,36 @@ class CandidatesTest extends TestCase
     /**
      *@test
      */
+    public function aptitude_test_done()
+    {
+        $candidate = factory(Candidate::class)->create();
+        $hr = factory(User::class)->create(['superadmin' => false]);
+
+        $aptitude_test = $candidate->passedAptitudeTest(Carbon::today(), $hr)->fresh();
+        $this->assertEquals($candidate->id, $aptitude_test->candidate_id);
+        $this->assertTrue(Carbon::today()->isSameDay($aptitude_test->tested_on));
+        $this->assertEquals($hr->id, $aptitude_test->marked_by);
+        $this->assertFalse($aptitude_test->skipped);
+    }
+
+    /**
+     *@test
+     */
+    public function skip_aptitude_test()
+    {
+        $candidate = factory(Candidate::class)->create();
+        $hr = factory(User::class)->create(['superadmin' => false]);
+
+        $aptitude_test = $candidate->skipAptitudeTest($hr)->fresh();
+        $this->assertEquals($candidate->id, $aptitude_test->candidate_id);
+        $this->assertTrue(Carbon::today()->isSameDay($aptitude_test->tested_on));
+        $this->assertEquals($hr->id, $aptitude_test->marked_by);
+        $this->assertTrue($aptitude_test->skipped);
+    }
+
+    /**
+     *@test
+     */
     public function recruiter_phone_interview_done()
     {
         $candidate = factory(Candidate::class)->create();
@@ -129,6 +159,38 @@ class CandidatesTest extends TestCase
         $this->assertTrue(Carbon::today()->isSameDay($meeting->met_on));
         $this->assertEquals($hr->id, $meeting->marked_by);
         $this->assertTrue($meeting->skipped);
+    }
+
+    /**
+     *@test
+     */
+    public function reference_check_okay()
+    {
+        $candidate = factory(Candidate::class)->create();
+        $hr = factory(User::class)->create(['superadmin' => false]);
+
+        $check = $candidate->referenceCheckOkay(Carbon::today(), $hr)->fresh();
+
+        $this->assertEquals($candidate->id, $check->candidate_id);
+        $this->assertTrue(Carbon::today()->isSameDay($check->checked_on));
+        $this->assertEquals($hr->id, $check->marked_by);
+        $this->assertFalse($check->skipped);
+    }
+
+    /**
+     *@test
+     */
+    public function skip_reference_check()
+    {
+        $candidate = factory(Candidate::class)->create();
+        $hr = factory(User::class)->create(['superadmin' => false]);
+
+        $check = $candidate->skipReferenceCheck($hr)->fresh();
+
+        $this->assertEquals($candidate->id, $check->candidate_id);
+        $this->assertTrue(Carbon::today()->isSameDay($check->checked_on));
+        $this->assertEquals($hr->id, $check->marked_by);
+        $this->assertTrue($check->skipped);
     }
 
     /**

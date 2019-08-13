@@ -2,7 +2,9 @@
 
 namespace App\Careers;
 
+use App\Hiring\AptitudeTest;
 use App\Hiring\JobOffer;
+use App\Hiring\ReferenceCheck;
 use App\Hiring\Screening;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
@@ -57,6 +59,28 @@ class Candidate extends Model
             'screened_on' => Carbon::today(),
             'marked_by'   => $user->id,
             'skipped'     => true,
+        ]);
+    }
+
+    public function aptitudeTest()
+    {
+        return $this->hasOne(AptitudeTest::class);
+    }
+
+    public function passedAptitudeTest($date, $user)
+    {
+        return $this->aptitudeTest()->create([
+            'tested_on' => Carbon::parse($date),
+            'marked_by' => $user->id,
+        ]);
+    }
+
+    public function skipAptitudeTest($user)
+    {
+        return $this->aptitudeTest()->create([
+            'tested_on' => Carbon::today(),
+            'marked_by' => $user->id,
+            'skipped' => true,
         ]);
     }
 
@@ -123,6 +147,28 @@ class Candidate extends Model
             'met_on'    => Carbon::today(),
             'marked_by' => $user->id,
             'skipped'   => true
+        ]);
+    }
+
+    public function referenceCheck()
+    {
+        return $this->hasOne(ReferenceCheck::class);
+    }
+
+    public function referenceCheckOkay($date, $user)
+    {
+        return $this->referenceCheck()->create([
+            'checked_on' => Carbon::parse($date),
+            'marked_by' => $user->id
+        ]);
+    }
+
+    public function skipReferenceCheck($user)
+    {
+        return $this->referenceCheck()->create([
+            'checked_on' => Carbon::today(),
+            'marked_by' => $user->id,
+            'skipped' => true,
         ]);
     }
 
@@ -258,6 +304,14 @@ class Candidate extends Model
             ];
         }
 
+        if(!$this->aptitudeTest) {
+            return [
+                'name'            => 'Aptitude Test',
+                'url'             => "/admin/candidates/{$this->id}/aptitude-test",
+                'date_field_name' => 'tested_on',
+            ];
+        }
+
         if (!$this->recruiterPhoneInterview) {
             return [
                 'name'            => 'Phone Interview (Recruiter)',
@@ -282,6 +336,14 @@ class Candidate extends Model
             ];
         }
 
+        if (!$this->referenceCheck) {
+            return [
+                'name'            => 'Reference Check',
+                'url'             => "/admin/candidates/{$this->id}/reference-check",
+                'date_field_name' => 'checked_on',
+            ];
+        }
+
         if (!$this->jobOffer) {
             return [
                 'name'            => 'Job Offer',
@@ -302,6 +364,15 @@ class Candidate extends Model
                 'date'    => $this->screening->screened_on->format('Y-m-d'),
                 'by'      => $this->screening->userName(),
                 'skipped' => $this->screening->skipped,
+            ]);
+        }
+
+        if($this->aptitudeTest) {
+            $completed->push([
+                'name'    => 'Aptitude Test',
+                'date'    => $this->aptitudeTest->tested_on->format('Y-m-d'),
+                'by'      => $this->aptitudeTest->userName(),
+                'skipped' => $this->aptitudeTest->skipped,
             ]);
         }
 
@@ -329,6 +400,15 @@ class Candidate extends Model
                 'date'    => $this->inPersonMeeting->met_on->format('Y-m-d'),
                 'by'      => $this->inPersonMeeting->userName(),
                 'skipped' => $this->inPersonMeeting->skipped,
+            ]);
+        }
+
+        if ($this->referenceCheck) {
+            $completed->push([
+                'name'    => 'Reference Check',
+                'date'    => $this->referenceCheck->checked_on->format('Y-m-d'),
+                'by'      => $this->referenceCheck->userName(),
+                'skipped' => $this->referenceCheck->skipped,
             ]);
         }
 
