@@ -7,8 +7,8 @@
         >
         <div class="mt4 flex flex-column flex-row-ns justify-center items-center">
             <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">Home</a>
-            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">About</a>
-            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">Services</a>
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/about">About</a>
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/services">Services</a>
             <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/careers">Careers</a>
             <a class="mb3 link bold-type pr3 hov-s col-w mh2 f6" href="/contact">Contact</a>
         </div>

@@ -8,13 +8,13 @@
         </span>
     </div>
     <nav class="nav-links">
-        <a class="ph2 bold-type hov-s link f6 col-grey @activeclass('about')"
+        <a class="ph2 bold-type hov-s link f4 f6-ns col-grey @activeclass('about')"
            href="/about">About Us</a>
-        <a class="ph2 bold-type hov-s link f6 col-grey @activeclass('services')"
+        <a class="ph2 bold-type hov-s link f4 f6-ns col-grey @activeclass('services')"
            href="/services">Services</a>
-        <a class="ph2 bold-type hov-s link f6 col-grey @activeclass('careers')"
+        <a class="ph2 bold-type hov-s link f4 f6-ns col-grey @activeclass('careers')"
            href="/careers">Careers</a>
-        <a class="ph2 bold-type hov-s link f6 col-grey @activeclass('contact')"
+        <a class="ph2 bold-type hov-s link f4 f6-ns col-grey @activeclass('contact')"
            href="/contact">Contact</a>
     </nav>
     <div class="nav-trigger dn items-center bold-type">

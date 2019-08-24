@@ -18,7 +18,7 @@
     </section>
     <section class="pv5">
         @if($postings->count() > 0)
-            <p class="tc headf lh-max">These positions are available now.</p>
+            <p class="tc headf lh-max ph4">These positions are available now.</p>
         @else
             <p class="tc f4 f3-ns mw7 lh-max center-ns">
                 We currently don't have any positions available. Feel free to get in

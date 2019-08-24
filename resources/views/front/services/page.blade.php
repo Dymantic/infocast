@@ -18,7 +18,7 @@
     @include('front.partials.bottom-wave')
 
     <section class="pv5">
-        <h3 class="normal tc headf">Proprietary analysis services</h3>
+        <h3 class="normal tc headf ph4">Proprietary analysis services</h3>
         <p class="f4 f3-ns mh4 mb5 tc measure-wide center-l lh-max">
             With our custom built tools for data-gathering, classification and analysis, users are able to analyze information for any market sector, helping you with the following.
         </p>
