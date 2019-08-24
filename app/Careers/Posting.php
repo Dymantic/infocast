@@ -4,6 +4,7 @@ namespace App\Careers;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Posting extends Model
 {
@@ -52,6 +53,11 @@ class Posting extends Model
     protected $attributes = [
         'application_fields' => '{}'
     ];
+
+    public function getSlugAttribute()
+    {
+        return Str::slug($this->title);
+    }
 
     public function scopeLive($query)
     {

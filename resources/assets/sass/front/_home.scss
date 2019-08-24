@@ -4,5 +4,7 @@
 }
 
 .home-page .banner {
-  background: linear-gradient($site_primary 30%, #004259 80%, $site_primary);
+  background: url('./images/infocast_banner.png'), linear-gradient($site_primary 30%, #004259 80%, $site_primary);
+  background-size: cover;
+
 }

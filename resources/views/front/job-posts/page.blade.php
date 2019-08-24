@@ -54,7 +54,7 @@
         </div>
         @endif
         <div class="flex flex-column items-center mv5">
-            <a class="f3 ttu col-p ba dib center link hov-r col-s pv2 ph4" href="/postings/{{ $posting->id }}/application">Apply for this job</a>
+            <a class="text-link col-s hov-r" href="/postings/{{ $posting->id }}/application">Apply for this job</a>
             <a class="link col-p mt4 ttu bold-type f6 hov-pll" href="/careers">&larr; Back to job listings</a>
         </div>
     </section>

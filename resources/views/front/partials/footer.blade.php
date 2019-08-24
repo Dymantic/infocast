@@ -5,13 +5,17 @@
              width="250px"
              class="mw-90 center"
         >
-        <div class="mt2">
-            <a class="link hov-s col-w mh2 f6 ttu" href="/">Home</a>
-            <a class="link hov-s col-w mh2 f6 ttu" href="/careers">Careers</a>
-            <a class="link hov-s col-w mh2 f6 ttu" href="/contact">Contact</a>
+        <div class="mt4 flex flex-column flex-row-ns justify-center items-center">
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">Home</a>
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">About</a>
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/">Services</a>
+            <a class="mb3 link br-ns bold-type b--white pr3 hov-s col-w mh2 f6" href="/careers">Careers</a>
+            <a class="mb3 link bold-type pr3 hov-s col-w mh2 f6" href="/contact">Contact</a>
         </div>
     </div>
 
-    <p class="col-w tc f6">&copy; Copyright {{ (new DateTime())->format('Y') }}. All rights reserved. Brilliantly built by
-        <a href="https://dymanticdesign.com" class="link col-w hov-dd">Dymantic Design.</a></p>
+    <div class="col-w tc f6 flex flex-column flex-row-ns pb2">
+        <span>&copy; Copyright {{ (new DateTime())->format('Y') }}. All rights reserved. </span>
+        <span class="ml2">Brilliantly built by <a href="https://dymanticdesign.com" class="link col-w hov-dd"> Dymantic Design.</a></span>
+    </div>
 </footer>

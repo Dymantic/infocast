@@ -1,4 +1,4 @@
-@extends('front.base', ['pageName' => 'careers-page dark'])
+@extends('front.base', ['pageName' => 'careers-page light'])
 
 @section('title')
     We're Hiring! Join us at Infocast
@@ -13,12 +13,12 @@
 @endsection
 
 @section('content')
-    <section class="banner flex justify-center items-center col-pl-bg">
+    <section class="banner flex justify-center items-center">
         <p class="col-r f-headline-ns f1 tc bold-type tracked-tight">Join the party.</p>
     </section>
     <section class="pv5">
         @if($postings->count() > 0)
-            <p class="tc f4 f3-ns lh-max">These positions are available now.</p>
+            <p class="tc headf lh-max">These positions are available now.</p>
         @else
             <p class="tc f4 f3-ns mw7 lh-max center-ns">
                 We currently don't have any positions available. Feel free to get in

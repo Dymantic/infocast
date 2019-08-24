@@ -74,7 +74,7 @@
             </div>
             <div class="mw6 center tc mv5">
                 <button type="submit"
-                        class="f3 ttu col-p dib center reg-type link col-s pv2 ph4 col-w-bg">Submit Inquiry
+                        class="text-link col-s hov-r bn">Submit Inquiry
                 </button>
             </div>
         </form>
@@ -133,19 +133,3 @@
     }
 </script>
 
-<style scoped
-       lang="scss"
-       type="text/scss">
-
-    @import "~@/_variables.scss";
-
-    button[type=submit] {
-        border: 1px solid $site_secondary;
-
-        &:hover {
-            background-color: $site_light;
-            color: $site_red;
-            border-color: $site_red;
-        }
-    }
-</style>

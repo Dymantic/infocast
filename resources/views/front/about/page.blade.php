@@ -1,18 +1,10 @@
-@extends('front.base', ['pageName' => 'dark'])
+@extends('front.base', ['pageName' => 'light'])
 
 @section('content')
-    <section class="banner col-p-bg flex flex-column justify-center items-center">
-
-    </section>
-    <section class="pv6">
-        <p class="f4 f3-ns mh4 mb3 measure-wide center-l lh-max">
-            Infocast started as a services company offering software development and technical solutions focusing on data gathering, analysis and automation.
-        </p>
-        <p class="f4 f3-ns mh4 mb3 measure-wide center-l lh-max">
-            As we evolved, together with our team, collaborators, and clients,  we  developed reliable and scalable software, and analytic tools with usability and efficiency in mind.
-        </p>
-        <p class="f4 f3-ns mh4 mb3 measure-wide center-l lh-max">
-            Our central focus is to provide ease of use tools and on demand data-gathering processes that lead to dynamic analysis  covering  automation, classification, image/text processing,  link-analysis,  and visualization.
+    <section class="pv6 about-banner">
+        <h3 class="normal tc head0 mt0">A brief history of time</h3>
+        <p class="f4 f3-ns tc mh4 mb3 measure-wide center-l lh-max">
+            Infocast started as a services company offering software development and technical solutions focusing on data gathering, analysis and automation. As we evolved, together with our team, collaborators, and clients,  we  developed reliable and scalable software, and analytic tools with usability and efficiency in mind. Our central focus is to provide ease of use tools and on demand data-gathering processes that lead to dynamic analysis  covering  automation, classification, image/text processing,  link-analysis,  and visualization.
         </p>
     </section>
 {{--    <section>--}}
@@ -24,7 +16,7 @@
 {{--        </div>--}}
 {{--    </section>--}}
     <section>
-        <h3 class="tc ttu headf normal">Meet the Team</h3>
+        <h3 class="tc head0 normal">Meet the team</h3>
         <div class="w-90 w-80-ns mw8 center mv5 pb5 pt4 flex flex-wrap justify-around">
             @foreach($team as $member)
                 @include('front.home.team-member')

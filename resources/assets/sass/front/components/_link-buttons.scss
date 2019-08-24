@@ -1,0 +1,12 @@
+.text-link {
+  font-family: $site_bold_font;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &::after {
+    content: "\003e";
+    padding-left: 8px;
+  }
+}
+

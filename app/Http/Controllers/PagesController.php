@@ -97,7 +97,33 @@ class PagesController extends Controller
 
     public function services()
     {
-        return view('front.services.page');
+        $service_points = [
+            [
+                'heading' => 'See The Big Picture, Understand the Story',
+                'content' => 'Ability to break down text into subcomponents that include proper name extraction, summarization, language identification, link analysis and categorization to help you absorb only the relevant  data.',
+            ],
+            [
+                'heading' => 'Understand the Essence',
+                'content' => 'Using deep learning methodologies, we segment information by topic and organize it in a way that makes sense to you.',
+            ],
+            [
+                'heading' => 'Identify key Players and Elements - See How Things Relate',
+                'content' => 'Ability to identify proper names that include company names, persons, stock tickers, numerical value ranges and link analysis capable of identifying and aggregating link recurrence to understand why a link is popular and help you find your way to the most important data.',
+            ],
+            [
+                'heading' => 'Check the Mood',
+                'content' => 'Utilizing sentiment analysis to determine the mood of the content.',
+            ],
+            [
+                'heading' => 'Classifying & Topic Extraction',
+                'content' => 'Organizing information to derived topics and identify targeted information for decision making process.',
+            ],
+            [
+                'heading' => 'Get To the Point',
+                'content' => 'The ability to quickly summarize data and provide key components you need to scan through only the relevant information.',
+            ],
+        ];
+        return view('front.services.page', ['service_points' => $service_points]);
     }
 
     public function thanks()
