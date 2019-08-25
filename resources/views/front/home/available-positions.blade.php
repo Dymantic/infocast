@@ -1,4 +1,5 @@
-<section class="pb6">
+<section class="pb6 relative">
+    @include('svg-decorations.wave_1', ['classes' => 'dn db-ns decoration d-right d-bottom-0 h3 mb4'])
     <h3 class="normal mt0 tc headf mb6">Available Positions</h3>
     @if($postings->count() > 0)
         <div class="mw8 flex flex-wrap justify-between center mt5">

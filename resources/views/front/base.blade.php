@@ -25,11 +25,11 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 <div id="app" class="flex-auto">
-    @include('front.partials.navbar')
+
     @yield('content')
 </div>
 @include('front.partials.footer')
-
+@include('front.partials.navbar')
 
 
 

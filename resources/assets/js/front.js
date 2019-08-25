@@ -70,7 +70,7 @@ window.addEventListener('scroll', throttle(() => {
     } else {
         document.querySelector('.main-nav').classList.remove('scrolled');
     }
-}, 150));
+}, 250));
 
 const menu = new Menu();
 menu.init();

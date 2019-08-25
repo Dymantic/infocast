@@ -74,7 +74,7 @@
             </div>
             <div class="mw6 center tc mv5">
                 <button type="submit"
-                        class="text-link col-s hov-r bn">Submit Inquiry
+                        class="text-link col-w-bg col-s hov-r bn">Submit Inquiry
                 </button>
             </div>
         </form>

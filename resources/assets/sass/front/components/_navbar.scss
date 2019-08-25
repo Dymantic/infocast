@@ -1,5 +1,9 @@
+.home-page .main-nav {
+  background-color: $site_primary;
+}
+
 .main-nav {
-  background-color: transparent;
+  background-color: rgba(24,50,66,0);
   box-shadow: none;
   z-index: 10;
   height: 70px;

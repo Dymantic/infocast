@@ -28,7 +28,7 @@
         @endif
     </section>
     <section class="pb6">
-        <div class="mw8 flex flex-wrap justify-between center mt5">
+        <div class="mw8 jobs-grid center mt5">
             @foreach($postings as $posting)
                 @include('front.home.job-card')
             @endforeach

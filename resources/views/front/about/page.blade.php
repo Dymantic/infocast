@@ -17,7 +17,7 @@
 {{--    </section>--}}
     <section>
         <h3 class="tc head0 normal">Meet the team</h3>
-        <div class="w-90 w-80-ns mw8 center mv5 pb5 pt4 flex flex-wrap justify-around">
+        <div class="w-90 w-80-ns mw8 center mv5 pb5 pt4 team-grid">
             @foreach($team as $member)
                 @include('front.home.team-member')
             @endforeach
