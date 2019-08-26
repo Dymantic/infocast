@@ -8,7 +8,7 @@
         </p>
     </section>
 {{--    @include('front.partials.top-wave')--}}
-    <section class="pv6">
+    <section class="pb6 pt4">
         <div class="center col-mb-bg h4 w4 flex items-center justify-center br-100" data-usher>
             <p class="huge-type bold-type col-w">1.</p>
         </div>
@@ -20,7 +20,7 @@
     </section>
 {{--    @include('front.partials.bottom-wave')--}}
 
-    <section class="pv5">
+    <section class="pb5">
         <div class="center col-mb-bg h4 w4 flex items-center justify-center br-100" data-usher>
             <p class="huge-type bold-type col-w">2.</p>
         </div>
