@@ -1,8 +1,12 @@
-<section class="pt6 pb4 relative">
-    @include('svg-decorations.lines_3', ['classes' => 'dn db-l decoration d-left d-top-30 h3'])
-    @include('svg-decorations.dots_2', ['classes' => 'dn db-l decoration d-right d-bottom-20 h3'])
+<section class="pt5 pb4 relative">
+    @include('svg-decorations.dots_3', ['classes' => 'dn db-l decoration d-left d-top-30 h3'])
+    @include('svg-decorations.lines_2', ['classes' => 'dn db-l decoration d-right d-bottom-20 h3'])
+    <div class="big-quote mb6 ph5">
+        <p class="quote-text f3 f2-ns measure center mb2">Getting information off the Internet is like taking a drink from a firehose.</p>
+        <p class="tr"> - Tim Berners-Lee, inventor of the World Wide Web</p>
+    </div>
     <p class="f4 f3-ns mh4 mb5 measure-wide center-l tc lh-max">
-        Information is everywhere, but deriving value from it can be challenging. At Infocast, through our unique tools and services, we offer value driven data analysis and processing, providing insight and guidance to take your decision making to the next level.
+        We strive to provide context and meaning to the vast array of unorganized information on the web by reducing cost and technical barriers in data mining processing.
     </p>
     <div class="tc mv4"><a class="text-link col-s hov-r" href="/about">About Us</a></div>
 

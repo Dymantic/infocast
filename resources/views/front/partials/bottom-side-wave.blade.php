@@ -1,0 +1,1 @@
+<div class="banner-wave-container" ><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;"><path d="M0.57,3.47 C240.40,-21.20 309.25,241.28 500.56,62.66 L500.56,-1.47 L-0.56,-0.48 Z" style="stroke: none; fill: #183242;"></path></svg></div>

@@ -1,12 +1,12 @@
 .about-banner {
-  background-image: url(./images/infocast_banner_about.png);
-  background-size: 100%;
-  background-position-y: 100px;
-  background-repeat: no-repeat;
-
-  @include respond-to(small) {
-    background-size: auto;
-  }
+  //background-image: url(./images/infocast_banner_about.png);
+  //background-size: 100%;
+  //background-position-y: 100px;
+  //background-repeat: no-repeat;
+  //
+  //@include respond-to(small) {
+  //  background-size: auto;
+  //}
 }
 
 .team-grid {

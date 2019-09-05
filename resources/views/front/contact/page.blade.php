@@ -1,4 +1,4 @@
-@extends('front.base', ['pageName' => 'light'])
+@extends('front.base', ['pageName' => 'dark'])
 
 @section('title')
     Contact Us

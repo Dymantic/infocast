@@ -1,4 +1,4 @@
-@extends('front.base', ['pageName' => 'careers-page light'])
+@extends('front.base', ['pageName' => 'careers-page dark'])
 
 @section('title')
     We're Hiring! Join us at Infocast
@@ -13,8 +13,8 @@
 @endsection
 
 @section('content')
-    <section class="banner flex justify-center items-center">
-        <p class="col-r f-headline-ns f1 tc bold-type tracked-tight">Join the party.</p>
+    <section class="pv5 flex justify-center items-center">
+        <p class="pt5 col-p head0 tc">Join the party.</p>
     </section>
     <section class="pv5">
         @if($postings->count() > 0)
@@ -33,5 +33,10 @@
                 @include('front.home.job-card')
             @endforeach
         </div>
+    </section>
+    <section class="pv5">
+        <p class="tc headf lh-max ph4">Can't find any position of your interest?</p>
+            <p class="tc f4 f3-ns ph4 mw7 lh-max center-ns">Send us your resume and tell us how you think you can help Infocast to improve our service or as a company. We will contact you if a suitable position becomes available."
+            </p>
     </section>
 @endsection

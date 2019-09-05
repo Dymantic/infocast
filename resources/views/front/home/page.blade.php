@@ -17,7 +17,7 @@
     @include('front.home.about')
     @include('front.home.services')
     @include('front.home.join-us')
-    @include('front.home.available-positions')
+{{--    @include('front.home.available-positions')--}}
 {{--    @include('front.home.tech-logos')--}}
 @endsection
 
