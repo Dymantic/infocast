@@ -10,6 +10,12 @@
   url('./fonts/Artegra_Sans-Alt-600-SemiBold.ttf') format('truetype'); /* Safari, Android, iOS */
 }
 
+@font-face {
+  font-family: 'artegra-sans-black';
+  src: url('./fonts/Artegra_Sans-Alt-900-Black.woff') format('woff'), /* Pretty Modern Browsers */
+  url('./fonts/Artegra_Sans-Alt-900-Black.ttf') format('truetype'); /* Safari, Android, iOS */
+}
+
 @import "mixins/media";
 // Variables
 @import "variables";

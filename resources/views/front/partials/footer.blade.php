@@ -14,9 +14,8 @@
         </div>
     </div>
     <div>
-        <p class="col-midgr tc f5 bold-type mt0">台北市中山區長安東路二段110號2樓</p>
-        <p class="col-midgr tc f5 bold-type mt0">2F, No 110, Sec.2 Chang An E. Road, <br/> Zhongshan Dist, Taipei</p>
-        <p class="tc col-midgr f5 bold-type mt3">Tel: 886 2 2506 3857</p>
+        <p class="col-w tc f5 bold-type mt0">2F, No 110, Sec.2 Chang An E. Road, <br/> Zhongshan Dist, Taipei</p>
+        <p class="tc col-w f5 bold-type mt3">Tel: 886 2 2506 3857</p>
     </div>
 
     <div class="col-w tc f6 flex flex-column flex-row-ns pb2 mt4">

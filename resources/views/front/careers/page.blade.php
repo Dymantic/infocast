@@ -13,8 +13,8 @@
 @endsection
 
 @section('content')
-    <section class="pv5 flex justify-center items-center">
-        <p class="pt5 col-p head0 tc">Join the party.</p>
+    <section class="banner flex justify-center items-center">
+        <p class="huge-type black-type col-w tc">Join the party.</p>
     </section>
     <section class="pv5">
         @if($postings->count() > 0)
@@ -28,15 +28,15 @@
         @endif
     </section>
     <section class="pb6">
-        <div class="mw8 jobs-grid center mt5">
+        <div class="mw8 jobs-grid center">
             @foreach($postings as $posting)
                 @include('front.home.job-card')
             @endforeach
         </div>
     </section>
-    <section class="pv5">
+    <section class="pv5 mb6">
         <p class="tc headf lh-max ph4">Can't find any position of your interest?</p>
-            <p class="tc f4 f3-ns ph4 mw7 lh-max center-ns">Send us your resume and tell us how you think you can help Infocast to improve our service or as a company. We will contact you if a suitable position becomes available."
+            <p class="tc f4 f3-ns ph4 mw7 lh-max center-ns">Send us your resume and tell us how you think you can help Infocast to improve our service or as a company. We will contact you if a suitable position becomes available.
             </p>
     </section>
 @endsection

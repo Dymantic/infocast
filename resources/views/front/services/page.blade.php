@@ -1,46 +1,38 @@
 @extends('front.base', ['pageName' => 'dark'])
 
 @section('content')
-    <section class="pt6 mb5 services-banner">
-        <h1 class="tc f2 mt1 col-p head0 pt5">Our Services</h1>
+    <section class="banner services-banner flex justify-center items-center">
+        <h1 class="black-type huge-type col-w">Our toolbox.</h1>
+    </section>
+    <section class="mb5 relative">
+        @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pr'])
         <p class="f4 f3-ns mh4 mv5 tc pv5 measure-wide center-l lh-max">
             Our core services are centered around data-science, with emphasis on software development, NLP and machine learning research,  validation and predictive  analysis with reliance on custom visualization tools.
         </p>
     </section>
-    @include('front.partials.top-wave')
-    <section class="pb4 pt4 col-pb-bg">
-{{--        <div class="center col-mb-bg h4 w4 flex items-center justify-center br-100" data-usher>--}}
-{{--            <p class="huge-type bold-type col-w">1.</p>--}}
-{{--        </div>--}}
-        <h3 class="normal tc headf mt0 pt5" data-usher>Software Development</h3>
-        <p class="f4 f3-ns mh4 mb5 tc measure-wide center-l lh-max">
-            We offer software development and architecture as a service. We build software to your specification.
-        </p>
-{{--        @include('front.home.tech-logos')--}}
-    </section>
-    @include('front.partials.bottom-wave')
+    <section class="pb4 pt4 relative dotted-wave-right-bg">
+        <div class="pv5 relative">
+            @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-w'])
+            <h3 class="normal tc headf mt0 pt5" data-usher>Software Development</h3>
+            <p class="f4 f3-ns mh4 mb5 tc measure-wide center-l lh-max">
+                We offer software development and architecture as a service. We build software to your specification.
+            </p>
+            <h3 class="normal tc headf ph4 pt5" data-usher>Proprietary analytic services</h3>
+            <p class="f4 f3-ns mh4 mb5 tc measure center-l lh-max">
+                Our custom built tools perform data-gathering and classification.
+            </p>
+        </div>
 
-    <section class="pb5">
-{{--        <div class="center col-mb-bg h4 w4 flex items-center justify-center br-100" data-usher>--}}
-{{--            <p class="huge-type bold-type col-w">2.</p>--}}
-{{--        </div>--}}
-        <h3 class="normal tc headf ph4 pt5" data-usher>Proprietary analytic services</h3>
-        <p class="f4 f3-ns mh4 mb5 tc measure center-l lh-max">
-            Our custom built tools perform data-gathering and classification.
-        </p>
-{{--        <div class="flex flex-wrap justify-around mx8 center">--}}
-{{--            @foreach($service_points as $point)--}}
-{{--             <div class="mb5 measure-wide center col-pb-bg" data-usher>--}}
-{{--                 <p class="bold-type col-p ph4 pv4 col-pb-bg ttu">{{ $point['heading'] }}</p>--}}
-{{--                 <p class="ph4 pt0 pb4 ma0 lh-title">{{ $point['content'] }}</p>--}}
-
-{{--             </div>--}}
-{{--            @endforeach--}}
-{{--        </div>--}}
     </section>
-    <p class="f4 f3-ns mh4 mb5 tc measure center-l lh-max">
-        Our services are expanding. Stay tuned.
-    </p>
+
+    <section class="pv5 mb6 relative">
+        @include('svg-decorations.crosses_deco', ['classes' => 'db db-l decoration d-right d-bottom-10 h3 col-pb'])
+        <p class="f4 f3-ns mh4 tc measure center-l lh-max">
+            Our services are expanding. Stay tuned.
+        </p>
+    </section>
+
+
 
 
 @endsection

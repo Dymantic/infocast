@@ -1,6 +1,6 @@
 <section class="pt5 pb4 relative">
-    @include('svg-decorations.dots_3', ['classes' => 'dn db-l decoration d-left d-top-30 h3'])
-    @include('svg-decorations.lines_2', ['classes' => 'dn db-l decoration d-right d-bottom-20 h3'])
+    @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pr'])
+    @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-pb'])
     <div class="big-quote mb6 ph5">
         <p class="quote-text f3 f2-ns measure center mb2">Getting information off the Internet is like taking a drink from a firehose.</p>
         <p class="tr"> - Tim Berners-Lee, inventor of the World Wide Web</p>

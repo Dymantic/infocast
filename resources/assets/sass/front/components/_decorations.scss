@@ -4,11 +4,15 @@
 }
 
 .d-left {
-  left: 0;
+  left: 5vw;
 }
 
 .d-right {
-  right: 0;
+  right: 5vw;
+}
+
+.d-top-10 {
+  top: 10%
 }
 
 .d-top-20 {
@@ -31,6 +35,10 @@
   bottom: 0;
 }
 
+.d-bottom-10 {
+  bottom: 10%;
+}
+
 .d-bottom-20 {
   bottom: 20%;
 }
@@ -41,4 +49,44 @@
 
 .d-bottom-40 {
   bottom: 40%;
+}
+
+.striped-wave-left-blue-bg {
+  background: url(./images/wavy-bgs/striped-wave-left.svg);
+  background-size: cover;
+  background-position-x: center;
+
+  & p {
+    position: relative;
+  }
+}
+
+.striped-wave-right-red-bg {
+  background: url(./images/wavy-bgs/striped-wave-right.svg);
+  background-size: cover;
+  background-position-x: center;
+
+  & p {
+    position: relative;
+  }
+}
+
+.dotted-wave-right-bg {
+  background: url(./images/wavy-bgs/dotted-wave-right.svg);
+  background-size: cover;
+  background-position-x: center;
+
+  & p {
+    position: relative;
+  }
+}
+
+.dotted-wave-left-bg {
+  background: url(./images/wavy-bgs/dotted-wave-left.svg);
+  background-size: cover;
+  background-position-x: center;
+
+  & p {
+    position: relative;
+  }
 }

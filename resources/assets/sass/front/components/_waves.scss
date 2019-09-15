@@ -17,6 +17,18 @@
   }
 }
 
+.top-wave.red {
+  path {
+    fill: $site_pale_red;
+  }
+}
+
+.bottom-wave.red {
+  path {
+    fill: $site_pale_red;
+  }
+}
+
 .bottom-wave {
   display: flex;
   justify-content: center;

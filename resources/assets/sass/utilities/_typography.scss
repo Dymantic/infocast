@@ -16,4 +16,8 @@
 
 .huge-type {
   font-size: 5rem;
+
+  @include respond-to(small) {
+    font-size: 3rem;
+  }
 }

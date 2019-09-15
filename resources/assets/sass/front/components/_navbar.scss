@@ -1,9 +1,13 @@
-.home-page .main-nav {
+//.home-page .main-nav {
+//  background-color: #28416f;
+//}
+
+.contact-page .main-nav {
   background-color: $site_primary;
 }
 
 .main-nav {
-  background-color: $site_primary;
+  background-color: rgba(24, 50, 66, 0);
   box-shadow: none;
   z-index: 10;
   height: 70px;
