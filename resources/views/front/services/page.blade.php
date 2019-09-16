@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="banner services-banner flex justify-center items-center">
-        <h1 class="black-type huge-type col-w">How we can help.</h1>
+        <h1 class="black-type huge-type col-w tc">How we can help.</h1>
     </section>
     <section class="mb5 relative decorated">
         @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pr'])
