@@ -1,4 +1,4 @@
-<section class="pt5 pb4 relative">
+<section class="pt5 pb4 relative decorated">
     @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pr'])
     @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-pb'])
     <div class="big-quote mb6 ph5">

@@ -1,4 +1,4 @@
-<section class="pv5 mb6 relative">
+<section class="pv5 mb6 relative decorated">
     @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-right d-top-30 h3 col-pr'])
     @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-left d-bottom-0 h3 col-pb'])
     <h3 class="normal tc head0" data-usher>Join Us</h3>

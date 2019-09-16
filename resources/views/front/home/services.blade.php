@@ -1,5 +1,4 @@
-<section class="pv4 relative striped-wave-left-blue-bg">
-{{--    @include('svg-decorations.striped-wave-bg')--}}
+<section class="pv4 relative striped-wave-left-blue-bg decorated">
     @include('svg-decorations.crosses_deco', ['classes' => 'db db-l decoration d-right d-top-30 h3 col-w'])
     <div class="pv5">
         <h3 class="normal tc head0 mt0" data-usher>Services</h3>

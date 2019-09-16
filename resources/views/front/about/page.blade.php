@@ -4,7 +4,7 @@
     <section class="about-banner banner flex justify-center items-center">
         <p class="huge-type black-type col-w">This is us.</p>
     </section>
-    <section class="pt6 pb5 relative">
+    <section class="pt6 pb5 relative decorated">
         @include('svg-decorations.crosses_deco', ['classes' => 'db db-l decoration d-left d-top-10 h3 col-pg'])
         @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-right d-bottom-10 h3 col-pr'])
         <h3 class="normal tc head0 mt0 pv5">What We Do</h3>
@@ -20,7 +20,7 @@
         <p class="f4 f3-ns tc mh4 mb3 measure-wide center-l lh-max">Technology developed by Infocast has served thousands of people, including over 200 Fortune 500 firms, 12 country governments, and dozens of nonprofits and small businesses around the globe.</p>
     </section>
 
-    <section class="pb5 relative dotted-wave-left-bg">
+    <section class="pb5 relative dotted-wave-left-bg decorated">
         <div class="pv5">
             @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-right d-bottom-20 h3 col-w'])
             <h3 class="normal tc head0 mt0 pv5">Who We Are</h3>
@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <section class="pb5 relative">
+    <section class="pb5 relative decorated">
         @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-pg'])
         @include('svg-decorations.crosses_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pb'])
         <h3 class="normal tc head0 mt0 pv5">Our Vision</h3>
@@ -40,7 +40,7 @@
 
     </section>
 
-    <section class="pb5 mb6 relative striped-wave-right-red-bg">
+    <section class="pb5 mb6 relative striped-wave-right-red-bg decorated">
         <div class="pv5 relative">
             @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-w'])
             <h3 class="normal tc head0 mt0 pv5">Our People</h3>

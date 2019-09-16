@@ -55,37 +55,27 @@
   background: url(./images/wavy-bgs/striped-wave-left.svg);
   background-size: cover;
   background-position-x: center;
-
-  & p {
-    position: relative;
-  }
 }
 
 .striped-wave-right-red-bg {
   background: url(./images/wavy-bgs/striped-wave-right.svg);
   background-size: cover;
   background-position-x: center;
-
-  & p {
-    position: relative;
-  }
 }
 
 .dotted-wave-right-bg {
   background: url(./images/wavy-bgs/dotted-wave-right.svg);
   background-size: cover;
   background-position-x: center;
-
-  & p {
-    position: relative;
-  }
 }
 
 .dotted-wave-left-bg {
-  background: url(./images/wavy-bgs/dotted-wave-left.svg);
+  background: url(./images/wavy-bgs/dots_left_red.svg);
   background-size: cover;
   background-position-x: center;
+}
 
+.decorated {
   & p {
     position: relative;
   }

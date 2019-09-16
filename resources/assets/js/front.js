@@ -64,13 +64,15 @@ const app = new Vue({
     }
 });
 
-window.addEventListener('scroll', throttle(() => {
+let handleScrollForNav = throttle(() => {
     if(window.scrollY > 80) {
         document.querySelector('.main-nav').classList.add('scrolled');
-    } else {
-        document.querySelector('.main-nav').classList.remove('scrolled');
+        window.removeEventListener('scroll', handleScrollForNav);
     }
-}, 250));
+}, 250);
+
+window.addEventListener('scroll', handleScrollForNav);
+
 
 const menu = new Menu();
 menu.init();
