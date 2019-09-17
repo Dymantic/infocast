@@ -36,7 +36,7 @@
     </section>
     <section class="pv5 mb6">
         <p class="tc headf lh-max ph4">Can't find any position of your interest?</p>
-            <p class="tc f4 f3-ns ph4 mw7 lh-max center-ns">Send us your resume and tell us how you think you can help Infocast to improve our service or as a company. We will contact you if a suitable position becomes available.
+            <p class="tc f4 f3-ns ph4 mw7 lh-max center-ns">Send us your resume to <a href="mailto:hr@infocast.tech" class="col-s hov-r">hr@infocast.tech</a>  and tell us how you think you can help Infocast to improve our service or as a company. We will contact you if a suitable position becomes available.
             </p>
     </section>
 @endsection
