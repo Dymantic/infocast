@@ -34,9 +34,9 @@
         @include('svg-decorations.dots_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-pg'])
         @include('svg-decorations.crosses_deco', ['classes' => 'db db-l decoration d-right d-top-10 h3 col-pb'])
         <h3 class="normal tc head0 mt0 pv5" data-usher>Our Vision</h3>
-        <p class="f4 f3-ns tl mh4 mb3 measure-wide center-l lh-max">We envision a world where anyone can easily accelerate data utilization of specialized and organized information extracted from the web. We aim to speed up the process of finding, creating, analyzing, and publishing hard-to-find, structured information by removing all technical barriers in data services. </p>
+        <p class="f4 f3-ns tc mh4 mb3 measure-wide center-l lh-max">We envision a world where anyone can easily accelerate data utilization of specialized and organized information extracted from the web. We aim to speed up the process of finding, creating, analyzing, and publishing hard-to-find, structured information by removing all technical barriers in data services. </p>
 
-        <p class="f4 f3-ns tl mh4 mb3 measure-wide center-l lh-max">It is our goal to give the average person the same resources that large businesses have to curate and commercialize highly structured information, so the rest of us can find and use that data quicker.</p>
+        <p class="f4 f3-ns tc mh4 mb3 measure-wide center-l lh-max">It is our goal to give the average person the same resources that large businesses have to curate and commercialize highly structured information, so the rest of us can find and use that data quicker.</p>
 
     </section>
 
@@ -44,7 +44,7 @@
         <div class="pv5 relative">
             @include('svg-decorations.stripe_deco', ['classes' => 'db db-l decoration d-left d-bottom-10 h3 col-w'])
             <h3 class="normal tc head0 mt0 pv5" data-usher>Our People</h3>
-            <p class="f4 f3-ns tl mh4 mb3 measure-wide center-l lh-max">We are a seasoned, interdisciplinary team of web custodians and data enthusiasts united by our passion for solving problems and streamlining complex processes. Our team works in an environment that emphasizes fun, creativity, teamwork, and productivity over bureaucracy, hierarchy, and attendance. We believe in the power of diversity, which is reflected in our international team, who come from different parts of the world. Prioritizing each team member’s voice and feedback in every step of the way ensures meeting our goals. We are a family brought together by our shared dream of making the metadata-sphere more friendly to everyone.</p>
+            <p class="f4 f3-ns tc mh4 mb3 measure-wide center-l lh-max">We are a seasoned, interdisciplinary team of web custodians and data enthusiasts united by our passion for solving problems and streamlining complex processes. Our team works in an environment that emphasizes fun, creativity, teamwork, and productivity over bureaucracy, hierarchy, and attendance. We believe in the power of diversity, which is reflected in our international team, who come from different parts of the world. Prioritizing each team member’s voice and feedback in every step of the way ensures meeting our goals. We are a family brought together by our shared dream of making the metadata-sphere more friendly to everyone.</p>
         </div>
 
 
