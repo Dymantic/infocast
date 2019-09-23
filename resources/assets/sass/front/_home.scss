@@ -4,8 +4,8 @@
 //}
 //
 .home-page .banner {
-  background: url(./images/banners/home_banner.jpg);
-  background-size: cover;
+  //background: url(./images/banners/home_banner.jpg);
+  //background-size: cover;
 
 }
 
@@ -25,15 +25,15 @@
 
 
 
-.big-quote .quote-text::before {
-  content: '\275d';
-  font-size: 10rem;
-  position: absolute;
-  top: -70px;
-  left: -4rem;
-  color: $site_mid_blue;
-  opacity: .2;
-}
+//.big-quote .quote-text::before {
+//  content: '\275d';
+//  font-size: 10rem;
+//  position: absolute;
+//  top: -70px;
+//  left: -4rem;
+//  color: $site_mid_blue;
+//  opacity: .2;
+//}
 
 .banner-wave-container {
   height: 150px;
