@@ -6,7 +6,7 @@
     </section>
     <section class="mb5 relative decorated">
         <p class="f4 f3-ns mh4 mv5 tc pv5 measure-wide center-l lh-max">
-            Our core services are centered around data-science, with emphasis on software development, NLP and machine learning research,  validation and predictive  analysis with reliance on custom visualization tools.
+            Our core services are centered around data-science, with emphasis on software development, and machine learning research, validation and predictive analysis with reliance on custom visualization tools.
         </p>
     </section>
     @include('front.partials.top-wave')
@@ -14,7 +14,7 @@
         <div class="pv5 relative">
             <h3 class="normal tc headf mt0 pt5" data-usher>Software Development</h3>
             <p class="f4 f3-ns mh4 mb5 tc measure-wide center-l lh-max">
-                We offer software development and architecture as a service. We build software to your specification.
+                We offer software development and architecture building software to your specifications.
             </p>
             <h3 class="normal tc headf ph4 pt5" data-usher>Proprietary analytic services</h3>
             <p class="f4 f3-ns mh4 mb5 tc measure center-l lh-max">

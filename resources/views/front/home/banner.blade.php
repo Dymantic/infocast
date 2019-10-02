@@ -4,4 +4,3 @@
          class="mw-90 db"
          width="500px">
 </section>
-{{--@include('front.partials.bottom-side-wave')--}}
