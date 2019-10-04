@@ -40,6 +40,8 @@ Vue.component('case-study-editor', require('./components/CaseStudies/Edit.vue'))
 
 Vue.component('notification-hub', require('./components/Notifications/NotificationHub.vue'));
 
+Vue.component('candidate-tracking-page', require('./components/Candidates/CandidateTrackingPage'));
+
 
 window.eventHub = new Vue();
 
