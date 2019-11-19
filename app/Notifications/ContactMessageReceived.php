@@ -42,7 +42,7 @@ class ContactMessageReceived extends Notification
 
     public function toSlack()
     {
-        $url = url("/admin/inquiries/{$this->message->id}");
+        $url = url("/admin/inquiries");
 
         return (new SlackMessage)
             ->success()

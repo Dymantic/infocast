@@ -18,14 +18,14 @@ class ContactMessageController extends Controller
 
     public function store()
     {
-        request()->validate([
+        $data = request()->validate([
             'first_name' => 'required_without:last_name|max:255',
             'last_name' => 'required_without:first_name|max:255',
             'phone' => 'required_without:email|max:255',
             'email' => 'required_without:phone|max:255',
             'inquiry' => 'required'
         ]);
-        $message = ContactMessage::create(request()->all());
+        $message = ContactMessage::create($data);
 
         $secretary = app()->make('secretary');
 
