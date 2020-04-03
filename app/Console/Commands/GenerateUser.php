@@ -40,6 +40,7 @@ class GenerateUser extends Command
             'superadmin' => $superadmin
         ];
 
-        return User::register($data);
+
+        User::register($data);
     }
 }

@@ -26,6 +26,7 @@ class User extends Authenticatable
 
     public static function register($user_attributes)
     {
+
         $user_attributes['password'] = bcrypt($user_attributes['password']);
         return static::create($user_attributes);
     }
