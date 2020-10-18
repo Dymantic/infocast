@@ -25,8 +25,8 @@ class UploadApplicationCVTest extends TestCase
         ]);
         $response->assertStatus(201);
 
-        $this->assertArrayHasKey('file_id', $response->decodeResponseJson());
-        $avatar_id = $response->decodeResponseJson()['file_id'];
+        $this->assertArrayHasKey('file_id', $response->json());
+        $avatar_id = $response->json()['file_id'];
         $this->assertDatabaseHas('application_uploads', [
             'file_id' => $avatar_id,
             'file_type' => 'cv'
@@ -48,7 +48,7 @@ class UploadApplicationCVTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('cv', $response->json()['errors']);
     }
 
     /**
@@ -61,7 +61,7 @@ class UploadApplicationCVTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('cv', $response->json()['errors']);
     }
 
     /**
@@ -74,6 +74,6 @@ class UploadApplicationCVTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('cv', $response->json()['errors']);
     }
 }

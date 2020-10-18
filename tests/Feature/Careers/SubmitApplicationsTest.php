@@ -56,7 +56,7 @@ class SubmitApplicationsTest extends TestCase
 
 
         $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=application',
-            $response->decodeResponseJson()['redirect_url']);
+            $response->json()['redirect_url']);
     }
 
     /**
@@ -128,7 +128,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey('email', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('email', $response->json()['errors']);
     }
 
     /**
@@ -176,7 +176,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey('contact_method', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('contact_method', $response->json()['errors']);
     }
 
     /**
@@ -208,7 +208,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey('gender', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('gender', $response->json()['errors']);
     }
 
     /**
@@ -312,7 +312,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey('english_ability', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('english_ability', $response->json()['errors']);
     }
 
     /**
@@ -336,7 +336,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey('mandarin_ability', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('mandarin_ability', $response->json()['errors']);
     }
 
     /**
@@ -384,7 +384,7 @@ class SubmitApplicationsTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('avatar', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('avatar', $response->json()['errors']);
     }
 
     /**
@@ -416,7 +416,7 @@ class SubmitApplicationsTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('cover_letter', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('cover_letter', $response->json()['errors']);
     }
 
     /**
@@ -448,7 +448,7 @@ class SubmitApplicationsTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('cv', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('cv', $response->json()['errors']);
     }
 
     /**
@@ -476,7 +476,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey($field, $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey($field, $response->json()['errors']);
     }
 
     private function assertNotRequired($field)
@@ -501,7 +501,7 @@ class SubmitApplicationsTest extends TestCase
         );
 
         $response->assertStatus(422);
-        $this->assertArrayHasKey($field, $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey($field, $response->json()['errors']);
     }
 
     private function defaultApplicationDetails($overrides = [])

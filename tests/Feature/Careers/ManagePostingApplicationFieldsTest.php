@@ -85,7 +85,7 @@ class ManagePostingApplicationFieldsTest extends TestCase
             'cv'               => Posting::FIELD_REQUIRED,
         ];
 
-        $this->assertEquals($expected, $response->decodeResponseJson());
+        $this->assertEquals($expected, $response->json());
     }
 
     /**
@@ -150,7 +150,7 @@ class ManagePostingApplicationFieldsTest extends TestCase
                          ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('last_name', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('last_name', $response->json()['errors']);
 
         $this->assertDatabaseHas('postings', [
             'application_fields' => json_encode(['first_name' => 'required'])

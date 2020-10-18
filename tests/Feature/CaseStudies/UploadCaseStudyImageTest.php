@@ -31,7 +31,7 @@ class UploadCaseStudyImageTest extends TestCase
 
         $this->assertCount(1, $case_study->fresh()->getMedia(CaseStudy::BODY_IMAGES));
         $image = $case_study->fresh()->getFirstMedia(CaseStudy::BODY_IMAGES);
-        $this->assertEquals($response->decodeResponseJson('src'), $image->getUrl('web'));
+        $this->assertEquals($response->json('src'), $image->getUrl('web'));
     }
 
     /**

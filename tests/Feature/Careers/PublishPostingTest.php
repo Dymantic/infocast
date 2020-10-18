@@ -59,7 +59,7 @@ class PublishPostingTest extends TestCase
                          ->json('POST', "/admin/published-postings", ['posting_id' => '']);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_id', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_id', $response->json()['errors']);
     }
 
     /**
@@ -71,7 +71,7 @@ class PublishPostingTest extends TestCase
                          ->json('POST', "/admin/published-postings", ['posting_id' => 'NOT-AN-INTEGER']);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_id', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_id', $response->json()['errors']);
     }
 
     /**
@@ -86,6 +86,6 @@ class PublishPostingTest extends TestCase
                          ->json('POST', "/admin/published-postings", ['posting_id' => $posting_id]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_id', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_id', $response->json()['errors']);
     }
 }

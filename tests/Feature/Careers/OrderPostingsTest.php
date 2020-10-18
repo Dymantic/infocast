@@ -78,7 +78,7 @@ class OrderPostingsTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_order', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_order', $response->json()['errors']);
     }
 
     /**
@@ -91,7 +91,7 @@ class OrderPostingsTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_order', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_order', $response->json()['errors']);
     }
 
     /**
@@ -104,7 +104,7 @@ class OrderPostingsTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posting_order.0', $response->decodeResponseJson()['errors']);
-        $this->assertArrayHasKey('posting_order.1', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posting_order.0', $response->json()['errors']);
+        $this->assertArrayHasKey('posting_order.1', $response->json()['errors']);
     }
 }

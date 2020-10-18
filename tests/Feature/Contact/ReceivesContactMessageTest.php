@@ -62,7 +62,7 @@ class ReceivesContactMessageTest extends TestCase
 
 
 
-        $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=inquiry', $response->decodeResponseJson()['redirect_url']);
+        $this->assertEquals('/thank-you?name=TEST+FIRST+NAME+TEST+LAST+NAME&type=inquiry', $response->json()['redirect_url']);
     }
 
     /**
@@ -79,8 +79,8 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('first_name', $response->decodeResponseJson()['errors']);
-        $this->assertArrayHasKey('last_name', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('first_name', $response->json()['errors']);
+        $this->assertArrayHasKey('last_name', $response->json()['errors']);
     }
 
     /**
@@ -97,8 +97,8 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('phone', $response->decodeResponseJson()['errors']);
-        $this->assertArrayHasKey('email', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('phone', $response->json()['errors']);
+        $this->assertArrayHasKey('email', $response->json()['errors']);
     }
 
     /**
@@ -115,7 +115,7 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('inquiry', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('inquiry', $response->json()['errors']);
     }
 
     /**
@@ -132,7 +132,7 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('first_name', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('first_name', $response->json()['errors']);
     }
 
     /**
@@ -149,7 +149,7 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('last_name', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('last_name', $response->json()['errors']);
     }
 
     /**
@@ -166,7 +166,7 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('phone', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('phone', $response->json()['errors']);
     }
 
     /**
@@ -183,6 +183,6 @@ class ReceivesContactMessageTest extends TestCase
         ]);
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('email', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('email', $response->json()['errors']);
     }
 }

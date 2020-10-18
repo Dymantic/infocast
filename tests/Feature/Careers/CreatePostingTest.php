@@ -38,7 +38,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('title', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('title', $response->json()['errors']);
     }
 
     /**
@@ -53,7 +53,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('title', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('title', $response->json()['errors']);
     }
 
     /**
@@ -68,7 +68,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('type', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('type', $response->json()['errors']);
     }
 
     /**
@@ -83,7 +83,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('category', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('category', $response->json()['errors']);
     }
 
     /**
@@ -98,7 +98,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('location', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('location', $response->json()['errors']);
     }
 
     /**
@@ -113,7 +113,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('compensation', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('compensation', $response->json()['errors']);
     }
 
     /**
@@ -128,7 +128,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('start_date', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('start_date', $response->json()['errors']);
     }
 
     /**
@@ -143,7 +143,7 @@ class CreatePostingTest extends TestCase
 
         $response->assertStatus(422);
 
-        $this->assertArrayHasKey('posted', $response->decodeResponseJson()['errors']);
+        $this->assertArrayHasKey('posted', $response->json()['errors']);
     }
 
     /**
