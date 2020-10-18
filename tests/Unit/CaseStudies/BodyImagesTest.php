@@ -7,7 +7,7 @@ namespace Tests\Unit\CaseStudies;
 use App\CaseStudies\CaseStudy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Tests\TestCase;
 
 class BodyImagesTest extends TestCase

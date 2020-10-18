@@ -19,7 +19,7 @@ class UploadCaseStudyImageTest extends TestCase
      */
     public function upload_image_to_case_study()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
         $this->withoutExceptionHandling();
 
         $case_study = factory(CaseStudy::class)->create();
@@ -39,7 +39,7 @@ class UploadCaseStudyImageTest extends TestCase
      */
     public function the_image_is_required()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -55,7 +55,7 @@ class UploadCaseStudyImageTest extends TestCase
      */
     public function the_image_must_be_a_file()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -71,7 +71,7 @@ class UploadCaseStudyImageTest extends TestCase
      */
     public function the_image_must_be_an_image()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 

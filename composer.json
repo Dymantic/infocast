@@ -15,7 +15,7 @@
         "laravel/tinker": "^2.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "spatie/laravel-backup": "^6.0",
-        "spatie/laravel-medialibrary": "^7.0.0",
+        "spatie/laravel-medialibrary": "^8.0",
         "spatie/laravel-sitemap": "^5.0",
         "facade/ignition": "^2.0",
         "laravel/ui": "^2.0"

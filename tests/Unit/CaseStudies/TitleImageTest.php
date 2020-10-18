@@ -8,7 +8,7 @@ use App\CaseStudies\CaseStudy;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Tests\TestCase;
 
 class TitleImageTest extends TestCase
@@ -20,7 +20,7 @@ class TitleImageTest extends TestCase
      */
     public function title_image_can_be_set()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -38,7 +38,7 @@ class TitleImageTest extends TestCase
      */
     public function adding_a_title_image_removes_any_previous_ones()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -54,7 +54,7 @@ class TitleImageTest extends TestCase
      */
     public function the_title_image_can_be_cleared()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 

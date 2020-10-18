@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Carbon;
 use Spatie\Image\Manipulations;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class CaseStudy extends Model implements HasMedia
 {
-    use Sluggable, HasMediaTrait;
+    use Sluggable, InteractsWithMedia;
 
     const TITLE_IMAGES = 'title_images';
     const BODY_IMAGES = 'body_images';
@@ -67,7 +67,7 @@ class CaseStudy extends Model implements HasMedia
         $this->save();
     }
 
-    public function registerMediaConversions(Media $media = null)
+    public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('banner')
              ->fit(Manipulations::FIT_MAX, 1400, 1000)

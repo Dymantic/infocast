@@ -19,7 +19,7 @@ class ClearTitleImageTest extends TestCase
      */
     public function an_existing_title_image_can_be_cleared()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
         $case_study->setTitleImage(UploadedFile::fake()->image('test.jpg'));

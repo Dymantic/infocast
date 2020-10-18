@@ -19,7 +19,7 @@ class SetTitleImageTest extends TestCase
      */
     public function a_title_image_may_be_uploaded()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
         $this->withoutExceptionHandling();
 
         $case_study = factory(CaseStudy::class)->create();
@@ -37,7 +37,7 @@ class SetTitleImageTest extends TestCase
      */
     public function the_image_is_required()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -54,7 +54,7 @@ class SetTitleImageTest extends TestCase
      */
     public function the_image_must_be_a_valid_image_file()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
@@ -71,7 +71,7 @@ class SetTitleImageTest extends TestCase
      */
     public function the_image_must_be_a_file()
     {
-        Storage::fake('media');
+        Storage::fake('media', config('filesystems.disks.media'));
 
         $case_study = factory(CaseStudy::class)->create();
 
