@@ -39,9 +39,13 @@ window.Flickity = Flickity;
 
 import { throttle} from "lodash";
 
-Vue.component('application-form', require('./components/ApplicationForm.vue'));
-Vue.component('file-attachment', require('./components/FormFileAttachment.vue'));
-Vue.component('contact-form', require('./components/ContactForm.vue'));
+import ApplicationForm from'./components/ApplicationForm.vue';
+import FileAttachment from'./components/FormFileAttachment.vue';
+import ContactForm from'./components/ContactForm.vue';
+
+Vue.component('application-form', ApplicationForm);
+Vue.component('file-attachment', FileAttachment);
+Vue.component('contact-form', ContactForm);
 
 window.eventHub = new Vue();
 

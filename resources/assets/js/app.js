@@ -15,32 +15,43 @@ import Datepicker from "vuejs-datepicker";
 import swal from "sweetalert";
 window.swal = swal;
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+import Dropdown from './components/Dropdown.vue';
+import Modal from './components/Modal.vue';
+import DeleteModal from './components/DeleteModal.vue';
+import ResetPassword from './components/ResetPasswordForm.vue';
+import RequestPassword from './components/RequestPasswordReset.vue';
+import UserForm from './components/UserForm.vue';
+import UserList from './components/UserList.vue';
+import UserItem from './components/User.vue';
+import ToggleSwitch from './components/Toggle.vue';
+import ImageUpload from './components/Singleupload.vue';
+import PostingForm from './components/PostingForm.vue';
+import ApplicationFields from './components/PostingApplicationFieldsSetter.vue';
+import SortableList from './components/SortableList.vue';
+import CaseStudiesIndex from './components/CaseStudies/Index.vue';
+import CaseStudyEditor from './components/CaseStudies/Edit.vue';
+import NotificationHub from './components/Notifications/NotificationHub.vue';
+import CandidateTrackingPage from './components/Candidates/CandidateTrackingPage';
+
+
 Vue.component('date-picker', Datepicker);
-Vue.component('dropdown', require('./components/Dropdown.vue'));
-Vue.component('modal', require('./components/Modal.vue'));
-Vue.component('delete-modal', require('./components/DeleteModal.vue'));
-Vue.component('reset-password', require('./components/ResetPasswordForm.vue'));
-Vue.component('request-password', require('./components/RequestPasswordReset.vue'));
-Vue.component('user-form', require('./components/UserForm.vue'));
-Vue.component('user-list', require('./components/UserList.vue'));
-Vue.component('user-item', require('./components/User.vue'));
-Vue.component('toggle-switch', require('./components/Toggle.vue'));
-Vue.component('image-upload', require('./components/Singleupload.vue'));
-Vue.component('posting-form', require('./components/PostingForm.vue'));
-Vue.component('application-fields', require('./components/PostingApplicationFieldsSetter.vue'));
-Vue.component('sortable-list', require('./components/SortableList.vue'));
-
-Vue.component('case-studies-index', require('./components/CaseStudies/Index.vue'));
-Vue.component('case-study-editor', require('./components/CaseStudies/Edit.vue'));
-
-Vue.component('notification-hub', require('./components/Notifications/NotificationHub.vue'));
-
-Vue.component('candidate-tracking-page', require('./components/Candidates/CandidateTrackingPage'));
+Vue.component('dropdown', Dropdown);
+Vue.component('modal', Modal);
+Vue.component('delete-modal', DeleteModal);
+Vue.component('reset-password', ResetPassword);
+Vue.component('request-password', RequestPassword);
+Vue.component('user-form', UserForm);
+Vue.component('user-list', UserList);
+Vue.component('user-item', UserItem);
+Vue.component('toggle-switch', ToggleSwitch);
+Vue.component('image-upload', ImageUpload);
+Vue.component('posting-form', PostingForm);
+Vue.component('application-fields', ApplicationFields);
+Vue.component('sortable-list', SortableList);
+Vue.component('case-studies-index', CaseStudiesIndex);
+Vue.component('case-study-editor', CaseStudyEditor);
+Vue.component('notification-hub', NotificationHub);
+Vue.component('candidate-tracking-page', CandidateTrackingPage);
 
 
 window.eventHub = new Vue();

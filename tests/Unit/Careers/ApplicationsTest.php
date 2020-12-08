@@ -102,7 +102,7 @@ class ApplicationsTest extends TestCase
             'last_name' => "O'Brien"
         ]);
 
-        $this->assertEquals('john_obrien_avatar.jpeg' , $application->avatarName());
+        $this->assertEquals('john_obrien_avatar.jpg' , $application->avatarName());
     }
 
     /**
