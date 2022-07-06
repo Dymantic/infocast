@@ -27,7 +27,7 @@
         "@dymantic/vue-trix-editor": "^0.2.1",
         "flickity": "^2.0.10",
         "markdown-it": "^8.4.0",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "sortablejs": "^1.7.0",
         "sweetalert": "^2.0.3",
         "tachyons-sass": "^4.8.1",
